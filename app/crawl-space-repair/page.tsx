@@ -8,7 +8,7 @@ import { getServiceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Crawl Space Repair Greenville SC | Joist, Mold & Structural Repair",
+  title: "Crawl Space Repair Greenville SC | Mold & Structure",
   description:
     "Connect with local crawl space repair specialists in Greenville, SC. Sagging joists, wood rot, mold damage, and failing piers — free estimate.",
   canonical: "/crawl-space-repair",

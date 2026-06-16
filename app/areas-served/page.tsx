@@ -10,7 +10,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
-  title: "Crawl Space Encapsulation Near Me | Upstate SC Service Area",
+  title: "Crawl Space Services Near Greenville SC | Service Area",
   description:
     "Connect with local crawl space specialists throughout Upstate South Carolina — Greenville, Simpsonville, Greer, Spartanburg, Anderson, Mauldin, and Taylors. Free estimates.",
   canonical: "/areas-served",

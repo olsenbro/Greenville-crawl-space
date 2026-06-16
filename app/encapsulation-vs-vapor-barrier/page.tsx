@@ -15,7 +15,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
-  title: "Crawl Space Encapsulation vs. Vapor Barrier | What's the Difference?",
+  title: "Encapsulation vs Vapor Barrier Greenville SC Guide",
   description:
     "Not sure if you need full encapsulation or just a vapor barrier? This guide explains the difference for South Carolina homeowners — with costs, pros, and cons.",
   canonical: "/encapsulation-vs-vapor-barrier",

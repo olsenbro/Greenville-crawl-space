@@ -13,7 +13,7 @@ import { getAuthorityForPath } from "@/lib/authorities";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
-  title: "Request a Free Crawl Space Estimate Greenville SC",
+  title: "Free Crawl Space Estimate Greenville SC | Call Today",
   description:
     "Connect with trusted local crawl space specialists in Greenville, SC. Request a free estimate for moisture, mold, structural, and vapor barrier concerns — no obligation.",
   canonical: "/contact",

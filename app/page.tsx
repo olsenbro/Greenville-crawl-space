@@ -21,15 +21,14 @@ import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: {
-    absolute:
-      "Crawl Space Encapsulation Greenville SC | Moisture & Mold Experts",
+    absolute: "Crawl Space Encapsulation Greenville SC | Local Pros",
   },
   description: `Wet, moldy, or musty crawl space in Greenville? Connect with trusted local crawl space specialists across Upstate SC. Get a free estimate from a licensed pro. Call ${siteConfig.phone}.`,
   alternates: {
     canonical: siteConfig.schemaUrl,
   },
   openGraph: {
-    title: "Crawl Space Encapsulation Greenville SC | Moisture & Mold Experts",
+    title: "Crawl Space Encapsulation Greenville SC | Local Pros",
     description: `Wet, moldy, or musty crawl space in Greenville? Connect with trusted local crawl space specialists across Upstate SC. Get a free estimate from a licensed pro. Call ${siteConfig.phone}.`,
     url: siteConfig.schemaUrl,
   },

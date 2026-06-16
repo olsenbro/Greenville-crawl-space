@@ -11,7 +11,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
-  title: "Crawl Space Encapsulation Cost Greenville SC | 2025 Price Guide",
+  title: "Crawl Space Encapsulation Cost Greenville SC | Guide",
   description:
     "How much does crawl space encapsulation cost in Greenville, SC? Full breakdown: vapor barriers, dehumidifiers, mold treatment, and full encapsulation. Free estimates.",
   canonical: "/crawl-space-encapsulation-cost",

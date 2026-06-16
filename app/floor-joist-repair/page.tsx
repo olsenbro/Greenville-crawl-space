@@ -8,7 +8,7 @@ import { getServiceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Floor Joist Repair Greenville SC | Crawl Space Wood Rot & Sagging Floors",
+  title: "Floor Joist Repair Greenville SC | Crawl Space Pros",
   description:
     "Sagging floors or wood rot in your Greenville crawl space? Connect with local specialists who repair and sister damaged floor joists. Free estimate.",
   canonical: "/floor-joist-repair",

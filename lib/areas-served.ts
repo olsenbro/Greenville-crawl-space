@@ -19,7 +19,7 @@ export const cityAreas: CityArea[] = [
     name: "Simpsonville",
     state: "SC",
     stateName: "South Carolina",
-    title: "Crawl Space Encapsulation Simpsonville SC | Moisture & Mold Experts",
+    title: "Crawl Space Encapsulation Simpsonville SC | Local Pros",
     description:
       `Crawl space encapsulation in Simpsonville, SC. Connect with local specialists for moisture control, vapor barriers, and mold treatment for Fairview Road corridor homes. Free estimate — ${siteConfig.phone}.`,
     h1: "Crawl Space Encapsulation in Simpsonville, South Carolina",
@@ -41,7 +41,7 @@ export const cityAreas: CityArea[] = [
     name: "Greer",
     state: "SC",
     stateName: "South Carolina",
-    title: "Crawl Space Encapsulation Greer SC | Upstate SC Crawl Space Repair",
+    title: "Crawl Space Encapsulation Greer SC | Upstate SC Pros",
     description:
       "Crawl space encapsulation and repair in Greer, SC. Connect with local specialists for older railroad district homes and BMW corridor subdivisions. Free crawl space estimate.",
     h1: "Crawl Space Encapsulation in Greer, South Carolina",
@@ -63,7 +63,7 @@ export const cityAreas: CityArea[] = [
     name: "Spartanburg",
     state: "SC",
     stateName: "South Carolina",
-    title: "Crawl Space Encapsulation Spartanburg SC | Moisture Control Experts",
+    title: "Crawl Space Encapsulation Spartanburg SC | Local Pros",
     description:
       "Crawl space encapsulation in Spartanburg, SC. Connect with local specialists for historic homes and rolling-terrain drainage challenges. Free estimate.",
     h1: "Crawl Space Encapsulation in Spartanburg, South Carolina",
@@ -85,7 +85,7 @@ export const cityAreas: CityArea[] = [
     name: "Anderson",
     state: "SC",
     stateName: "South Carolina",
-    title: "Crawl Space Encapsulation Anderson SC | Crawl Space Repair & Vapor Barrier",
+    title: "Crawl Space Encapsulation Anderson SC | Local Pros",
     description:
       "Crawl space encapsulation in Anderson, SC. Connect with local specialists for vapor barriers, mold treatment, and repair for rural homes and Lake Hartwell area properties. Free estimate.",
     h1: "Crawl Space Encapsulation in Anderson, South Carolina",
@@ -107,7 +107,7 @@ export const cityAreas: CityArea[] = [
     name: "Mauldin",
     state: "SC",
     stateName: "South Carolina",
-    title: "Crawl Space Encapsulation Mauldin SC | Greenville County Moisture Control",
+    title: "Crawl Space Encapsulation Mauldin SC | Greenville Area",
     description:
       "Crawl space encapsulation in Mauldin, SC. Connect with local specialists to replace failed builder-grade vapor barriers in 1980s–2000s neighborhoods. Free estimate.",
     h1: "Crawl Space Encapsulation in Mauldin, South Carolina",
@@ -129,7 +129,7 @@ export const cityAreas: CityArea[] = [
     name: "Taylors",
     state: "SC",
     stateName: "South Carolina",
-    title: "Crawl Space Encapsulation Taylors SC | North Greenville Crawl Space Pros",
+    title: "Crawl Space Encapsulation Taylors SC | North Greenville",
     description:
       "Crawl space encapsulation in Taylors, SC. Connect with local specialists for Blue Ridge foothill homes where elevation-driven humidity meets Piedmont clay. Free estimate.",
     h1: "Crawl Space Encapsulation in Taylors, South Carolina",

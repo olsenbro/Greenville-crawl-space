@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
-  title: "Crawl Space Encapsulation Greenville SC | Full Moisture Control",
+  title: "Crawl Space Encapsulation Service Greenville SC Pros",
   description:
     `Connect with local specialists for crawl space encapsulation in Greenville, SC. 20-mil vapor barrier, sealed vents, dehumidifier installation. Free estimate. ${siteConfig.phone}.`,
   canonical: "/crawl-space-encapsulation",

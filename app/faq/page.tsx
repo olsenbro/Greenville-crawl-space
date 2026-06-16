@@ -13,7 +13,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
-  title: "Crawl Space Encapsulation FAQ | Greenville SC Questions Answered",
+  title: "Crawl Space FAQ Greenville SC | Encapsulation Answers",
   description:
     "All your crawl space encapsulation questions answered. Greenville, SC homeowners ask about cost, process, mold, humidity, and more.",
   canonical: "/faq",

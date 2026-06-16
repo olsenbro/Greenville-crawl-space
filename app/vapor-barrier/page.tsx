@@ -10,7 +10,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
-  title: "Vapor Barrier Installation Greenville SC | Crawl Space Moisture Control",
+  title: "Vapor Barrier Installation Greenville SC | Crawl Space",
   description:
     `Connect with local specialists for vapor barrier installation in Greenville, SC. 20-mil reinforced crawl space liners to stop moisture, mold, and rot. Free estimate — ${siteConfig.phone}.`,
   canonical: "/vapor-barrier",

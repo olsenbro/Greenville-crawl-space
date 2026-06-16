@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
-  title: "Crawl Space Mold Removal Greenville SC | Treatment Before Encapsulation",
+  title: "Crawl Space Mold Removal Greenville SC | Local Pros",
   description:
     `Mold in your Greenville crawl space? Connect with local specialists who treat and remove crawl space mold before encapsulation to stop it at the source. Free estimate — ${siteConfig.phone}.`,
   canonical: "/mold-in-crawl-space",
