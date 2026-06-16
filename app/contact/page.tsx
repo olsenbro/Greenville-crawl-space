@@ -94,7 +94,7 @@ export default function ContactPage() {
                 <li className="flex items-start gap-3 text-muted">
                   <Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
                   <span>
-                    Monday–Saturday: 7:00 AM – 6:00 PM
+                    {siteConfig.businessHoursLabel}
                     <br />
                     Emergency consultations available
                   </span>

@@ -22,7 +22,6 @@ export function getLocalBusinessSchema(city?: string, state?: string): SchemaObj
     foundingDate: String(siteConfig.foundedYear),
     address: {
       "@type": "PostalAddress",
-      streetAddress: siteConfig.address.street,
       addressLocality: city ?? siteConfig.address.city,
       addressRegion: state ?? siteConfig.address.state,
       postalCode: siteConfig.address.zip,
@@ -47,6 +46,15 @@ export function getLocalBusinessSchema(city?: string, state?: string): SchemaObj
       "Floor Joist Repair",
     ],
     priceRange: "$$$",
+    image: `${siteConfig.schemaUrl}${siteConfig.logoPath}`,
+    logo: `${siteConfig.schemaUrl}${siteConfig.logoPath}`,
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.mapEmbedQuery)}`,
+    openingHoursSpecification: siteConfig.openingHours.map(({ days, opens, closes }) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [...days],
+      opens,
+      closes,
+    })),
   };
 }
 
@@ -154,10 +162,11 @@ export function faqSchema(questions: { q: string; a: string }[]): string {
   return schemaToScriptHtml(getFAQPageSchema(questions));
 }
 
-function buildFaqPageSchema(items: FaqItem[]): SchemaObject {
+function buildFaqPageSchema(items: FaqItem[], idSuffix = "faq"): SchemaObject {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": `${siteConfig.schemaUrl}/#${idSuffix}`,
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
@@ -174,7 +183,7 @@ export function getHomeFaqSchema(): SchemaObject {
 }
 
 export function getFaqPageSchema(items: FaqItem[]): SchemaObject {
-  return buildFaqPageSchema(items);
+  return buildFaqPageSchema(items, "faq-page");
 }
 
 export function getArticleSchema(options: {
@@ -207,4 +216,13 @@ export function combineSchemas(...schemas: SchemaObject[]): SchemaObject {
       return rest;
     }),
   };
+}
+
+/** Combined LocalBusiness, WebSite, and homepage FAQ schema for document head */
+export function getSiteHeadSchema(): SchemaObject {
+  return combineSchemas(
+    getLocalBusinessSchema(),
+    getWebSiteSchema(),
+    getHomeFaqSchema(),
+  );
 }

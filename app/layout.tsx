@@ -5,7 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { PhoneClickTracker } from "@/components/PhoneClickTracker";
 import { StickyCallButton } from "@/components/StickyCallButton";
 import { SchemaScript } from "@/components/SchemaScript";
-import { getLocalBusinessSchema, getWebSiteSchema } from "@/lib/schema";
+import { getSiteHeadSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -36,9 +36,14 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   robots: { index: true, follow: true },
+  manifest: "/site.webmanifest",
   icons: {
-    icon: "/icon-512.png",
-    apple: "/icon-512.png",
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     type: "website",
@@ -47,9 +52,18 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: siteConfig.name,
     description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.ogImagePath,
+        width: 512,
+        height: 512,
+        alt: siteConfig.name,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    images: [siteConfig.ogImagePath],
   },
 };
 
@@ -61,8 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${sourceSerif.variable}`}>
       <head>
-        <SchemaScript schema={getLocalBusinessSchema()} />
-        <SchemaScript schema={getWebSiteSchema()} />
+        <SchemaScript schema={getSiteHeadSchema()} />
       </head>
       <body className="flex min-h-screen flex-col">
         <PhoneClickTracker />

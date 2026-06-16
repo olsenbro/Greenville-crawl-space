@@ -3,8 +3,8 @@ export const siteConfig = {
   tagline: "Crawl Space Encapsulation & Repair in Greenville, SC",
   description:
     "Connect with trusted local crawl space encapsulation, moisture control, and repair specialists serving Greenville and the Upstate South Carolina region. Free inspections and fast referrals.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://crawlspacegreenville.com",
-  schemaUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://crawlspacegreenville.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.crawlspacegreenville.com",
+  schemaUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.crawlspacegreenville.com",
   phone: "(864) 387-3270",
   phoneHref: "tel:+18643873270",
   email: "info@crawlspacegreenville.com",
@@ -13,7 +13,6 @@ export const siteConfig = {
     "/api/public/leads/989dcdf4-fcda-4ea7-9496-664150ee3ecb",
   foundedYear: 2015,
   address: {
-    street: "Greenville, SC",
     city: "Greenville",
     state: "SC",
     zip: "29601",
@@ -23,9 +22,19 @@ export const siteConfig = {
     latitude: 34.8526,
     longitude: -82.394,
   },
+  openingHours: [
+    {
+      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] as const,
+      opens: "07:00",
+      closes: "18:00",
+    },
+  ],
+  businessHoursLabel: "Monday–Saturday: 7:00 AM – 6:00 PM",
   serviceArea: "Greenville, Spartanburg, Anderson, Greer, Simpsonville, and the Upstate SC region",
   gaId: process.env.NEXT_PUBLIC_GA_ID ?? "",
   mapEmbedQuery: "Greenville,+SC",
+  logoPath: "/icon-512.png",
+  ogImagePath: "/og-image.png",
 } as const;
 
 export const serviceLinks = [

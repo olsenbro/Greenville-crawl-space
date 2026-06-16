@@ -1,15 +1,11 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { PhoneLink } from "@/components/PhoneLink";
-import { SchemaScript } from "@/components/SchemaScript";
-import { getLocalBusinessSchema } from "@/lib/schema";
 import { serviceAreas, serviceLinks, siteConfig } from "@/lib/site-config";
 
 export function Footer() {
   return (
     <footer className="bg-primary-dark text-neutral">
-      <SchemaScript schema={getLocalBusinessSchema()} />
-
       <div className="container-narrow section-padding grid gap-10 md:grid-cols-3">
         <div className="space-y-5">
           <Link

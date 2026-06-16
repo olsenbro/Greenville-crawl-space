@@ -13,10 +13,8 @@ import { CrossHatchOverlay } from "@/components/home/CrossHatchOverlay";
 import { HomeFaqAccordion } from "@/components/home/HomeFaqAccordion";
 import { AuthoritySection } from "@/components/AuthorityCitation";
 import { PhoneLink } from "@/components/PhoneLink";
-import { SchemaScript } from "@/components/SchemaScript";
 import { homeFaqPreview } from "@/lib/home-faq";
 import { getAuthorityForPath } from "@/lib/authorities";
-import { getHomeFaqSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -152,8 +150,6 @@ const trustBadges = [
 export default function Home() {
   return (
     <>
-      <SchemaScript schema={getHomeFaqSchema()} />
-
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary text-white">
         <CrossHatchOverlay />
@@ -247,18 +243,22 @@ export default function Home() {
           <div className="mx-auto max-w-4xl">
             <p className="label-caps">The South Carolina Difference</p>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl">
-              What Is Crawl Space Encapsulation — and Why Does It Matter in South Carolina?
+              What Is Crawl Space Encapsulation?
             </h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted">
+              Modern encapsulation seals the crawl space completely with a heavy-duty vapor barrier
+              on the floor and walls, conditions the air, and typically adds a dehumidifier to
+              maintain optimal humidity year-round.
+            </p>
+
+            <h3 className="mt-10 font-display text-2xl sm:text-3xl">
+              Why Does Crawl Space Encapsulation Matter in South Carolina?
+            </h3>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted">
               <p>
                 South Carolina&apos;s humidity is among the highest in the nation. Traditional
                 open-vent crawl spaces were designed for drier climates and actually draw humid
                 outdoor air in — the opposite of what&apos;s needed here.
-              </p>
-              <p>
-                Modern encapsulation seals the crawl space completely with a heavy-duty vapor barrier
-                on the floor and walls, conditions the air, and typically adds a dehumidifier to
-                maintain optimal humidity year-round.
               </p>
             </div>
 
@@ -349,22 +349,26 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding">
+      <section className="section-padding" aria-labelledby="testimonials-heading">
         <div className="container-narrow">
-          <h2 className="font-display text-3xl sm:text-4xl">What Greenville Homeowners Say</h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <h2 id="testimonials-heading" className="font-display text-3xl sm:text-4xl">
+            What Greenville Homeowners Say
+          </h2>
+          <div className="mt-10 grid items-start gap-6 lg:grid-cols-3">
             {testimonials.map(({ quote, author }) => (
               <blockquote
                 key={author}
-                className="flex h-full flex-col rounded-2xl border border-primary/10 bg-white p-6 shadow-sm"
+                className="rounded-2xl border border-primary/10 bg-white p-6 shadow-sm"
               >
                 <div className="flex gap-0.5 text-accent" aria-label="5 out of 5 stars">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-current" aria-hidden="true" />
                   ))}
                 </div>
-                <p className="mt-4 flex-1 text-sm leading-relaxed text-muted">&ldquo;{quote}&rdquo;</p>
-                <footer className="mt-4 text-sm font-semibold text-primary">— {author}</footer>
+                <p className="mt-4 text-base leading-relaxed text-muted">{quote}</p>
+                <footer className="mt-4">
+                  <cite className="text-sm font-semibold not-italic text-primary">— {author}</cite>
+                </footer>
               </blockquote>
             ))}
           </div>
@@ -374,13 +378,16 @@ export default function Home() {
       <AuthoritySection source={getAuthorityForPath("/")} />
 
       {/* FAQ Preview */}
-      <section className="bg-neutral section-padding">
+      <section className="bg-neutral section-padding" aria-labelledby="home-faq-heading">
         <div className="container-narrow">
           <div className="max-w-3xl">
             <p className="label-caps">Got Questions?</p>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl">
-              Common Questions About Crawl Space Encapsulation in Greenville
+            <h2 id="home-faq-heading" className="mt-3 font-display text-3xl sm:text-4xl">
+              Frequently Asked Questions
             </h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted">
+              Common crawl space encapsulation questions from Greenville homeowners.
+            </p>
           </div>
           <div className="mt-10 max-w-4xl">
             <HomeFaqAccordion items={homeFaqPreview} />
