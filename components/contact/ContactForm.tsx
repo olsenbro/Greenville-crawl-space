@@ -55,12 +55,20 @@ export function ContactForm() {
     const data = Object.fromEntries(new FormData(form).entries());
 
     try {
+      let sessionId = "";
+      try {
+        sessionId = sessionStorage.getItem("_sid") ?? "";
+      } catch {
+        // sessionStorage unavailable (private browsing, etc.)
+      }
+
       await submitLead({
         name: String(data.name),
         email: String(data.email),
         phone: String(data.phone),
         message: buildMessage(data),
         source: "crawlspacegreenville.com",
+        session_id: sessionId || undefined,
       });
       form.reset();
       router.push("/thank-you");

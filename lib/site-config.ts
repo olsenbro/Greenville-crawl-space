@@ -33,6 +33,13 @@ export const siteConfig = {
   businessHoursLabel: "Monday–Saturday: 7:00 AM – 6:00 PM",
   serviceArea: "Greenville, Spartanburg, Anderson, Greer, Simpsonville, and the Upstate SC region",
   gaId: process.env.NEXT_PUBLIC_GA_ID ?? "G-WLBWCSRS3L",
+  lovable: {
+    projectId: "989dcdf4-fcda-4ea7-9496-664150ee3ecb",
+    pixelUrl:
+      "https://brosites.lovable.app/api/public/px/989dcdf4-fcda-4ea7-9496-664150ee3ecb.gif",
+    leadsUrl:
+      "https://brosites.lovable.app/api/public/leads/989dcdf4-fcda-4ea7-9496-664150ee3ecb",
+  },
   mapEmbedQuery: "Greenville,+SC",
   logoPath: "/icon-512.png",
   ogImagePath: "/og-image.png",

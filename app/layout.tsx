@@ -98,6 +98,18 @@ export default function RootLayout({
             </Script>
           </>
         ) : null}
+        <Script id="lovable-tracking" strategy="afterInteractive">
+          {`
+            (function(){
+              var s=Math.random().toString(36).slice(2);
+              try{s=sessionStorage.getItem('_sid')||s;sessionStorage.setItem('_sid',s);}catch(e){}
+              var p=location.pathname+location.search;
+              var r=document.referrer||'';
+              var i=new Image();
+              i.src='${siteConfig.lovable.pixelUrl}?p='+encodeURIComponent(p)+'&r='+encodeURIComponent(r)+'&s='+s+'&t='+Date.now();
+            })();
+          `}
+        </Script>
       </head>
       <body className="flex min-h-screen flex-col">
         <PhoneClickTracker />
