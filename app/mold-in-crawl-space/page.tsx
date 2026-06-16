@@ -6,11 +6,12 @@ import {
 } from "@/components/service/ServicePageTemplate";
 import { getServiceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
   title: "Crawl Space Mold Removal Greenville SC | Treatment Before Encapsulation",
   description:
-    "Mold in your Greenville crawl space? We treat and remove crawl space mold before encapsulation to stop it at the source. Free inspection — (864) 555-0142.",
+    `Mold in your Greenville crawl space? We treat and remove crawl space mold before encapsulation to stop it at the source. Free inspection — ${siteConfig.phone}.`,
   canonical: "/mold-in-crawl-space",
 });
 

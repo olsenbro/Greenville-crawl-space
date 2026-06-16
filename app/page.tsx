@@ -22,16 +22,14 @@ export const metadata: Metadata = {
     absolute:
       "Crawl Space Encapsulation Greenville SC | Moisture & Mold Experts",
   },
-  description:
-    "Wet, moldy, or musty crawl space in Greenville? We encapsulate, repair, and dehumidify crawl spaces across Upstate SC. Free inspections. Call (864) 555-0142.",
+  description: `Wet, moldy, or musty crawl space in Greenville? We encapsulate, repair, and dehumidify crawl spaces across Upstate SC. Free inspections. Call ${siteConfig.phone}.`,
   alternates: {
-    canonical: "https://greenvillecrawlspacepros.com",
+    canonical: siteConfig.schemaUrl,
   },
   openGraph: {
     title: "Crawl Space Encapsulation Greenville SC | Moisture & Mold Experts",
-    description:
-      "Wet, moldy, or musty crawl space in Greenville? We encapsulate, repair, and dehumidify crawl spaces across Upstate SC. Free inspections. Call (864) 555-0142.",
-    url: "https://greenvillecrawlspacepros.com",
+    description: `Wet, moldy, or musty crawl space in Greenville? We encapsulate, repair, and dehumidify crawl spaces across Upstate SC. Free inspections. Call ${siteConfig.phone}.`,
+    url: siteConfig.schemaUrl,
   },
 };
 

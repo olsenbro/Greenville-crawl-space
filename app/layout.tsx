@@ -3,6 +3,7 @@ import { Inter, Source_Serif_4 } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { PhoneClickTracker } from "@/components/PhoneClickTracker";
+import { StickyCallButton } from "@/components/StickyCallButton";
 import { SchemaScript } from "@/components/SchemaScript";
 import { getLocalBusinessSchema, getWebSiteSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
@@ -66,8 +67,9 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col">
         <PhoneClickTracker />
         <Navigation />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pb-24 lg:pb-0">{children}</main>
         <Footer />
+        <StickyCallButton />
       </body>
     </html>
   );

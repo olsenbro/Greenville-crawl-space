@@ -1,3 +1,5 @@
+import { siteConfig } from "@/lib/site-config";
+
 export type CityArea = {
   slug: string;
   name: string;
@@ -19,7 +21,7 @@ export const cityAreas: CityArea[] = [
     stateName: "South Carolina",
     title: "Crawl Space Encapsulation Simpsonville SC | Moisture & Mold Experts",
     description:
-      "Crawl space encapsulation in Simpsonville, SC. Moisture control, vapor barriers, and mold treatment for Fairview Road corridor homes. Free inspection — (864) 555-0142.",
+      `Crawl space encapsulation in Simpsonville, SC. Moisture control, vapor barriers, and mold treatment for Fairview Road corridor homes. Free inspection — ${siteConfig.phone}.`,
     h1: "Crawl Space Encapsulation in Simpsonville, South Carolina",
     intro: [
       "Simpsonville homeowners face crawl space moisture problems rooted in the town's rapid growth along the Fairview Road corridor — a mix of 1990s and 2000s homes with original open-vent crawl spaces, and newer subdivisions built on disturbed red clay that holds water long after rain.",

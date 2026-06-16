@@ -6,11 +6,12 @@ import {
 } from "@/components/service/ServicePageTemplate";
 import { getServiceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
   title: "Crawl Space Encapsulation Greenville SC | Full Moisture Control",
   description:
-    "Professional crawl space encapsulation in Greenville, SC. 20-mil vapor barrier, sealed vents, dehumidifier installation. Free inspection. (864) 555-0142.",
+    `Professional crawl space encapsulation in Greenville, SC. 20-mil vapor barrier, sealed vents, dehumidifier installation. Free inspection. ${siteConfig.phone}.`,
   canonical: "/crawl-space-encapsulation",
 });
 

@@ -7,11 +7,12 @@ import {
 } from "@/components/service/ServicePageTemplate";
 import { getServiceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
   title: "Vapor Barrier Installation Greenville SC | Crawl Space Moisture Control",
   description:
-    "Vapor barrier installation in Greenville, SC. We install 20-mil reinforced crawl space liners to stop moisture, mold, and rot. Free estimate — (864) 555-0142.",
+    `Vapor barrier installation in Greenville, SC. We install 20-mil reinforced crawl space liners to stop moisture, mold, and rot. Free estimate — ${siteConfig.phone}.`,
   canonical: "/vapor-barrier",
 });
 

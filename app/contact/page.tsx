@@ -2,6 +2,7 @@ import Link from "next/link";
 import { AlertTriangle, Check, Clock, Mail, MapPin, Phone, Star } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { ContactMap } from "@/components/contact/ContactMap";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SERVICE_PAGES } from "@/components/service/ServiceInternalLinks";
 import { SchemaScript } from "@/components/SchemaScript";
@@ -152,6 +153,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <ContactMap />
 
       <section className="border-t border-primary/10 bg-white section-padding">
         <div className="container-narrow">

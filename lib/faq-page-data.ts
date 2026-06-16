@@ -76,6 +76,11 @@ export const faqCategories: FaqCategory[] = [
           "Most standard residential encapsulation projects in the Greenville area take 2–4 days depending on crawl space size, clearance height, and prep work required. Homes needing mold treatment, joist repair, or drainage installation before encapsulation may take 4–7 days total. The encapsulation phase itself — liner installation, vent sealing, and dehumidifier setup — is typically 1–2 days for an average home. Your contractor provides a timeline during the free inspection based on your specific conditions.",
       },
       {
+        question: "What's the best vapor barrier thickness for a Greenville crawl space?",
+        answer:
+          "For Upstate South Carolina's humid climate, 20-mil reinforced polyethylene is the best choice for long-term moisture control. The U.S. Department of Energy recommends a continuous ground vapor barrier in humid regions — but thin 6-mil builder-grade liners tear on gravel and pier footings within a few years. Professional contractors use 20-mil material with antimicrobial additives for puncture resistance and seam durability over the full crawl space floor and foundation walls.",
+      },
+      {
         question: "What warranty comes with encapsulation?",
         answer:
           "Reputable encapsulation contractors typically warranty the vapor barrier liner for 20–25 years and workmanship for 5–10 years. Dehumidifier units carry separate manufacturer warranties, usually 5 years on parts with optional extended coverage. Warranty terms should be provided in writing before work begins, including what maintenance is required to keep coverage valid — typically annual dehumidifier filter changes and a visual inspection. Ask specifically what is excluded, such as damage from future plumbing leaks or homeowner modifications.",

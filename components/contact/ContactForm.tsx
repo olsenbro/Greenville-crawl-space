@@ -1,7 +1,10 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import { useState, type FormEvent } from "react";
 import { PhoneLink } from "@/components/PhoneLink";
+import { submitLead } from "@/lib/leads";
+import { siteConfig } from "@/lib/site-config";
 
 const homeAgeOptions = [
   "Built before 1990",
@@ -26,71 +29,62 @@ const previousInspectionOptions = ["Yes", "No", "Not sure"] as const;
 const inputClassName =
   "w-full rounded-lg border border-primary/20 px-4 py-3 text-dark focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20";
 
+function buildMessage(data: Record<string, FormDataEntryValue>): string {
+  const lines = [
+    data.email ? `Email: ${data.email}` : null,
+    data.address ? `Address: ${data.address}` : null,
+    data.homeAge ? `Home age: ${data.homeAge}` : null,
+    data.primaryConcern ? `Primary concern: ${data.primaryConcern}` : null,
+    data.previousInspection ? `Previous inspection: ${data.previousInspection}` : null,
+    data.notes ? `Notes: ${data.notes}` : null,
+  ].filter(Boolean);
+
+  return lines.join("\n");
+}
+
 export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
-  const [sessionId, setSessionId] = useState("");
+  const router = useRouter();
+  const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
 
-  useEffect(() => {
-    try {
-      setSessionId(sessionStorage.getItem("_sid") || "");
-    } catch {
-      // sessionStorage unavailable
-    }
-  }, []);
-
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setError(null);
+    setSubmitting(true);
 
     const form = event.currentTarget;
-    try {
-      const sid = sessionStorage.getItem("_sid") || "";
-      setSessionId(sid);
-      const sessionInput = form.elements.namedItem("session_id") as HTMLInputElement | null;
-      if (sessionInput) sessionInput.value = sid;
-    } catch {
-      // sessionStorage unavailable
-    }
-
     const data = Object.fromEntries(new FormData(form).entries());
 
-    // TODO: Replace with Formspree, Resend, or API route for real lead delivery
-    console.log("Contact form submission:", data);
-
-    setSubmitted(true);
-    form.reset();
-  }
-
-  if (submitted) {
-    return (
-      <div className="rounded-xl border border-accent/30 bg-accent/5 p-8 text-center shadow-sm">
-        <p className="font-display text-2xl font-semibold text-primary">Inspection Request Received!</p>
-        <p className="mt-3 text-muted">
-          Thanks for reaching out. We&apos;ll review your request and contact you to schedule your
-          free crawl space inspection — usually within one business day.
-        </p>
-        <p className="mt-4 text-sm text-muted">
-          Need a faster response? Call or text{" "}
-          <PhoneLink className="font-semibold text-primary hover:underline" />
-        </p>
-        <button
-          type="button"
-          onClick={() => setSubmitted(false)}
-          className="mt-6 text-sm font-semibold text-accent hover:underline"
-        >
-          Submit another request
-        </button>
-      </div>
-    );
+    try {
+      await submitLead({
+        name: String(data.name),
+        phone: String(data.phone),
+        message: buildMessage(data),
+        source: "contact_form",
+      });
+      router.push("/thank-you");
+    } catch {
+      setError("Something went wrong submitting your request. Please call us directly.");
+      setSubmitting(false);
+    }
   }
 
   return (
     <form onSubmit={handleSubmit} className="rounded-xl bg-white p-8 shadow-sm">
-      <input type="hidden" name="session_id" value={sessionId} />
       <h2 className="font-display text-xl font-semibold text-primary">Request Your Free Inspection</h2>
       <p className="mt-2 text-sm text-muted">
         Tell us about your home and we&apos;ll schedule a no-obligation crawl space inspection with
         a written report.
       </p>
+
+      {error ? (
+        <p className="mt-4 rounded-lg border border-danger/20 bg-danger/5 px-4 py-3 text-sm text-danger">
+          {error}{" "}
+          <PhoneLink source="contact_form_error" className="font-semibold underline">
+            {siteConfig.phone}
+          </PhoneLink>
+        </p>
+      ) : null}
 
       <div className="mt-6 space-y-4">
         <div>
@@ -119,7 +113,7 @@ export function ContactForm() {
             required
             autoComplete="tel"
             className={inputClassName}
-            placeholder="(864) 555-0142"
+            placeholder={siteConfig.phone}
           />
         </div>
 
@@ -232,8 +226,8 @@ export function ContactForm() {
           />
         </div>
 
-        <button type="submit" className="btn-primary w-full py-4 text-base">
-          Request My Free Inspection
+        <button type="submit" disabled={submitting} className="btn-primary w-full py-4 text-base">
+          {submitting ? "Submitting…" : "Request My Free Inspection"}
         </button>
       </div>
     </form>
