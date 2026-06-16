@@ -5,7 +5,7 @@ import { Navigation } from "@/components/Navigation";
 import { PhoneClickTracker } from "@/components/PhoneClickTracker";
 import { StickyCallButton } from "@/components/StickyCallButton";
 import { SchemaScript } from "@/components/SchemaScript";
-import { getSiteHeadSchema } from "@/lib/schema";
+import { getSiteHeadSchemas } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -75,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${sourceSerif.variable}`}>
       <head>
-        <SchemaScript schema={getSiteHeadSchema()} />
+        <SchemaScript schema={getSiteHeadSchemas()} />
       </head>
       <body className="flex min-h-screen flex-col">
         <PhoneClickTracker />

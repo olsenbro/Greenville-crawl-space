@@ -1,5 +1,6 @@
 import { homeFaqPreview } from "@/lib/home-faq";
 import type { FaqItem } from "@/lib/faq-page-data";
+import { homeProcessSteps } from "@/lib/home-process-steps";
 import { siteConfig, serviceAreas } from "@/lib/site-config";
 
 export type SchemaObject = Record<string, unknown>;
@@ -218,11 +219,29 @@ export function combineSchemas(...schemas: SchemaObject[]): SchemaObject {
   };
 }
 
-/** Combined LocalBusiness, WebSite, and homepage FAQ schema for document head */
+export function getHowToSchema(): SchemaObject {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": `${siteConfig.schemaUrl}/#process`,
+    name: "How the Crawl Space Encapsulation Process Works",
+    description:
+      "The step-by-step crawl space encapsulation process used by licensed specialists serving Greenville and Upstate South Carolina.",
+    step: homeProcessSteps.map(({ step, title, description }) => ({
+      "@type": "HowToStep",
+      position: step,
+      name: title,
+      text: description,
+    })),
+  };
+}
+
+/** LocalBusiness, WebSite, and homepage FAQ schemas for document head */
+export function getSiteHeadSchemas(): SchemaObject[] {
+  return [getLocalBusinessSchema(), getWebSiteSchema(), getHomeFaqSchema()];
+}
+
+/** @deprecated Use getSiteHeadSchemas() for separate script tags */
 export function getSiteHeadSchema(): SchemaObject {
-  return combineSchemas(
-    getLocalBusinessSchema(),
-    getWebSiteSchema(),
-    getHomeFaqSchema(),
-  );
+  return combineSchemas(...getSiteHeadSchemas());
 }

@@ -13,8 +13,11 @@ import { CrossHatchOverlay } from "@/components/home/CrossHatchOverlay";
 import { HomeFaqAccordion } from "@/components/home/HomeFaqAccordion";
 import { AuthoritySection } from "@/components/AuthorityCitation";
 import { PhoneLink } from "@/components/PhoneLink";
+import { SchemaScript } from "@/components/SchemaScript";
 import { homeFaqPreview } from "@/lib/home-faq";
+import { homeProcessSteps } from "@/lib/home-process-steps";
 import { getAuthorityForPath } from "@/lib/authorities";
+import { getHowToSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -72,38 +75,7 @@ const symptoms = [
   },
 ] as const;
 
-const processSteps = [
-  {
-    step: 1,
-    title: "Initial Inspection",
-    description:
-      "A licensed specialist crawls your space and checks for moisture, mold, structural damage, and current vapor barrier condition. Most contractors provide a written assessment of findings.",
-  },
-  {
-    step: 2,
-    title: "Clear & Clean",
-    description:
-      "Old insulation, debris, and deteriorated vapor barrier material is removed. Any existing mold is treated before encapsulation begins.",
-  },
-  {
-    step: 3,
-    title: "Vapor Barrier Installation",
-    description:
-      "A 20-mil reinforced liner is installed across the entire floor and up the walls, sealed at all seams and foundation walls for a complete moisture barrier.",
-  },
-  {
-    step: 4,
-    title: "Dehumidifier & Drainage",
-    description:
-      "A crawl-space-rated dehumidifier is installed and set to maintain optimal humidity. If standing water is a recurring issue, an interior drainage system may be recommended.",
-  },
-  {
-    step: 5,
-    title: "Final Walkthrough & Warranty",
-    description:
-      "The contractor walks you through the completed work and provides warranty documentation. Warranty terms vary by contractor — confirm details before work begins.",
-  },
-] as const;
+const processSteps = homeProcessSteps;
 
 const beforeItems = [
   "Dirt or thin plastic liner on floor",
@@ -126,7 +98,7 @@ const afterItems = [
 const testimonials = [
   {
     quote:
-      "We ignored our crawl space for years. Finally had it inspected and found significant mold on the joists. These guys handled everything — mold treatment, full encapsulation, dehumidifier. Our energy bills are down and the musty smell is completely gone.",
+      "We found mold on our joists after years of ignoring the crawl space. They handled mold treatment, full encapsulation, and a dehumidifier. Our energy bills dropped and the musty smell is gone.",
     author: "Patricia W., Simpsonville",
   },
   {
@@ -150,6 +122,8 @@ const trustBadges = [
 export default function Home() {
   return (
     <>
+      <SchemaScript schema={getHowToSchema()} />
+
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary text-white">
         <CrossHatchOverlay />
