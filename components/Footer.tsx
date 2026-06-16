@@ -73,16 +73,28 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-narrow flex flex-col items-center justify-between gap-3 px-4 py-5 text-center text-sm text-neutral/70 sm:flex-row sm:px-6 lg:px-8">
-          <p>&copy; 2025 Greenville Crawl Space Pros</p>
-          <div className="flex items-center gap-4">
-            <Link href="/privacy-policy" className="transition-colors hover:text-accent-light">
-              Privacy Policy
-            </Link>
-            <span aria-hidden="true">|</span>
-            <Link href="/sitemap.xml" className="transition-colors hover:text-accent-light">
-              Sitemap
-            </Link>
+        <div className="container-narrow px-4 py-5 sm:px-6 lg:px-8">
+          <p className="mt-4 pt-4 text-xs leading-[1.7] text-white/45">
+            Greenville Crawl Space Pros is a local lead generation and referral service that connects
+            homeowners with licensed crawl space contractors in the Greenville, SC area and throughout
+            Upstate South Carolina. We do not directly perform crawl space encapsulation, repair, mold
+            remediation, or any related services. All work is performed by independent licensed
+            contractors. Pricing information on this site reflects typical market rates and is provided
+            for general reference only — actual pricing is determined by the contractor performing your
+            project. Availability of free estimates, warranty terms, and service guarantees vary by
+            contractor and should be confirmed directly with your service provider before work begins.
+          </p>
+          <div className="mt-4 flex flex-col items-center justify-between gap-3 text-center text-sm text-neutral/70 sm:flex-row">
+            <p>&copy; 2026 Greenville Crawl Space Pros</p>
+            <div className="flex items-center gap-4">
+              <Link href="/privacy-policy" className="transition-colors hover:text-accent-light">
+                Privacy Policy
+              </Link>
+              <span aria-hidden="true">|</span>
+              <Link href="/sitemap.xml" className="transition-colors hover:text-accent-light">
+                Sitemap
+              </Link>
+            </div>
           </div>
         </div>
       </div>
