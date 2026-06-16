@@ -23,13 +23,15 @@ export const metadata: Metadata = {
   title: {
     absolute: "Crawl Space Encapsulation Greenville SC | Local Pros",
   },
-  description: `Wet, moldy, or musty crawl space in Greenville? Connect with trusted local crawl space specialists across Upstate SC. Get a free estimate from a licensed pro. Call ${siteConfig.phone}.`,
+  description:
+    "Wet or musty crawl space in Greenville, SC? Connect with local specialists for encapsulation, mold treatment, and moisture control. Get a free estimate.",
   alternates: {
     canonical: siteConfig.schemaUrl,
   },
   openGraph: {
     title: "Crawl Space Encapsulation Greenville SC | Local Pros",
-    description: `Wet, moldy, or musty crawl space in Greenville? Connect with trusted local crawl space specialists across Upstate SC. Get a free estimate from a licensed pro. Call ${siteConfig.phone}.`,
+    description:
+      "Wet or musty crawl space in Greenville, SC? Connect with local specialists for encapsulation, mold treatment, and moisture control. Get a free estimate.",
     url: siteConfig.schemaUrl,
   },
 };

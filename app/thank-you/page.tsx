@@ -13,7 +13,7 @@ export const metadata = {
   ...buildPageMetadata({
     title: "Thank You | Greenville Crawl Space Estimate Request",
     description:
-      "Your crawl space estimate request was received. We will connect you with a local specialist shortly. For immediate help, call Greenville Crawl Space Pros.",
+      "Your crawl space estimate request was received. We will connect you with a local Greenville specialist shortly. Call now for immediate help with your project.",
     canonical: "/thank-you",
     absoluteTitle: true,
   }),

@@ -17,7 +17,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata = buildPageMetadata({
   title: "What Is Crawl Space Encapsulation? | Greenville SC Guide",
   description:
-    "What is crawl space encapsulation and how does it work in Greenville, SC? Learn what the process includes, how long it takes, costs, and when your home needs it.",
+    "What is crawl space encapsulation in Greenville, SC? Learn how it works, typical costs, timeline, and when your home needs it. Get a free estimate today.",
   canonical: "/what-is-encapsulation",
 });
 

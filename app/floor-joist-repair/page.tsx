@@ -10,7 +10,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Floor Joist Repair Greenville SC | Crawl Space Pros",
   description:
-    "Sagging floors or wood rot in your Greenville crawl space? Connect with local specialists who repair and sister damaged floor joists. Free estimate.",
+    "Sagging floors or wood rot in your Greenville, SC crawl space? Local pros repair and sister damaged floor joists before problems spread. Get a free estimate.",
   canonical: "/floor-joist-repair",
 });
 

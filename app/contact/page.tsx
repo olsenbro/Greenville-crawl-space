@@ -15,7 +15,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata = buildPageMetadata({
   title: "Free Crawl Space Estimate Greenville SC | Call Today",
   description:
-    "Connect with trusted local crawl space specialists in Greenville, SC. Request a free estimate for moisture, mold, structural, and vapor barrier concerns — no obligation.",
+    "Contact crawl space specialists in Greenville, SC for moisture, mold, structural, and vapor barrier concerns. No obligation — request your free estimate today.",
   canonical: "/contact",
 });
 

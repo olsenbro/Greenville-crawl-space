@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata = buildPageMetadata({
   title: "Crawl Space Page Not Found | Greenville SC Home Services",
   description:
-    "This page could not be found. Browse crawl space encapsulation, repair, and moisture control services in Greenville, SC or call for a free estimate.",
+    "This page could not be found. Browse crawl space encapsulation, repair, and moisture control services in Greenville, SC. Call or request a free estimate today.",
   canonical: "/404",
 });
 

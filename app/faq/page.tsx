@@ -15,7 +15,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata = buildPageMetadata({
   title: "Crawl Space FAQ Greenville SC | Encapsulation Answers",
   description:
-    "All your crawl space encapsulation questions answered. Greenville, SC homeowners ask about cost, process, mold, humidity, and more.",
+    "Crawl space FAQ for Greenville, SC homeowners. Answers on encapsulation cost, process, mold, humidity, and repairs from local specialists. Get a free estimate.",
   canonical: "/faq",
 });
 

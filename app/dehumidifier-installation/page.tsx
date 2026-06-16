@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Crawl Space Dehumidifier Installation Greenville SC",
   description:
-    "Connect with local specialists for crawl space dehumidifier installation in Greenville, SC. Commercial-grade units that maintain safe humidity levels year-round. Free estimate.",
+    "Crawl space dehumidifier installation in Greenville, SC. Commercial-grade units keep humidity safe year-round and help prevent mold. Get a free estimate today.",
   canonical: "/dehumidifier-installation",
 });
 

@@ -12,7 +12,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata = buildPageMetadata({
   title: "Crawl Space Services Near Greenville SC | Service Area",
   description:
-    "Connect with local crawl space specialists throughout Upstate South Carolina — Greenville, Simpsonville, Greer, Spartanburg, Anderson, Mauldin, and Taylors. Free estimates.",
+    "Local crawl space specialists across Upstate SC — Greenville, Simpsonville, Greer, Spartanburg, Anderson, Mauldin, and Taylors. Get a free estimate today.",
   canonical: "/areas-served",
 });
 

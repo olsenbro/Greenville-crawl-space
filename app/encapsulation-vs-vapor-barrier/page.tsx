@@ -17,7 +17,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata = buildPageMetadata({
   title: "Encapsulation vs Vapor Barrier Greenville SC Guide",
   description:
-    "Not sure if you need full encapsulation or just a vapor barrier? This guide explains the difference for South Carolina homeowners — with costs, pros, and cons.",
+    "Encapsulation vs vapor barrier in Greenville, SC — not sure which you need? Compare costs, pros, and cons for Upstate homeowners. Get a free estimate today.",
   canonical: "/encapsulation-vs-vapor-barrier",
 });
 

@@ -6,12 +6,11 @@ import {
 } from "@/components/service/ServicePageTemplate";
 import { getServiceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
-import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
   title: "Crawl Space Mold Removal Greenville SC | Local Pros",
   description:
-    `Mold in your Greenville crawl space? Connect with local specialists who treat and remove crawl space mold before encapsulation to stop it at the source. Free estimate — ${siteConfig.phone}.`,
+    "Mold in your Greenville, SC crawl space? Local specialists treat and remove mold at the source before encapsulation. Protect your home — get a free estimate.",
   canonical: "/mold-in-crawl-space",
 });
 

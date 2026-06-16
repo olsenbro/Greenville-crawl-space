@@ -10,7 +10,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Crawl Space Repair Greenville SC | Mold & Structure",
   description:
-    "Connect with local crawl space repair specialists in Greenville, SC. Sagging joists, wood rot, mold damage, and failing piers — free estimate.",
+    "Crawl space repair in Greenville, SC for sagging joists, wood rot, mold damage, and failing piers. Connect with local specialists and get a free estimate today.",
   canonical: "/crawl-space-repair",
 });
 

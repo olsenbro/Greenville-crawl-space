@@ -1,5 +1,3 @@
-import { siteConfig } from "@/lib/site-config";
-
 export type CityArea = {
   slug: string;
   name: string;
@@ -21,7 +19,7 @@ export const cityAreas: CityArea[] = [
     stateName: "South Carolina",
     title: "Crawl Space Encapsulation Simpsonville SC | Local Pros",
     description:
-      `Crawl space encapsulation in Simpsonville, SC. Connect with local specialists for moisture control, vapor barriers, and mold treatment for Fairview Road corridor homes. Free estimate — ${siteConfig.phone}.`,
+      "Crawl space encapsulation in Simpsonville, SC. Local specialists for moisture control, vapor barriers, and mold in Golden Strip homes. Get a free estimate.",
     h1: "Crawl Space Encapsulation in Simpsonville, South Carolina",
     intro: [
       "Simpsonville homeowners face crawl space moisture problems rooted in the town's rapid growth along the Fairview Road corridor — a mix of 1990s and 2000s homes with original open-vent crawl spaces, and newer subdivisions built on disturbed red clay that holds water long after rain.",
@@ -43,7 +41,7 @@ export const cityAreas: CityArea[] = [
     stateName: "South Carolina",
     title: "Crawl Space Encapsulation Greer SC | Upstate SC Pros",
     description:
-      "Crawl space encapsulation and repair in Greer, SC. Connect with local specialists for older railroad district homes and BMW corridor subdivisions. Free crawl space estimate.",
+      "Crawl space encapsulation and repair in Greer, SC. Local specialists serve railroad district homes and BMW corridor subdivisions. Request a free estimate today.",
     h1: "Crawl Space Encapsulation in Greer, South Carolina",
     intro: [
       "Greer crawl spaces tell two different stories: post-war homes near the historic railroad district that have never had a proper vapor barrier, and newer BMW/Michelin corridor suburbs built on cut-and-fill lots where drainage was an afterthought.",
@@ -65,7 +63,7 @@ export const cityAreas: CityArea[] = [
     stateName: "South Carolina",
     title: "Crawl Space Encapsulation Spartanburg SC | Local Pros",
     description:
-      "Crawl space encapsulation in Spartanburg, SC. Connect with local specialists for historic homes and rolling-terrain drainage challenges. Free estimate.",
+      "Crawl space encapsulation in Spartanburg, SC. Local specialists handle historic homes and rolling-terrain drainage challenges. Request your free estimate today.",
     h1: "Crawl Space Encapsulation in Spartanburg, South Carolina",
     intro: [
       "Spartanburg's historic housing stock — much of it pre-1970 — combined with rolling terrain that channels water toward foundations makes crawl space moisture one of the most common hidden problems in the county.",
@@ -87,7 +85,7 @@ export const cityAreas: CityArea[] = [
     stateName: "South Carolina",
     title: "Crawl Space Encapsulation Anderson SC | Local Pros",
     description:
-      "Crawl space encapsulation in Anderson, SC. Connect with local specialists for vapor barriers, mold treatment, and repair for rural homes and Lake Hartwell area properties. Free estimate.",
+      "Crawl space encapsulation in Anderson, SC. Local specialists for vapor barriers, mold treatment, and repair near Lake Hartwell. Get a free estimate today.",
     h1: "Crawl Space Encapsulation in Anderson, South Carolina",
     intro: [
       "Anderson County's mix of rural farmhouses, semi-rural properties, and homes on low-lying lots near Lake Hartwell tributaries creates crawl space moisture challenges that standard builder solutions rarely address.",
@@ -109,7 +107,7 @@ export const cityAreas: CityArea[] = [
     stateName: "South Carolina",
     title: "Crawl Space Encapsulation Mauldin SC | Greenville Area",
     description:
-      "Crawl space encapsulation in Mauldin, SC. Connect with local specialists to replace failed builder-grade vapor barriers in 1980s–2000s neighborhoods. Free estimate.",
+      "Crawl space encapsulation in Mauldin, SC. Replace failed builder-grade vapor barriers in 1980s–2000s neighborhoods with 20-mil systems. Free estimate today.",
     h1: "Crawl Space Encapsulation in Mauldin, South Carolina",
     intro: [
       "Mauldin's established suburban neighborhoods — largely built between the 1980s and 2000s — contain thousands of crawl spaces with original builder-grade vapor barriers that have torn, gapped, or degraded to the point of uselessness.",
@@ -131,7 +129,7 @@ export const cityAreas: CityArea[] = [
     stateName: "South Carolina",
     title: "Crawl Space Encapsulation Taylors SC | North Greenville",
     description:
-      "Crawl space encapsulation in Taylors, SC. Connect with local specialists for Blue Ridge foothill homes where elevation-driven humidity meets Piedmont clay. Free estimate.",
+      "Crawl space encapsulation in Taylors, SC for Blue Ridge foothill homes where humidity and Piedmont clay cause moisture problems. Get a free estimate today.",
     h1: "Crawl Space Encapsulation in Taylors, South Carolina",
     intro: [
       "Taylors sits where the Piedmont lowlands meet the Blue Ridge foothills — a geography that creates crawl space moisture patterns distinct from Greenville proper, with seasonal runoff from higher elevations and cooler nighttime temperatures that drive condensation.",
