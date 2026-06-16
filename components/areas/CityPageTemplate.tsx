@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
+import { AuthoritySection } from "@/components/AuthorityCitation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SchemaScript } from "@/components/SchemaScript";
 import type { CityArea } from "@/lib/areas-served";
 import { getNeighborSlug } from "@/lib/areas-served";
+import { getAuthorityForPath } from "@/lib/authorities";
 import { getLocalBusinessSchema } from "@/lib/schema";
 import { serviceLinks, siteConfig } from "@/lib/site-config";
 
@@ -13,6 +15,8 @@ type CityPageTemplateProps = {
 };
 
 export function CityPageTemplate({ city }: CityPageTemplateProps) {
+  const authority = getAuthorityForPath(`/areas-served/${city.slug}`);
+
   return (
     <>
       <SchemaScript schema={getLocalBusinessSchema(city.name, city.state)} />
@@ -60,6 +64,8 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
           ))}
         </div>
       </section>
+
+      <AuthoritySection source={authority} />
 
       <section className="bg-neutral section-padding">
         <div className="container-narrow mx-auto max-w-3xl">

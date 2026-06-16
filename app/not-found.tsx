@@ -2,7 +2,9 @@ import Link from "next/link";
 import { ArrowRight, Home, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/PhoneLink";
+import { AuthoritySection } from "@/components/AuthorityCitation";
 import { SERVICE_PAGES } from "@/components/service/ServiceInternalLinks";
+import { getAuthorityForPath } from "@/lib/authorities";
 import { siteConfig } from "@/lib/site-config";
 
 export default function NotFound() {
@@ -61,6 +63,8 @@ export default function NotFound() {
           </div>
         </div>
       </section>
+
+      <AuthoritySection source={getAuthorityForPath("/404")} className="bg-white" />
     </>
   );
 }

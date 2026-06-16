@@ -2,7 +2,9 @@ import Link from "next/link";
 import { ArrowRight, Home, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/PhoneLink";
+import { AuthoritySection } from "@/components/AuthorityCitation";
 import { getWebPageSchema } from "@/lib/schema";
+import { getAuthorityForPath } from "@/lib/authorities";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 import { SchemaScript } from "@/components/SchemaScript";
@@ -67,6 +69,8 @@ export default function ThankYouPage() {
           </div>
         </div>
       </section>
+
+      <AuthoritySection source={getAuthorityForPath("/thank-you")} className="bg-white" />
     </>
   );
 }

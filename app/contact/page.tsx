@@ -3,11 +3,13 @@ import { AlertTriangle, Check, Clock, Mail, MapPin, Phone, Star } from "lucide-r
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactMap } from "@/components/contact/ContactMap";
+import { AuthoritySection } from "@/components/AuthorityCitation";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SERVICE_PAGES } from "@/components/service/ServiceInternalLinks";
 import { SchemaScript } from "@/components/SchemaScript";
 import { getWebPageSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
+import { getAuthorityForPath } from "@/lib/authorities";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
@@ -153,6 +155,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <AuthoritySection source={getAuthorityForPath("/contact")} className="bg-white" />
 
       <ContactMap />
 

@@ -11,9 +11,11 @@ import {
 } from "lucide-react";
 import { CrossHatchOverlay } from "@/components/home/CrossHatchOverlay";
 import { HomeFaqAccordion } from "@/components/home/HomeFaqAccordion";
+import { AuthoritySection } from "@/components/AuthorityCitation";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SchemaScript } from "@/components/SchemaScript";
 import { homeFaqPreview } from "@/lib/home-faq";
+import { getAuthorityForPath } from "@/lib/authorities";
 import { getHomeFaqSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
@@ -368,6 +370,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <AuthoritySection source={getAuthorityForPath("/")} />
 
       {/* FAQ Preview */}
       <section className="bg-neutral section-padding">

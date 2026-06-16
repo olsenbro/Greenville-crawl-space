@@ -2,8 +2,10 @@ import Link from "next/link";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/PhoneLink";
+import { AuthoritySection } from "@/components/AuthorityCitation";
 import { ServiceLinksGrid } from "@/components/service/ServiceLinksGrid";
 import { hubAreaCards } from "@/lib/areas-served";
+import { getAuthorityForPath } from "@/lib/authorities";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -107,6 +109,8 @@ export default function AreasServedPage() {
           </div>
         </div>
       </section>
+
+      <AuthoritySection source={getAuthorityForPath("/areas-served")} />
 
       <section className="bg-white section-padding">
         <div className="container-narrow mx-auto max-w-3xl">

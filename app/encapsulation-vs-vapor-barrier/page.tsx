@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/PhoneLink";
+import { AuthoritySection } from "@/components/AuthorityCitation";
 import { SchemaScript } from "@/components/SchemaScript";
 import {
   BulletList,
@@ -9,6 +10,7 @@ import {
   ServiceSection,
 } from "@/components/service/ServicePageTemplate";
 import { getArticleSchema, getFaqPageSchema } from "@/lib/schema";
+import { getAuthorityForPath } from "@/lib/authorities";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -304,6 +306,8 @@ export default function EncapsulationVsVaporBarrierPage() {
           </Link>
         </p>
       </ServiceSection>
+
+      <AuthoritySection source={getAuthorityForPath("/encapsulation-vs-vapor-barrier")} />
 
       <section className="border-t border-primary/10 bg-primary section-padding text-white">
         <div className="container-narrow mx-auto max-w-3xl text-center">

@@ -2,10 +2,12 @@ import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FaqAccordion } from "@/components/faq/FaqAccordion";
+import { AuthoritySection } from "@/components/AuthorityCitation";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SchemaScript } from "@/components/SchemaScript";
 import { ServiceLinksGrid } from "@/components/service/ServiceLinksGrid";
 import { allFaqItems, faqCategories } from "@/lib/faq-page-data";
+import { getAuthorityForPath } from "@/lib/authorities";
 import { getFaqPageSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
@@ -50,7 +52,9 @@ export default function FaqPage() {
         </div>
       </section>
 
-      <section className="bg-neutral section-padding">
+      <AuthoritySection source={getAuthorityForPath("/faq")} className="bg-neutral" />
+
+      <section className="bg-neutral section-padding border-t border-primary/10">
         <div className="container-narrow mx-auto max-w-3xl">
           <ServiceLinksGrid title="Crawl Space Services" />
           <p className="mt-6 text-center">

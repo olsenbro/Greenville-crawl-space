@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
+import { AuthorityCitation } from "@/components/AuthorityCitation";
 import { Breadcrumbs, type BreadcrumbItem } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SchemaScript } from "@/components/SchemaScript";
 import { ServiceInternalLinks } from "@/components/service/ServiceInternalLinks";
+import type { AuthoritySource } from "@/lib/authorities";
+import { getAuthorityForPath } from "@/lib/authorities";
 import type { SchemaObject } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
@@ -23,6 +26,7 @@ type ServicePageTemplateProps = {
   faqTitle?: string;
   ctaHeading?: string;
   ctaBody?: string;
+  authority?: AuthoritySource;
   children: React.ReactNode;
 };
 
@@ -37,8 +41,12 @@ export function ServicePageTemplate({
   faqTitle = "Frequently Asked Questions",
   ctaHeading = "Ready to Schedule a Free Inspection?",
   ctaBody,
+  authority,
   children,
 }: ServicePageTemplateProps) {
+  const pagePath = breadcrumbPath ?? (serviceSlug ? `/${serviceSlug}` : undefined);
+  const citation = authority ?? (pagePath ? getAuthorityForPath(pagePath) : undefined);
+
   return (
     <>
       {schema ? <SchemaScript schema={schema} /> : null}
@@ -78,6 +86,14 @@ export function ServicePageTemplate({
       {children}
 
       {serviceSlug ? <ServiceInternalLinks currentSlug={serviceSlug} /> : null}
+
+      {citation ? (
+        <section className="bg-neutral section-padding">
+          <div className="container-narrow mx-auto max-w-3xl">
+            <AuthorityCitation source={citation} />
+          </div>
+        </section>
+      ) : null}
 
       <section className="bg-white section-padding">
         <div className="container-narrow mx-auto max-w-3xl">
