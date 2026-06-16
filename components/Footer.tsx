@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { Mail, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { PhoneLink } from "@/components/PhoneLink";
 import { serviceAreas, serviceLinks, siteConfig } from "@/lib/site-config";
 
 export function Footer() {
   return (
     <footer className="bg-primary-dark text-neutral">
-      <div className="container-narrow section-padding grid gap-10 md:grid-cols-3">
+      <div className="container-narrow section-padding grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div className="space-y-5">
           <Link
             href="/"
@@ -25,14 +25,23 @@ export function Footer() {
           <p className="text-sm leading-relaxed text-neutral/80">
             Connecting Upstate South Carolina homeowners with trusted crawl space specialists.
           </p>
-          <ul className="space-y-3">
-            <li>
+        </div>
+
+        <div>
+          <h2 className="label-caps text-neutral/60">Contact</h2>
+          <address className="mt-4 space-y-3 not-italic">
+            <p className="text-sm font-semibold text-neutral">{siteConfig.name}</p>
+            <p className="flex items-start gap-2 text-sm text-neutral/80">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+              <span>{siteConfig.formattedAddress}</span>
+            </p>
+            <p>
               <PhoneLink className="inline-flex items-center gap-2 text-sm font-semibold text-neutral/90 transition-colors hover:text-accent-light">
                 <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
                 {siteConfig.phone}
               </PhoneLink>
-            </li>
-            <li>
+            </p>
+            <p>
               <a
                 href={`mailto:${siteConfig.email}`}
                 className="inline-flex items-center gap-2 text-sm text-neutral/80 transition-colors hover:text-accent-light"
@@ -40,8 +49,12 @@ export function Footer() {
                 <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
                 {siteConfig.email}
               </a>
-            </li>
-          </ul>
+            </p>
+            <p className="flex items-start gap-2 text-sm text-neutral/80">
+              <Clock className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+              <span>{siteConfig.businessHoursLabel}</span>
+            </p>
+          </address>
         </div>
 
         <div>

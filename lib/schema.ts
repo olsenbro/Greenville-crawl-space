@@ -236,9 +236,14 @@ export function getHowToSchema(): SchemaObject {
   };
 }
 
-/** LocalBusiness, WebSite, and homepage FAQ schemas for document head */
+/** LocalBusiness, WebSite, FAQ, and HowTo schemas for document head */
 export function getSiteHeadSchemas(): SchemaObject[] {
-  return [getLocalBusinessSchema(), getWebSiteSchema(), getHomeFaqSchema()];
+  return [
+    getLocalBusinessSchema(),
+    getWebSiteSchema(),
+    getHomeFaqSchema(),
+    getHowToSchema(),
+  ];
 }
 
 /** @deprecated Use getSiteHeadSchemas() for separate script tags */

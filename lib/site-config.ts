@@ -18,6 +18,8 @@ export const siteConfig = {
     zip: "29601",
     country: "US",
   },
+  /** Single-line NAP address for display (service-area business, no street) */
+  formattedAddress: "Greenville, SC 29601",
   geo: {
     latitude: 34.8526,
     longitude: -82.394,

@@ -13,11 +13,10 @@ import { CrossHatchOverlay } from "@/components/home/CrossHatchOverlay";
 import { HomeFaqAccordion } from "@/components/home/HomeFaqAccordion";
 import { AuthoritySection } from "@/components/AuthorityCitation";
 import { PhoneLink } from "@/components/PhoneLink";
-import { SchemaScript } from "@/components/SchemaScript";
+import { ServiceAreaMap } from "@/components/ServiceAreaMap";
 import { homeFaqPreview } from "@/lib/home-faq";
 import { homeProcessSteps } from "@/lib/home-process-steps";
 import { getAuthorityForPath } from "@/lib/authorities";
-import { getHowToSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -122,8 +121,6 @@ const trustBadges = [
 export default function Home() {
   return (
     <>
-      <SchemaScript schema={getHowToSchema()} />
-
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary text-white">
         <CrossHatchOverlay />
@@ -134,9 +131,12 @@ export default function Home() {
             Upstate South Carolina&apos;s Crawl Space Specialists
           </p>
           <h1 className="mt-5 max-w-5xl text-balance font-display text-display-sm sm:text-display">
-            Your Crawl Space Is the Foundation of Your Home&apos;s Health. Is Yours Protecting
-            You — or Hurting You?
+            Crawl Space Encapsulation in Greenville, SC
           </h1>
+          <p className="mt-4 max-w-3xl text-xl font-medium leading-relaxed text-white/95 sm:text-2xl">
+            Your crawl space is the foundation of your home&apos;s health — is yours protecting you,
+            or hurting you?
+          </p>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/90 sm:text-xl">
             Moisture, mold, and rot in your crawl space affect your air quality, your floors, and
             your home&apos;s structure. We connect Greenville homeowners with trusted local crawl
@@ -373,6 +373,17 @@ export default function Home() {
             See All FAQs
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
+        </div>
+      </section>
+
+      {/* Service Area Map */}
+      <section className="bg-white section-padding" aria-labelledby="service-area-heading">
+        <div className="container-narrow">
+          <ServiceAreaMap
+            headingId="service-area-heading"
+            heading="Serving Greenville & Upstate South Carolina"
+            description={`Greenville Crawl Space Pros connects homeowners across Greenville County and the Upstate with licensed crawl space specialists. Call ${siteConfig.phone} to confirm service in your area.`}
+          />
         </div>
       </section>
 
