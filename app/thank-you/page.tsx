@@ -6,6 +6,8 @@ import { AuthoritySection } from "@/components/AuthorityCitation";
 import { getWebPageSchema } from "@/lib/schema";
 import { getAuthorityForPath } from "@/lib/authorities";
 import { buildPageMetadata } from "@/lib/seo";
+import { FaqOutline, PricingOutline, ServicesOutline, ServiceAreaOutline } from "@/components/seo/PageOutlineSections";
+import { LocationLinksOutline, RelatedGuidesLinks } from "@/components/seo/InternalLinksSections";
 import { siteConfig } from "@/lib/site-config";
 import { SchemaScript } from "@/components/SchemaScript";
 
@@ -69,6 +71,13 @@ export default function ThankYouPage() {
           </div>
         </div>
       </section>
+
+      <PricingOutline className="bg-white section-padding border-t border-primary/10" />
+      <ServicesOutline className="bg-neutral section-padding border-t border-primary/10" />
+      <LocationLinksOutline className="bg-white section-padding border-t border-primary/10" />
+      <RelatedGuidesLinks className="bg-neutral section-padding border-t border-primary/10" />
+      <ServiceAreaOutline className="bg-white section-padding border-t border-primary/10" showMap={false} />
+      <FaqOutline className="bg-neutral section-padding border-t border-primary/10" />
 
       <AuthoritySection source={getAuthorityForPath("/thank-you")} className="bg-white" />
     </>

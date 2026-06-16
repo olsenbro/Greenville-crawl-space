@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
 import { PhoneLink } from "@/components/PhoneLink";
+import { SiteLogo } from "@/components/SiteLogo";
 import { mainNavLinks, serviceLinks, siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
@@ -50,17 +51,20 @@ export function Navigation() {
       <div className="container-narrow flex items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="shrink-0 font-display text-lg font-semibold leading-tight text-primary sm:text-xl"
+          className="flex shrink-0 items-center gap-3 font-display text-lg font-semibold leading-tight text-primary sm:text-xl"
           aria-label={`${siteConfig.name} home`}
           onClick={() => setMobileOpen(false)}
         >
-          Greenville Crawl Space{" "}
-          <span className="relative inline-block">
-            Pros
-            <span
-              className="absolute -bottom-0.5 left-0 h-0.5 w-full rounded-full bg-accent"
-              aria-hidden="true"
-            />
+          <SiteLogo size={36} priority className="rounded-md" />
+          <span>
+            Greenville Crawl Space{" "}
+            <span className="relative inline-block">
+              Pros
+              <span
+                className="absolute -bottom-0.5 left-0 h-0.5 w-full rounded-full bg-accent"
+                aria-hidden="true"
+              />
+            </span>
           </span>
         </Link>
 

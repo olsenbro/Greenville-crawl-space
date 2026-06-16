@@ -27,13 +27,15 @@ export function ServiceLinksGrid({
       <ul className={`grid gap-3 sm:grid-cols-2 ${showTitle && title ? "mt-6" : ""}`}>
         {pages.map(({ href, label }) => (
           <li key={href}>
-            <Link
-              href={href}
-              className="flex items-center gap-2 rounded-lg bg-white px-5 py-4 text-sm font-semibold text-primary shadow-sm transition-colors hover:bg-primary hover:text-white"
-            >
-              {label}
-              <ArrowRight className="ml-auto h-4 w-4" aria-hidden="true" />
-            </Link>
+            <h3 className="font-display text-base font-semibold text-primary">
+              <Link
+                href={href}
+                className="flex items-center gap-2 rounded-lg bg-white px-5 py-4 text-sm shadow-sm transition-colors hover:bg-primary hover:text-white"
+              >
+                {label}
+                <ArrowRight className="ml-auto h-4 w-4" aria-hidden="true" />
+              </Link>
+            </h3>
           </li>
         ))}
       </ul>

@@ -1,4 +1,5 @@
 import { siteConfig } from "./site-config";
+import { cityAreas } from "./areas-served";
 
 export type SiteRoute = {
   path: string;
@@ -19,12 +20,11 @@ export const siteRoutes: SiteRoute[] = [
   { path: "/encapsulation-vs-vapor-barrier", changeFrequency: "monthly", priority: 0.8 },
   { path: "/what-is-encapsulation", changeFrequency: "monthly", priority: 0.8 },
   { path: "/areas-served", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/areas-served/simpsonville", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/areas-served/greer", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/areas-served/spartanburg", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/areas-served/anderson", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/areas-served/mauldin", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/areas-served/taylors", changeFrequency: "monthly", priority: 0.7 },
+  ...cityAreas.map((city) => ({
+    path: `/areas-served/${city.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  })),
   { path: "/faq", changeFrequency: "monthly", priority: 0.7 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.6 },
 ];

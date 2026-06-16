@@ -57,7 +57,7 @@ export const metadata: Metadata = {
         url: siteConfig.ogImagePath,
         width: 512,
         height: 512,
-        alt: siteConfig.name,
+        alt: siteConfig.imageAlt.og,
       },
     ],
   },

@@ -8,6 +8,7 @@ type GenerateMetadataOptions = {
   /** Full URL or path (e.g. "/crawl-space-encapsulation") */
   canonical: string;
   ogImage?: string;
+  ogImageAlt?: string;
   /** When true, bypasses the root layout title template */
   absoluteTitle?: boolean;
 };
@@ -22,7 +23,8 @@ export function buildPageMetadata({
   title,
   description,
   canonical,
-  ogImage = "/icon-512.png",
+  ogImage = siteConfig.ogImagePath,
+  ogImageAlt = siteConfig.imageAlt.og,
   absoluteTitle = true,
 }: GenerateMetadataOptions): Metadata {
   const canonicalUrl = resolveCanonical(canonical);
@@ -41,7 +43,7 @@ export function buildPageMetadata({
       type: "website",
       locale: "en_US",
       siteName: siteConfig.name,
-      images: [{ url: ogImageUrl, width: 512, height: 512, alt: siteConfig.name }],
+      images: [{ url: ogImageUrl, width: 512, height: 512, alt: ogImageAlt }],
     },
     twitter: {
       card: "summary_large_image",

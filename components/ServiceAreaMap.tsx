@@ -5,6 +5,7 @@ type ServiceAreaMapProps = {
   headingId?: string;
   description?: string;
   className?: string;
+  showMap?: boolean;
 };
 
 export function ServiceAreaMap({
@@ -12,6 +13,7 @@ export function ServiceAreaMap({
   headingId,
   description = `Connecting Greenville and Upstate South Carolina homeowners with local crawl space specialists — call ${siteConfig.phone} to confirm coverage in your area.`,
   className = "",
+  showMap = true,
 }: ServiceAreaMapProps) {
   const src = `https://maps.google.com/maps?q=${siteConfig.mapEmbedQuery}&z=10&output=embed`;
 
@@ -24,16 +26,18 @@ export function ServiceAreaMap({
         {heading}
       </h2>
       <p className="mt-2 text-muted">{description}</p>
-      <div className="mt-6 overflow-hidden rounded-xl border border-primary/10 shadow-sm">
-        <iframe
-          title="Greenville South Carolina service area map"
-          src={src}
-          className="aspect-[16/10] w-full border-0"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-        />
-      </div>
+      {showMap ? (
+        <div className="mt-6 overflow-hidden rounded-xl border border-primary/10 shadow-sm">
+          <iframe
+            title={siteConfig.imageAlt.serviceAreaMap}
+            src={src}
+            className="aspect-[16/10] w-full border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </div>
+      ) : null}
     </div>
   );
 }

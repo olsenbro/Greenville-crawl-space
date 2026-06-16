@@ -72,7 +72,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="rounded-xl bg-white p-8 shadow-sm">
-      <h2 className="font-display text-xl font-semibold text-primary">Request Your Free Estimate</h2>
+      <h3 className="font-display text-xl font-semibold text-primary">Request Your Free Estimate</h3>
       <p className="mt-2 text-sm text-muted">
         Tell us about your home and we&apos;ll connect you with a local crawl space specialist for a
         no-obligation estimate.

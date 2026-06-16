@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import {
   AlertTriangle,
@@ -14,27 +13,21 @@ import { HomeFaqAccordion } from "@/components/home/HomeFaqAccordion";
 import { AuthoritySection } from "@/components/AuthorityCitation";
 import { PhoneLink } from "@/components/PhoneLink";
 import { ServiceAreaMap } from "@/components/ServiceAreaMap";
+import { PricingOutline, ServicesOutline } from "@/components/seo/PageOutlineSections";
+import { LocationLinksOutline } from "@/components/seo/InternalLinksSections";
 import { homeFaqPreview } from "@/lib/home-faq";
 import { homeProcessSteps } from "@/lib/home-process-steps";
 import { getAuthorityForPath } from "@/lib/authorities";
+import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Crawl Space Encapsulation Greenville SC | Local Pros",
-  },
+export const metadata = buildPageMetadata({
+  title: "Crawl Space Encapsulation Greenville SC | Local Pros",
   description:
     "Wet or musty crawl space in Greenville, SC? Connect with local specialists for encapsulation, mold treatment, and moisture control. Get a free estimate.",
-  alternates: {
-    canonical: siteConfig.schemaUrl,
-  },
-  openGraph: {
-    title: "Crawl Space Encapsulation Greenville SC | Local Pros",
-    description:
-      "Wet or musty crawl space in Greenville, SC? Connect with local specialists for encapsulation, mold treatment, and moisture control. Get a free estimate.",
-    url: siteConfig.schemaUrl,
-  },
-};
+  canonical: "/",
+  ogImage: siteConfig.ogImagePath,
+});
 
 const symptoms = [
   {
@@ -212,6 +205,8 @@ export default function Home() {
         </div>
       </section>
 
+      <ServicesOutline className="bg-neutral section-padding" />
+
       {/* What Is Encapsulation */}
       <section className="bg-white section-padding">
         <div className="container-narrow">
@@ -287,13 +282,29 @@ export default function Home() {
       </section>
 
       {/* Before / After */}
-      <section className="bg-white section-padding">
+      <section className="bg-white section-padding" aria-labelledby="before-after-heading">
         <div className="container-narrow">
-          <div className="grid gap-8 lg:grid-cols-2">
+          <h2
+            id="before-after-heading"
+            className="font-display text-3xl sm:text-4xl"
+          >
+            Before &amp; After Crawl Space Encapsulation
+          </h2>
+          <div className="mt-10 grid gap-8 lg:grid-cols-2">
             <article className="rounded-2xl border border-danger/20 bg-danger/5 p-8">
-              <div className="flex items-center gap-3">
+              <figure className="overflow-hidden rounded-xl border border-danger/10 bg-white">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/crawl-space-before-encapsulation.svg"
+                  alt={siteConfig.imageAlt.beforeCrawlSpace}
+                  width={400}
+                  height={240}
+                  className="h-auto w-full"
+                />
+              </figure>
+              <div className="mt-6 flex items-center gap-3">
                 <XCircle className="h-7 w-7 text-danger" aria-hidden="true" />
-                <h2 className="font-display text-2xl text-danger">Before</h2>
+                <h3 className="font-display text-2xl text-danger">Before Encapsulation</h3>
               </div>
               <ul className="mt-6 space-y-3">
                 {beforeItems.map((item) => (
@@ -306,9 +317,19 @@ export default function Home() {
             </article>
 
             <article className="rounded-2xl border border-primary/20 bg-primary/5 p-8">
-              <div className="flex items-center gap-3">
+              <figure className="overflow-hidden rounded-xl border border-primary/10 bg-white">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/crawl-space-after-encapsulation.svg"
+                  alt={siteConfig.imageAlt.afterEncapsulation}
+                  width={400}
+                  height={240}
+                  className="h-auto w-full"
+                />
+              </figure>
+              <div className="mt-6 flex items-center gap-3">
                 <CheckCircle2 className="h-7 w-7 text-primary" aria-hidden="true" />
-                <h2 className="font-display text-2xl text-primary">After</h2>
+                <h3 className="font-display text-2xl text-primary">After Encapsulation</h3>
               </div>
               <ul className="mt-6 space-y-3">
                 {afterItems.map((item) => (
@@ -377,16 +398,20 @@ export default function Home() {
         </div>
       </section>
 
+      <PricingOutline className="bg-white section-padding border-t border-primary/10" />
+
       {/* Service Area Map */}
       <section className="bg-white section-padding" aria-labelledby="service-area-heading">
         <div className="container-narrow">
           <ServiceAreaMap
             headingId="service-area-heading"
-            heading="Serving Greenville & Upstate South Carolina"
+            heading="Service Area — Greenville & Upstate South Carolina"
             description={`Greenville Crawl Space Pros connects homeowners across Greenville County and the Upstate with licensed crawl space specialists. Call ${siteConfig.phone} to confirm service in your area.`}
           />
         </div>
       </section>
+
+      <LocationLinksOutline className="bg-neutral section-padding border-t border-primary/10" />
 
       {/* CTA Banner */}
       <section className="bg-accent text-white section-padding">

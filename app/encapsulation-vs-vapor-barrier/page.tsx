@@ -9,6 +9,12 @@ import {
   ServiceComparisonTable,
   ServiceSection,
 } from "@/components/service/ServicePageTemplate";
+import {
+  FaqOutline,
+  ServiceAreaOutline,
+  ServicesOutline,
+} from "@/components/seo/PageOutlineSections";
+import { LocationLinksOutline, RelatedGuidesLinks } from "@/components/seo/InternalLinksSections";
 import { getArticleSchema, getFaqPageSchema } from "@/lib/schema";
 import { getAuthorityForPath } from "@/lib/authorities";
 import { buildPageMetadata } from "@/lib/seo";
@@ -306,6 +312,23 @@ export default function EncapsulationVsVaporBarrierPage() {
           </Link>
         </p>
       </ServiceSection>
+
+      <FaqOutline
+        items={comparisonFaqs}
+        heading="Encapsulation vs. Vapor Barrier FAQ — Greenville, SC"
+        className="border-t border-primary/10 bg-white section-padding"
+      />
+
+      <ServicesOutline className="border-t border-primary/10 bg-neutral section-padding" />
+
+      <LocationLinksOutline className="border-t border-primary/10 bg-white section-padding" />
+
+      <RelatedGuidesLinks
+        excludeHref="/encapsulation-vs-vapor-barrier"
+        className="border-t border-primary/10 bg-neutral section-padding"
+      />
+
+      <ServiceAreaOutline className="border-t border-primary/10 bg-white section-padding" />
 
       <AuthoritySection source={getAuthorityForPath("/encapsulation-vs-vapor-barrier")} />
 

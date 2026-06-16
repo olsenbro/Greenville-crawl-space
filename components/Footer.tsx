@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { PhoneLink } from "@/components/PhoneLink";
+import { SiteLogo } from "@/components/SiteLogo";
 import { serviceAreas, serviceLinks, siteConfig } from "@/lib/site-config";
 
 export function Footer() {
@@ -10,16 +11,19 @@ export function Footer() {
         <div className="space-y-5">
           <Link
             href="/"
-            className="inline-block font-display text-xl font-semibold leading-tight text-neutral"
+            className="inline-flex items-center gap-3 font-display text-xl font-semibold leading-tight text-neutral"
             aria-label={`${siteConfig.name} home`}
           >
-            Greenville Crawl Space{" "}
-            <span className="relative inline-block">
-              Pros
-              <span
-                className="absolute -bottom-0.5 left-0 h-0.5 w-full rounded-full bg-accent"
-                aria-hidden="true"
-              />
+            <SiteLogo size={36} className="rounded-md" />
+            <span>
+              Greenville Crawl Space{" "}
+              <span className="relative inline-block">
+                Pros
+                <span
+                  className="absolute -bottom-0.5 left-0 h-0.5 w-full rounded-full bg-accent"
+                  aria-hidden="true"
+                />
+              </span>
             </span>
           </Link>
           <p className="text-sm leading-relaxed text-neutral/80">
@@ -28,7 +32,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="label-caps text-neutral/60">Contact</h2>
+          <h3 className="label-caps text-neutral/60">Contact</h3>
           <address className="mt-4 space-y-3 not-italic">
             <p className="text-sm font-semibold text-neutral">{siteConfig.name}</p>
             <p className="flex items-start gap-2 text-sm text-neutral/80">
@@ -58,7 +62,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="label-caps text-neutral/60">Services</h2>
+          <h3 className="label-caps text-neutral/60">Services</h3>
           <ul className="mt-4 space-y-2">
             {serviceLinks.map(({ href, label }) => (
               <li key={href}>
@@ -74,7 +78,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="label-caps text-neutral/60">Service Areas</h2>
+          <h3 className="label-caps text-neutral/60">Service Areas</h3>
           <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2">
             {serviceAreas.map((area) => (
               <li key={area} className="text-sm text-neutral/80">

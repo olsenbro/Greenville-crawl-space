@@ -5,6 +5,8 @@ import { PhoneLink } from "@/components/PhoneLink";
 import { AuthoritySection } from "@/components/AuthorityCitation";
 import { ServiceLinksGrid } from "@/components/service/ServiceLinksGrid";
 import { hubAreaCards } from "@/lib/areas-served";
+import { FaqOutline, PricingOutline } from "@/components/seo/PageOutlineSections";
+import { RelatedGuidesLinks } from "@/components/seo/InternalLinksSections";
 import { getAuthorityForPath } from "@/lib/authorities";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
@@ -81,6 +83,31 @@ export default function AreasServedPage() {
                     </div>
                   </div>
                 </Link>
+              ) : area.name === "Greenville" ? (
+                <Link
+                  key={area.name}
+                  href="/"
+                  className="group rounded-xl border border-primary/10 bg-white p-6 shadow-sm transition-all hover:border-primary hover:shadow-md"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <MapPin className="h-5 w-5" aria-hidden="true" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-display text-xl font-semibold text-primary group-hover:text-primary-dark">
+                        {area.name}, {area.state}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-muted">{area.description}</p>
+                      <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent">
+                        View Greenville services
+                        <ArrowRight
+                          className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                          aria-hidden="true"
+                        />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
               ) : (
                 <article
                   key={area.name}
@@ -115,7 +142,7 @@ export default function AreasServedPage() {
 
       <section className="bg-white section-padding">
         <div className="container-narrow mx-auto max-w-3xl">
-          <ServiceLinksGrid title="Find Local Crawl Space Specialists" />
+          <ServiceLinksGrid title="Crawl Space Services in Greenville, SC" />
           <p className="mt-6 text-center text-muted">
             <Link href="/contact" className="font-semibold text-primary hover:underline">
               {siteConfig.cta.primary} in your area →
@@ -123,6 +150,15 @@ export default function AreasServedPage() {
           </p>
         </div>
       </section>
+
+      <PricingOutline className="bg-neutral section-padding border-t border-primary/10" />
+
+      <FaqOutline className="bg-white section-padding border-t border-primary/10" />
+
+      <RelatedGuidesLinks
+        excludeHref="/areas-served"
+        className="bg-neutral section-padding border-t border-primary/10"
+      />
 
       <section className="bg-neutral section-padding">
         <div className="container-narrow mx-auto max-w-3xl text-center">

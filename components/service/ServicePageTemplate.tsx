@@ -4,7 +4,12 @@ import { AuthorityCitation } from "@/components/AuthorityCitation";
 import { Breadcrumbs, type BreadcrumbItem } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SchemaScript } from "@/components/SchemaScript";
-import { ServiceInternalLinks } from "@/components/service/ServiceInternalLinks";
+import { SiteLogo } from "@/components/SiteLogo";
+import { ServiceAreaOutline, ServicesOutline } from "@/components/seo/PageOutlineSections";
+import {
+  LocationLinksOutline,
+  RelatedGuidesLinks,
+} from "@/components/seo/InternalLinksSections";
 import type { AuthoritySource } from "@/lib/authorities";
 import { getAuthorityForPath } from "@/lib/authorities";
 import type { SchemaObject } from "@/lib/schema";
@@ -59,6 +64,7 @@ export function ServicePageTemplate({
       <section className="relative overflow-hidden bg-primary text-white">
         <div className="container-narrow section-padding">
           <div className="mx-auto max-w-3xl">
+            <SiteLogo size={48} className="mb-5 rounded-lg" />
             <h1 className="font-display text-4xl font-semibold leading-tight text-balance sm:text-5xl">
               {h1}
             </h1>
@@ -85,7 +91,23 @@ export function ServicePageTemplate({
 
       {children}
 
-      {serviceSlug ? <ServiceInternalLinks currentSlug={serviceSlug} /> : null}
+      <ServiceAreaOutline className="border-t border-primary/10 bg-neutral section-padding" />
+
+      <LocationLinksOutline className="border-t border-primary/10 bg-white section-padding" />
+
+      {serviceSlug ? (
+        <ServicesOutline
+          excludeSlug={serviceSlug}
+          className="border-t border-primary/10 bg-neutral section-padding"
+        />
+      ) : (
+        <ServicesOutline className="border-t border-primary/10 bg-neutral section-padding" />
+      )}
+
+      <RelatedGuidesLinks
+        serviceSlug={serviceSlug}
+        className="border-t border-primary/10 bg-white section-padding"
+      />
 
       {citation ? (
         <section className="bg-neutral section-padding">
@@ -98,26 +120,16 @@ export function ServicePageTemplate({
       <section className="bg-white section-padding">
         <div className="container-narrow mx-auto max-w-3xl">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">{faqTitle}</h2>
-          <div className="mt-8 space-y-3">
+          <div className="mt-8 space-y-6">
             {faqs.map(({ question, answer }) => (
               <article
                 key={question}
-                className="group rounded-xl border border-primary/10 bg-neutral open:bg-white open:shadow-sm"
+                className="rounded-xl border border-primary/10 bg-neutral p-6"
               >
-                <details className="group">
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-display text-base font-semibold text-primary marker:content-none [&::-webkit-details-marker]:hidden">
-                    {question}
-                    <span
-                      className="shrink-0 text-accent transition-transform group-open:rotate-45"
-                      aria-hidden="true"
-                    >
-                      +
-                    </span>
-                  </summary>
-                  <div className="border-t border-primary/10 px-6 pb-5 pt-2">
-                    <p className="leading-relaxed text-muted">{answer}</p>
-                  </div>
-                </details>
+                <h3 className="font-display text-lg font-semibold text-primary sm:text-xl">
+                  {question}
+                </h3>
+                <p className="mt-3 leading-relaxed text-muted">{answer}</p>
               </article>
             ))}
           </div>

@@ -9,6 +9,12 @@ import {
   ProcessSteps,
   ServiceSection,
 } from "@/components/service/ServicePageTemplate";
+import {
+  PricingOutline,
+  ServiceAreaOutline,
+  ServicesOutline,
+} from "@/components/seo/PageOutlineSections";
+import { LocationLinksOutline, RelatedGuidesLinks } from "@/components/seo/InternalLinksSections";
 import { getAuthorityForPath } from "@/lib/authorities";
 import { getArticleSchema, getFaqPageSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
@@ -227,25 +233,17 @@ export default function WhatIsEncapsulationPage() {
       </ServiceSection>
 
       <ServiceSection title="Common Questions About Encapsulation" className="bg-neutral">
-        <div className="space-y-3">
+        <div className="space-y-6">
           {pageFaqs.map(({ question, answer }) => (
-            <details
+            <article
               key={question}
-              className="group rounded-xl border border-primary/10 bg-white open:shadow-sm"
+              className="rounded-xl border border-primary/10 bg-white p-6"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-display text-base font-semibold text-primary marker:content-none [&::-webkit-details-marker]:hidden">
+              <h3 className="font-display text-lg font-semibold text-primary sm:text-xl">
                 {question}
-                <span
-                  className="shrink-0 text-accent transition-transform group-open:rotate-45"
-                  aria-hidden="true"
-                >
-                  +
-                </span>
-              </summary>
-              <div className="border-t border-primary/10 px-6 pb-5 pt-2">
-                <p className="leading-relaxed text-muted">{answer}</p>
-              </div>
-            </details>
+              </h3>
+              <p className="mt-3 leading-relaxed text-muted">{answer}</p>
+            </article>
           ))}
         </div>
         <p className="mt-6">
@@ -261,6 +259,19 @@ export default function WhatIsEncapsulationPage() {
           </Link>
         </p>
       </ServiceSection>
+
+      <PricingOutline className="border-t border-primary/10 bg-white section-padding" />
+
+      <ServicesOutline className="border-t border-primary/10 bg-neutral section-padding" />
+
+      <LocationLinksOutline className="border-t border-primary/10 bg-white section-padding" />
+
+      <RelatedGuidesLinks
+        excludeHref="/what-is-encapsulation"
+        className="border-t border-primary/10 bg-neutral section-padding"
+      />
+
+      <ServiceAreaOutline className="border-t border-primary/10 bg-white section-padding" />
 
       <AuthoritySection source={getAuthorityForPath("/what-is-encapsulation")} />
 

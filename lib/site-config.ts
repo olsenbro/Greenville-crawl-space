@@ -34,6 +34,16 @@ export const siteConfig = {
   mapEmbedQuery: "Greenville,+SC",
   logoPath: "/icon-512.png",
   ogImagePath: "/og-image.png",
+  imageAlt: {
+    logo: "Greenville Crawl Space Pros logo — crawl space encapsulation specialists in Greenville, SC",
+    og: "Greenville Crawl Space Pros — crawl space encapsulation and moisture control in Greenville, SC",
+    beforeCrawlSpace:
+      "Unencapsulated crawl space with standing water, open vents, and moisture damage in a Greenville, SC home",
+    afterEncapsulation:
+      "Encapsulated crawl space with sealed vapor barrier and dehumidifier installed in Greenville, SC",
+    serviceAreaMap:
+      "Map showing Greenville, SC and Upstate South Carolina crawl space service coverage area",
+  },
   cta: {
     primary: "Request a Free Estimate",
     online: "Request a Free Estimate",

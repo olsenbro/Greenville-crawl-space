@@ -6,6 +6,8 @@ import { AuthoritySection } from "@/components/AuthorityCitation";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SchemaScript } from "@/components/SchemaScript";
 import { ServiceLinksGrid } from "@/components/service/ServiceLinksGrid";
+import { PricingOutline, ServiceAreaOutline } from "@/components/seo/PageOutlineSections";
+import { LocationLinksOutline, RelatedGuidesLinks } from "@/components/seo/InternalLinksSections";
 import { allFaqItems, faqCategories } from "@/lib/faq-page-data";
 import { getAuthorityForPath } from "@/lib/authorities";
 import { getFaqPageSchema } from "@/lib/schema";
@@ -53,9 +55,11 @@ export default function FaqPage() {
 
       <AuthoritySection source={getAuthorityForPath("/faq")} className="bg-neutral" />
 
+      <PricingOutline className="bg-white section-padding border-t border-primary/10" />
+
       <section className="bg-neutral section-padding border-t border-primary/10">
         <div className="container-narrow mx-auto max-w-3xl">
-          <ServiceLinksGrid title="Find Local Crawl Space Specialists" />
+          <ServiceLinksGrid title="Crawl Space Services in Greenville, SC" />
           <p className="mt-6 text-center">
             <Link
               href="/crawl-space-encapsulation-cost"
@@ -70,6 +74,15 @@ export default function FaqPage() {
           </p>
         </div>
       </section>
+
+      <ServiceAreaOutline className="bg-white section-padding border-t border-primary/10" />
+
+      <LocationLinksOutline className="bg-neutral section-padding border-t border-primary/10" />
+
+      <RelatedGuidesLinks
+        excludeHref="/faq"
+        className="bg-white section-padding border-t border-primary/10"
+      />
 
       <section className="bg-accent section-padding text-white">
         <div className="container-narrow mx-auto max-w-3xl text-center">

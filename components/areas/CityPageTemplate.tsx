@@ -4,10 +4,14 @@ import { AuthoritySection } from "@/components/AuthorityCitation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SchemaScript } from "@/components/SchemaScript";
+import { SiteLogo } from "@/components/SiteLogo";
 import type { CityArea } from "@/lib/areas-served";
-import { getNeighborSlug } from "@/lib/areas-served";
+import { getNeighborHref } from "@/lib/areas-served";
 import { getAuthorityForPath } from "@/lib/authorities";
 import { getLocalBusinessSchema } from "@/lib/schema";
+import { FaqOutline } from "@/components/seo/PageOutlineSections";
+import { LocationLinksOutline, RelatedGuidesLinks } from "@/components/seo/InternalLinksSections";
+import { CityGeographySection } from "@/components/areas/CityGeographySection";
 import { serviceLinks, siteConfig } from "@/lib/site-config";
 
 type CityPageTemplateProps = {
@@ -33,6 +37,7 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
         <div className="container-narrow section-padding">
           <div className="mx-auto max-w-3xl">
             <p className="label-caps mb-4 text-accent-light">Areas Served</p>
+            <SiteLogo size={48} className="mb-5 rounded-lg" />
             <h1 className="font-display text-4xl font-semibold leading-tight text-balance sm:text-5xl">
               {city.h1}
             </h1>
@@ -58,12 +63,19 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
       </section>
 
       <section className="bg-white section-padding">
-        <div className="container-narrow mx-auto max-w-3xl space-y-5 text-lg leading-relaxed text-muted">
-          {city.body.map((paragraph) => (
-            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-          ))}
+        <div className="container-narrow mx-auto max-w-3xl">
+          <h2 className="font-display text-3xl font-semibold sm:text-4xl">
+            Crawl Space Conditions in {city.name}, {city.state}
+          </h2>
+          <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted">
+            {city.body.map((paragraph) => (
+              <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+            ))}
+          </div>
         </div>
       </section>
+
+      <CityGeographySection city={city} />
 
       <AuthoritySection source={authority} />
 
@@ -79,13 +91,15 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {serviceLinks.map(({ href, label }) => (
               <li key={href}>
-                <Link
-                  href={href}
-                  className="flex items-center gap-2 rounded-lg bg-white px-5 py-4 text-sm font-semibold text-primary shadow-sm transition-colors hover:bg-primary hover:text-white"
-                >
-                  {label}
-                  <ArrowRight className="ml-auto h-4 w-4" aria-hidden="true" />
-                </Link>
+                <h3 className="font-display text-base font-semibold text-primary">
+                  <Link
+                    href={href}
+                    className="flex items-center gap-2 rounded-lg bg-white px-5 py-4 text-sm shadow-sm transition-colors hover:bg-primary hover:text-white"
+                  >
+                    {label}
+                    <ArrowRight className="ml-auto h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </h3>
               </li>
             ))}
           </ul>
@@ -114,14 +128,24 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
 
       <section className="bg-primary/5 section-padding">
         <div className="container-narrow mx-auto max-w-3xl">
-          <h2 className="font-display text-2xl font-semibold">Also Serving Nearby</h2>
+          <h2 className="font-display text-2xl font-semibold">Service Area — {city.name} &amp; Nearby</h2>
+          <p className="mt-4 text-lg text-muted">
+            Also serving homeowners near {city.name}.{" "}
+            <Link href="/areas-served" className="font-semibold text-primary hover:underline">
+              View all Upstate SC service areas
+            </Link>
+            {" · "}
+            <Link href="/" className="font-semibold text-primary hover:underline">
+              Greenville crawl space home
+            </Link>
+          </p>
           <div className="mt-4 flex flex-wrap gap-3">
             {city.neighbors.map((neighbor) => {
-              const slug = getNeighborSlug(neighbor);
-              return slug ? (
+              const href = getNeighborHref(neighbor);
+              return href ? (
                 <Link
                   key={neighbor}
-                  href={`/areas-served/${slug}`}
+                  href={href}
                   className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
                 >
                   {neighbor}
@@ -138,6 +162,21 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
           </div>
         </div>
       </section>
+
+      <RelatedGuidesLinks
+        excludeHref={`/areas-served/${city.slug}`}
+        className="bg-neutral section-padding border-t border-primary/10"
+      />
+
+      <LocationLinksOutline
+        excludeCitySlug={city.slug}
+        className="bg-white section-padding border-t border-primary/10"
+      />
+
+      <FaqOutline
+        city={`${city.name}, ${city.state}`}
+        className="bg-white section-padding border-t border-primary/10"
+      />
 
       <section className="bg-accent section-padding text-white">
         <div className="container-narrow mx-auto max-w-3xl text-center">

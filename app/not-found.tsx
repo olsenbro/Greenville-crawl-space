@@ -4,6 +4,16 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/PhoneLink";
 import { AuthoritySection } from "@/components/AuthorityCitation";
 import { SERVICE_PAGES } from "@/components/service/ServiceInternalLinks";
+import {
+  LocationLinksOutline,
+  RelatedGuidesLinks,
+} from "@/components/seo/InternalLinksSections";
+import {
+  FaqOutline,
+  PricingOutline,
+  ServicesOutline,
+  ServiceAreaOutline,
+} from "@/components/seo/PageOutlineSections";
 import { getAuthorityForPath } from "@/lib/authorities";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
@@ -55,22 +65,31 @@ export default function NotFound() {
           </div>
 
           <div className="mt-8">
-            <p className="text-sm font-semibold text-dark">Popular services:</p>
-            <ul className="mt-3 flex flex-wrap justify-center gap-3">
+            <h2 className="font-display text-2xl font-semibold text-primary">Popular Crawl Space Services</h2>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
               {SERVICE_PAGES.slice(0, 4).map(({ href, label }) => (
                 <li key={href}>
-                  <Link
-                    href={href}
-                    className="rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary hover:bg-primary hover:text-white"
-                  >
-                    {label}
-                  </Link>
+                  <h3 className="font-display text-base font-semibold text-primary">
+                    <Link
+                      href={href}
+                      className="block rounded-full bg-primary/10 px-4 py-2 text-sm hover:bg-primary hover:text-white"
+                    >
+                      {label}
+                    </Link>
+                  </h3>
                 </li>
               ))}
             </ul>
           </div>
         </div>
       </section>
+
+      <PricingOutline className="bg-white section-padding border-t border-primary/10" />
+      <ServicesOutline className="bg-neutral section-padding border-t border-primary/10" />
+      <LocationLinksOutline className="bg-white section-padding border-t border-primary/10" />
+      <RelatedGuidesLinks className="bg-neutral section-padding border-t border-primary/10" />
+      <ServiceAreaOutline className="bg-white section-padding border-t border-primary/10" showMap={false} />
+      <FaqOutline className="bg-neutral section-padding border-t border-primary/10" />
 
       <AuthoritySection source={getAuthorityForPath("/404")} className="bg-white" />
     </>

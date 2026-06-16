@@ -1,3 +1,5 @@
+import { withCityGeography } from "./city-geography-data";
+
 export type CityArea = {
   slug: string;
   name: string;
@@ -9,9 +11,17 @@ export type CityArea = {
   intro: string[];
   body: string[];
   neighbors: string[];
+  /** Primary ZIP codes served in this city */
+  zipCodes: string[];
+  /** Neighborhoods and subdivisions with crawl space service coverage */
+  neighborhoods: string[];
+  /** Local landmarks and geographic reference points */
+  landmarks: string[];
 };
 
-export const cityAreas: CityArea[] = [
+type CityAreaBase = Omit<CityArea, "zipCodes" | "neighborhoods" | "landmarks">;
+
+const cityAreasBase: CityAreaBase[] = [
   {
     slug: "simpsonville",
     name: "Simpsonville",
@@ -144,7 +154,75 @@ export const cityAreas: CityArea[] = [
     ],
     neighbors: ["Greer", "Greenville", "Travelers Rest"],
   },
+  {
+    slug: "easley",
+    name: "Easley",
+    state: "SC",
+    stateName: "South Carolina",
+    title: "Crawl Space Encapsulation Easley SC | Pickens County",
+    description:
+      "Crawl space encapsulation in Easley, SC. Local specialists for moisture control, mold, and repair in Pickens County homes. Request your free estimate today.",
+    h1: "Crawl Space Encapsulation in Easley, South Carolina",
+    intro: [
+      "Easley sits at the crossroads of Pickens County growth — older ranch homes near downtown, newer subdivisions along Highway 123, and rural properties on rolling land where crawl spaces often go years without inspection.",
+      "Get matched with licensed crawl space specialists serving Easley, Powdersville, and all of Pickens County for encapsulation, mold treatment, and structural repair.",
+    ],
+    body: [
+      "Easley and the surrounding Pickens County communities combine Piedmont red clay, high summer humidity, and a housing mix that spans mid-century ranches to 2010s subdivisions along the Greenville–Clemson corridor. Many Easley crawl spaces were built with open vents and thin 6-mil vapor barriers that fail within a decade — leaving homeowners with musty indoor air, soft floors, and mold on joists discovered only during HVAC service or a home inspection.",
+      "Properties toward Powdersville and the Anderson County line often share drainage challenges with neighboring Upstate markets: water pooling against downhill foundation walls after heavy rain, saturated soil beneath torn vapor barriers, and humidity that stays elevated long after storms pass. Easley homes on sloped lots near Doodle Trail and Saluda River tributaries frequently show standing water in the crawl space during spring — a sign that encapsulation alone may require interior drainage first.",
+      "Pickens County's older housing stock includes farmhouses and country homes with limited crawl space access, sagging fiberglass insulation, and wood that has absorbed moisture for years. Newer Easley developments along the Highway 123 corridor face the same builder-grade shortcuts seen across the Upstate: minimum-code liners, unsealed vents, and no dehumidification. Both housing eras benefit from full encapsulation with 20-mil reinforced liner, vent sealing, and commercial dehumidifier installation.",
+      "Because Easley sits between Greenville and Anderson, local contractors cover Pickens County without the delays common with out-of-area companies. Licensed pros in Easley provide photo-documented inspections, itemized quotes, and complete project work — encapsulation, mold remediation, joist sistering, and drainage correction — from downtown Easley to rural properties toward Liberty and Six Mile.",
+      "If you smell mustiness in your Easley home, notice bouncing floors, or had an inspector flag crawl space moisture, request a free estimate to connect with local specialists. Most full encapsulation projects in Easley run $5,000–$9,000 depending on square footage and existing conditions — far less than the structural repairs that follow years of unchecked moisture.",
+    ],
+    neighbors: ["Anderson", "Greenville", "Simpsonville"],
+  },
+  {
+    slug: "duncan",
+    name: "Duncan",
+    state: "SC",
+    stateName: "South Carolina",
+    title: "Crawl Space Encapsulation Duncan SC | I-85 Corridor",
+    description:
+      "Crawl space encapsulation in Duncan, SC along the I-85 growth corridor. Local pros for vapor barriers, mold, and repair near Greer and Spartanburg. Free estimate.",
+    h1: "Crawl Space Encapsulation in Duncan, South Carolina",
+    intro: [
+      "Duncan's rapid growth along the I-85 corridor brought thousands of homes built on cut-and-fill lots — crawl spaces where builder-grade vapor barriers tore within years and open vents pull humid Upstate air inside year-round.",
+      "Connect with local specialists who encapsulate, repair, and dehumidify crawl spaces throughout Duncan, Reidville, and the Spartanburg–Greenville county line.",
+    ],
+    body: [
+      "Duncan has transformed from a quiet Spartanburg County crossroads into one of the fastest-growing communities along the I-85 corridor between Greenville and Spartanburg. That growth put new subdivisions on aggressively graded terrain — cut-and-fill lots where water runs toward foundation walls, builder-grade 6-mil poly tears on gravel within a few years, and crawl spaces that looked compliant at closing fail within a decade in Upstate humidity.",
+      "Neighborhoods near Tyger River, Reidville Road, and the areas surrounding the inland port experience the same moisture patterns as Greer and Spartanburg: red clay that holds water against foundations, summer dew points that push unencapsulated crawl spaces above 80% relative humidity, and open vents that deliver saturated outdoor air instead of drying the space below.",
+      "Duncan's mix of 1990s–2000s suburban homes and newer construction along the corridor often shows recognizable warning signs: vapor barrier pulled away from walls, dark mold staining on joists, insulation hanging in wet batts, and musty odors upstairs when the HVAC runs. Homeowners frequently discover problems during pre-sale inspections — moisture damage that becomes a negotiation point or deal-breaker if left unaddressed.",
+      "Because Duncan sits minutes from both Greer and Spartanburg, local contractors serve the entire I-85 corridor without subcontractor handoffs. Licensed pros in Duncan provide free crawl space estimates with written, itemized quotes covering encapsulation with 20-mil liners, vent sealing, commercial dehumidifier installation, mold treatment, floor joist repair, and interior drainage where needed.",
+      "Request a free estimate to connect with crawl space specialists throughout Duncan and Spartanburg County. Most full encapsulation projects run $5,000–$9,000 depending on size and condition. Homes requiring mold treatment or joist repair before encapsulation may fall in the $6,000–$15,000 range — but addressing moisture at the source prevents the repeat failures that come from partial fixes.",
+    ],
+    neighbors: ["Greer", "Spartanburg", "Simpsonville"],
+  },
+  {
+    slug: "fountain-inn",
+    name: "Fountain Inn",
+    state: "SC",
+    stateName: "South Carolina",
+    title: "Crawl Space Encapsulation Fountain Inn SC | Pros",
+    description:
+      "Crawl space encapsulation in Fountain Inn, SC on the Golden Strip. Local specialists for moisture, mold, and vapor barriers in southern Greenville County. Free estimate.",
+    h1: "Crawl Space Encapsulation in Fountain Inn, South Carolina",
+    intro: [
+      "Fountain Inn anchors the southern end of the Golden Strip — a blend of historic downtown homes, 1980s–2000s subdivisions, and newer growth toward Laurens County where crawl spaces with failed builder-grade barriers are the norm, not the exception.",
+      "Get matched with licensed specialists who encapsulate, repair, and dehumidify crawl spaces throughout Fountain Inn and southern Greenville County.",
+    ],
+    body: [
+      "Fountain Inn occupies a distinct position on the Golden Strip between Simpsonville and Laurens — a community where downtown historic properties sit minutes from suburban neighborhoods built during decades when open-vent crawl spaces and thin polyethylene sheeting were standard. Thirty years later, those original barriers have torn, gapped, or degraded to the point where ground moisture and humid outdoor air combine to create mold, rot, and musty indoor air throughout the home.",
+      "Southern Greenville County's red clay soil holds moisture against foundation walls long after rain stops. Fountain Inn neighborhoods along Fairview Road extensions, Quillen Avenue corridors, and subdivisions branching toward Ware Place and Gray Court show the same failure pattern seen in Simpsonville and Mauldin: insulation sagging from moisture absorption, joist surfaces with early-stage mold staining, and homeowners who notice problems first as soft floors or persistent musty smells when the HVAC runs.",
+      "Fountain Inn's growth toward the Laurens County line added newer homes on disturbed clay pads where drainage was often an afterthought. Cut-and-fill lots create slopes where water pools on the downhill side of foundations — saturating crawl space soil even when the yard looks dry. Builder-grade vapor barriers, where installed at all, rarely survive contact with gravel and pier footings for more than a few years.",
+      "The Golden Strip's humidity profile matches the rest of the Upstate: summer dew points that push unencapsulated crawl spaces well into mold-growth territory, open vents that pull humid air inside, and the stack effect distributing musty air and spores through every room above. Full encapsulation — 20-mil reinforced liner, sealed vents, wall coverage, and a commercial dehumidifier — is the standard correction for Fountain Inn homes with failed original barriers.",
+      "Licensed contractors serve every Fountain Inn neighborhood and adjacent southern Greenville County communities. Request a free estimate with photo documentation and itemized pricing. Most Fountain Inn encapsulation projects run $5,000–$9,000 for a complete system. Homes requiring mold treatment or joist repair before encapsulation may cost more — but one thorough project prevents the structural damage that turns a manageable moisture problem into a major repair.",
+    ],
+    neighbors: ["Simpsonville", "Mauldin", "Greenville"],
+  },
 ];
+
+export const cityAreas: CityArea[] = cityAreasBase.map(withCityGeography);
 
 export const hubAreaCards = [
   ...cityAreas.map((city) => ({
@@ -161,27 +239,6 @@ export const hubAreaCards = [
     description: "Greenville County — all neighborhoods and districts.",
     hasPage: false as const,
   },
-  {
-    slug: null,
-    name: "Easley",
-    state: "SC" as const,
-    description: "Pickens County homes and surrounding communities.",
-    hasPage: false as const,
-  },
-  {
-    slug: null,
-    name: "Duncan",
-    state: "SC" as const,
-    description: "Spartanburg County growth corridor along I-85.",
-    hasPage: false as const,
-  },
-  {
-    slug: null,
-    name: "Fountain Inn",
-    state: "SC" as const,
-    description: "Southern Greenville County and Golden Strip area.",
-    hasPage: false as const,
-  },
 ];
 
 export function getCityBySlug(slug: string): CityArea | undefined {
@@ -191,4 +248,10 @@ export function getCityBySlug(slug: string): CityArea | undefined {
 export function getNeighborSlug(name: string): string | null {
   const city = cityAreas.find((c) => c.name === name);
   return city?.slug ?? null;
+}
+
+export function getNeighborHref(name: string): string | null {
+  if (name === "Greenville") return "/";
+  const slug = getNeighborSlug(name);
+  return slug ? `/areas-served/${slug}` : null;
 }
