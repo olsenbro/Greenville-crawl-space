@@ -10,7 +10,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Crawl Space Repair Greenville SC | Joist, Mold & Structural Repair",
   description:
-    "Crawl space repair in Greenville, SC. We fix sagging joists, wood rot, mold damage, and failing piers. Local crawl space specialists — free inspection.",
+    "Connect with local crawl space repair specialists in Greenville, SC. Sagging joists, wood rot, mold damage, and failing piers — free estimate.",
   canonical: "/crawl-space-repair",
 });
 
@@ -18,7 +18,7 @@ const repairSteps = [
   {
     title: "Assess the damage",
     description:
-      "We inspect joists, piers, vapor barriers, and drainage. You receive a written report with photos documenting every issue found.",
+      "A specialist inspects joists, piers, vapor barriers, and drainage. You receive a written report with photos documenting every issue found.",
   },
   {
     title: "Remove damaged material",
@@ -38,7 +38,7 @@ const repairSteps = [
   {
     title: "Encapsulate to prevent recurrence",
     description:
-      "Once repairs are complete, we recommend encapsulation to stop the moisture that caused the damage in the first place.",
+      "Once repairs are complete, contractors recommend encapsulation to stop the moisture that caused the damage in the first place.",
   },
 ];
 
@@ -46,7 +46,7 @@ const faqs = [
   {
     question: "How do I know if my crawl space damage is structural?",
     answer:
-      "Signs include bouncing or soft floors, doors that stick or won't latch, visible sag in floor lines, and rot you can see on joists during inspection. If you're unsure, schedule a free inspection — structural issues worsen with time.",
+      "Signs include bouncing or soft floors, doors that stick or won't latch, visible sag in floor lines, and rot you can see on joists during inspection. If you're unsure, request a free estimate — structural issues worsen with time.",
   },
   {
     question: "Can crawl space damage affect my home sale?",
@@ -61,7 +61,7 @@ const faqs = [
   {
     question: "Will insurance cover crawl space repair?",
     answer:
-      "Standard homeowners policies typically do not cover gradual moisture damage or rot. Sudden events like plumbing leaks may be covered. We document everything during inspection to support any claim you choose to file.",
+      "Standard homeowners policies typically do not cover gradual moisture damage or rot. Sudden events like plumbing leaks may be covered. Contractors document everything during assessment to support any claim you choose to file.",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function CrawlSpaceRepairPage() {
       h1="Crawl Space Repair in Greenville, South Carolina"
       intro={[
         "If your floors are bouncing, doors are sticking, or an inspector flagged your crawl space — you need repair now, not later.",
-        "We fix sagging joists, wood rot, mold damage, and failing support systems throughout Greenville and Upstate SC.",
+        "Connect with local specialists who repair sagging joists, wood rot, mold damage, and failing support systems throughout Greenville and Upstate SC.",
       ]}
       breadcrumbs={[
         { label: "Services", href: "/crawl-space-repair" },
@@ -86,9 +86,9 @@ export default function CrawlSpaceRepairPage() {
       })}
       faqs={faqs}
       ctaHeading="Don't Wait — Structural Damage Gets Worse"
-      ctaBody="Schedule a free crawl space inspection. We'll document the damage and give you a clear repair plan."
+      ctaBody="Request a free crawl space estimate. A local specialist will document the damage and outline a clear repair plan."
     >
-      <ServiceSection title="Types of Crawl Space Damage We Repair">
+      <ServiceSection title="Types of Crawl Space Damage Local Pros Repair">
         <BulletList
           items={[
             "Sagging or rotted floor joists from long-term moisture exposure",
@@ -118,7 +118,7 @@ export default function CrawlSpaceRepairPage() {
         />
       </ServiceSection>
 
-      <ServiceSection title="Our Crawl Space Repair Process">
+      <ServiceSection title="Typical Crawl Space Repair Process">
         <ProcessSteps steps={repairSteps} />
       </ServiceSection>
 
@@ -132,8 +132,8 @@ export default function CrawlSpaceRepairPage() {
         <p>
           <strong className="text-dark">Full replacement</strong> is required when joists are severely
           rotted, split, or structurally failed. Replacement takes longer and costs more but restores
-          full load-bearing capacity. We recommend the least invasive option that meets structural
-          requirements.
+          full load-bearing capacity. Contractors recommend the least invasive option that meets
+          structural requirements.
         </p>
       </ServiceSection>
 
@@ -146,7 +146,7 @@ export default function CrawlSpaceRepairPage() {
           ]}
         />
         <p>
-          Every home is different. Our free inspection includes itemized pricing so you know exactly
+          Every home is different. A free estimate includes itemized pricing so you know exactly
           what you&apos;re paying for before any work begins.
         </p>
       </ServiceSection>

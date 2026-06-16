@@ -35,8 +35,7 @@ export default function FaqPage() {
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-white/90">
               Honest answers about crawl space moisture, encapsulation, mold, dehumidifiers, costs,
-              and what to expect — from the team that inspects and repairs crawl spaces across
-              Upstate SC every day.
+              and what to expect — connecting Greenville-area homeowners with trusted local specialists.
             </p>
             <PhoneLink className="btn-primary mt-8 inline-flex items-center gap-2 px-8 py-4 text-base">
               <Phone className="h-5 w-5" aria-hidden="true" />
@@ -56,7 +55,7 @@ export default function FaqPage() {
 
       <section className="bg-neutral section-padding border-t border-primary/10">
         <div className="container-narrow mx-auto max-w-3xl">
-          <ServiceLinksGrid title="Crawl Space Services" />
+          <ServiceLinksGrid title="Find Local Crawl Space Specialists" />
           <p className="mt-6 text-center">
             <Link
               href="/crawl-space-encapsulation-cost"
@@ -66,7 +65,7 @@ export default function FaqPage() {
             </Link>
             {" · "}
             <Link href="/contact" className="font-semibold text-primary hover:underline">
-              Schedule a free inspection →
+              {siteConfig.cta.primary} →
             </Link>
           </p>
         </div>
@@ -75,12 +74,9 @@ export default function FaqPage() {
       <section className="bg-accent section-padding text-white">
         <div className="container-narrow mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            Ready to Schedule a Free Inspection?
+            {siteConfig.cta.defaultHeading}
           </h2>
-          <p className="mt-4 text-lg text-white/90">
-            We&apos;ll inspect your crawl space, answer your questions on site, and provide a written
-            quote with no obligation.
-          </p>
+          <p className="mt-4 text-lg text-white/90">{siteConfig.cta.defaultBody}</p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <PhoneLink className="inline-flex items-center gap-3 rounded-lg bg-primary px-10 py-4 text-lg font-semibold text-white shadow-lg transition-colors hover:bg-primary-dark">
               <Phone className="h-6 w-6" aria-hidden="true" />
@@ -90,7 +86,7 @@ export default function FaqPage() {
               href="/contact"
               className="inline-flex items-center gap-1 text-base font-semibold text-white underline-offset-4 hover:underline"
             >
-              Request Inspection Online
+              {siteConfig.cta.online}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>

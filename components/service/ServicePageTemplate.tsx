@@ -39,8 +39,8 @@ export function ServicePageTemplate({
   schema,
   faqs,
   faqTitle = "Frequently Asked Questions",
-  ctaHeading = "Ready to Schedule a Free Inspection?",
-  ctaBody,
+  ctaHeading = siteConfig.cta.defaultHeading,
+  ctaBody = siteConfig.cta.defaultBody,
   authority,
   children,
 }: ServicePageTemplateProps) {
@@ -76,7 +76,7 @@ export function ServicePageTemplate({
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-white hover:text-primary"
               >
-                Request a Free Inspection
+                {siteConfig.cta.primary}
               </Link>
             </div>
           </div>
@@ -137,7 +137,7 @@ export function ServicePageTemplate({
               href="/contact"
               className="inline-flex items-center gap-1 text-base font-semibold text-white underline-offset-4 hover:underline"
             >
-              Request Inspection Online
+              {siteConfig.cta.online}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>

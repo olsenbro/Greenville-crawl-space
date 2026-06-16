@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata = buildPageMetadata({
   title: "Crawl Space Mold Removal Greenville SC | Treatment Before Encapsulation",
   description:
-    `Mold in your Greenville crawl space? We treat and remove crawl space mold before encapsulation to stop it at the source. Free inspection — ${siteConfig.phone}.`,
+    `Mold in your Greenville crawl space? Connect with local specialists who treat and remove crawl space mold before encapsulation to stop it at the source. Free estimate — ${siteConfig.phone}.`,
   canonical: "/mold-in-crawl-space",
 });
 
@@ -19,7 +19,7 @@ const treatmentSteps = [
   {
     title: "Identify the mold source",
     description:
-      "We locate all affected areas, assess mold type and extent, and identify the moisture source that allowed growth.",
+      "Specialists locate all affected areas, assess mold type and extent, and identify the moisture source that allowed growth.",
   },
   {
     title: "Contain and treat",
@@ -47,7 +47,7 @@ const faqs = [
   {
     question: "Is crawl space mold dangerous to my health?",
     answer:
-      "Mold spores from crawl spaces can enter living areas through the stack effect. Some people experience allergy-like symptoms. If you have health concerns, consult your doctor — we focus on eliminating the source through proper treatment and encapsulation.",
+      "Mold spores from crawl spaces can enter living areas through the stack effect. Some people experience allergy-like symptoms. If you have health concerns, consult your doctor — qualified local specialists focus on eliminating the source through proper treatment and encapsulation.",
   },
   {
     question: "Can I use bleach to kill crawl space mold?",
@@ -62,7 +62,7 @@ const faqs = [
   {
     question: "Will mold come back after treatment?",
     answer:
-      "Not if the moisture source is eliminated. Mold treatment without fixing humidity and moisture is temporary. That's why we always pair treatment with encapsulation — treating mold without stopping moisture is a band-aid.",
+      "Not if the moisture source is eliminated. Mold treatment without fixing humidity and moisture is temporary. That's why reputable contractors always pair treatment with encapsulation — treating mold without stopping moisture is a band-aid.",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function MoldInCrawlSpacePage() {
       h1="Crawl Space Mold in Greenville, SC — What to Know and What to Do"
       intro={[
         "Mold in your crawl space isn't just a nuisance below your floor — it affects the air your family breathes every day.",
-        "We treat crawl space mold at the source, then encapsulate to stop it from coming back.",
+        "Connect with local specialists who treat crawl space mold at the source, then encapsulate to stop it from coming back.",
       ]}
       breadcrumbs={[
         { label: "Services", href: "/mold-in-crawl-space" },
@@ -87,7 +87,7 @@ export default function MoldInCrawlSpacePage() {
       })}
       faqs={faqs}
       ctaHeading="Mold Won't Fix Itself — Act Now"
-      ctaBody="Schedule a free crawl space inspection. We'll identify the mold, find the moisture source, and give you a treatment plan."
+      ctaBody="Request a free crawl space estimate. A local specialist will identify the mold, find the moisture source, and outline a treatment plan."
     >
       <ServiceSection title="Why Crawl Space Mold Is Common in Greenville">
         <p>
@@ -122,12 +122,12 @@ export default function MoldInCrawlSpacePage() {
         />
         <p>
           Mold identification requires proper assessment. If you have health concerns related to mold
-          exposure, consult a medical professional. Our role is eliminating the source through proper
-          treatment and moisture control.
+          exposure, consult a medical professional. Qualified local specialists eliminate the source
+          through proper treatment and moisture control.
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Our Mold Treatment Process" className="bg-neutral">
+      <ServiceSection title="Typical Mold Treatment Process" className="bg-neutral">
         <ProcessSteps steps={treatmentSteps} />
       </ServiceSection>
 
@@ -159,8 +159,9 @@ export default function MoldInCrawlSpacePage() {
           area, and whether structural wood replacement is needed alongside treatment.
         </p>
         <p>
-          Full encapsulation after treatment adds $3,500–$8,000 for a standard home. We provide itemized
-          pricing during your free inspection so you understand the full scope before committing.
+          Full encapsulation after treatment adds $3,500–$8,000 for a standard home. Connect with a
+          local specialist for itemized pricing during a free estimate so you understand the full
+          scope before committing.
         </p>
       </ServiceSection>
     </ServicePageTemplate>

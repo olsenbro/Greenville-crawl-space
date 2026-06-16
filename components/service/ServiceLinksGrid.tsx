@@ -11,7 +11,7 @@ type ServiceLinksGridProps = {
 
 export function ServiceLinksGrid({
   excludeSlug,
-  title = "Our Crawl Space Services",
+  title = "Find Local Crawl Space Specialists",
   showTitle = true,
   className = "",
 }: ServiceLinksGridProps) {

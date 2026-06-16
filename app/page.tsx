@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     absolute:
       "Crawl Space Encapsulation Greenville SC | Moisture & Mold Experts",
   },
-  description: `Wet, moldy, or musty crawl space in Greenville? We encapsulate, repair, and dehumidify crawl spaces across Upstate SC. Free inspections. Call ${siteConfig.phone}.`,
+  description: `Wet, moldy, or musty crawl space in Greenville? Connect with trusted local crawl space specialists across Upstate SC. Get a free estimate from a licensed pro. Call ${siteConfig.phone}.`,
   alternates: {
     canonical: siteConfig.schemaUrl,
   },
   openGraph: {
     title: "Crawl Space Encapsulation Greenville SC | Moisture & Mold Experts",
-    description: `Wet, moldy, or musty crawl space in Greenville? We encapsulate, repair, and dehumidify crawl spaces across Upstate SC. Free inspections. Call ${siteConfig.phone}.`,
+    description: `Wet, moldy, or musty crawl space in Greenville? Connect with trusted local crawl space specialists across Upstate SC. Get a free estimate from a licensed pro. Call ${siteConfig.phone}.`,
     url: siteConfig.schemaUrl,
   },
 };
@@ -75,33 +75,33 @@ const symptoms = [
 const processSteps = [
   {
     step: 1,
-    title: "Free Inspection",
+    title: "Initial Inspection",
     description:
-      "We crawl your space, check for moisture, mold, structural damage, and current vapor barrier condition. You get a written report.",
+      "A licensed specialist crawls your space and checks for moisture, mold, structural damage, and current vapor barrier condition. Most contractors provide a written assessment of findings.",
   },
   {
     step: 2,
     title: "Clear & Clean",
     description:
-      "We remove old insulation, debris, and any existing deteriorated vapor barrier. Mold is treated if present.",
+      "Old insulation, debris, and deteriorated vapor barrier material is removed. Any existing mold is treated before encapsulation begins.",
   },
   {
     step: 3,
     title: "Vapor Barrier Installation",
     description:
-      "We install a 20-mil reinforced liner across the entire floor and up the walls, sealed at seams and foundation walls.",
+      "A 20-mil reinforced liner is installed across the entire floor and up the walls, sealed at all seams and foundation walls for a complete moisture barrier.",
   },
   {
     step: 4,
     title: "Dehumidifier & Drainage",
     description:
-      "A crawl-space-rated dehumidifier is installed and programmed. If standing water is a recurring issue, a drainage system is recommended.",
+      "A crawl-space-rated dehumidifier is installed and set to maintain optimal humidity. If standing water is a recurring issue, an interior drainage system may be recommended.",
   },
   {
     step: 5,
-    title: "Final Inspection & Warranty",
+    title: "Final Walkthrough & Warranty",
     description:
-      "We walk you through the completed work and provide your warranty documentation.",
+      "The contractor walks you through the completed work and provides warranty documentation. Warranty terms vary by contractor — confirm details before work begins.",
   },
 ] as const;
 
@@ -142,9 +142,9 @@ const testimonials = [
 ] as const;
 
 const trustBadges = [
-  "Free Inspections",
-  "Licensed & Insured",
-  `Serving Upstate SC Since ${siteConfig.foundedYear}`,
+  "Licensed Local Pros",
+  "Free Estimates Available",
+  "Upstate SC Coverage",
 ] as const;
 
 export default function Home() {
@@ -165,13 +165,13 @@ export default function Home() {
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/90 sm:text-xl">
             Moisture, mold, and rot in your crawl space affect your air quality, your floors, and
-            your home&apos;s structure. We inspect, encapsulate, and repair crawl spaces throughout
-            Greenville and Upstate SC.
+            your home&apos;s structure. We connect Greenville homeowners with trusted local crawl
+            space specialists throughout Upstate SC.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link href="/contact" className="btn-primary justify-center text-base">
-              Schedule a Free Inspection
+              {siteConfig.cta.primary}
             </Link>
             <Link
               href="/crawl-space-encapsulation"
@@ -277,9 +277,9 @@ export default function Home() {
       <section className="section-padding">
         <div className="container-narrow">
           <div className="max-w-2xl">
-            <p className="label-caps">Our Process</p>
+            <p className="label-caps">The Process</p>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl">
-              Our Crawl Space Encapsulation Process
+              How the Crawl Space Encapsulation Process Works
             </h2>
           </div>
 
@@ -407,8 +407,9 @@ export default function Home() {
         <div className="container-narrow text-center">
           <h2 className="font-display text-3xl sm:text-4xl">Ready to Protect Your Greenville Home?</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
-            Schedule a free crawl space inspection — no obligation, no pressure. We&apos;ll tell you
-            exactly what&apos;s there and what it needs.
+            Connect with a licensed Greenville crawl space specialist — no obligation, no pressure.
+            Get an honest assessment of your crawl space and a clear recommendation for what it
+            needs.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <PhoneLink className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-primary-dark">
@@ -419,7 +420,7 @@ export default function Home() {
               href="/contact"
               className="inline-flex items-center gap-2 rounded-lg border-2 border-white px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-white hover:text-accent"
             >
-              Request Inspection Online
+              {siteConfig.cta.online}
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Link>
           </div>

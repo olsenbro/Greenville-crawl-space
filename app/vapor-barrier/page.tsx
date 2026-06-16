@@ -12,7 +12,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata = buildPageMetadata({
   title: "Vapor Barrier Installation Greenville SC | Crawl Space Moisture Control",
   description:
-    `Vapor barrier installation in Greenville, SC. We install 20-mil reinforced crawl space liners to stop moisture, mold, and rot. Free estimate — ${siteConfig.phone}.`,
+    `Connect with local specialists for vapor barrier installation in Greenville, SC. 20-mil reinforced crawl space liners to stop moisture, mold, and rot. Free estimate — ${siteConfig.phone}.`,
   canonical: "/vapor-barrier",
 });
 
@@ -20,7 +20,7 @@ const installSteps = [
   {
     title: "Inspect and measure",
     description:
-      "We assess your crawl space size, current liner condition, moisture sources, and any mold or drainage issues that need addressing first.",
+      "A specialist assesses your crawl space size, current liner condition, moisture sources, and any mold or drainage issues that need addressing first.",
   },
   {
     title: "Clear the space",
@@ -35,7 +35,7 @@ const installSteps = [
   {
     title: "Verify and document",
     description:
-      "We inspect all seams, confirm coverage is complete, and provide you with maintenance guidance and warranty information.",
+      "The contractor inspects all seams, confirms coverage is complete, and provides maintenance guidance and warranty information.",
   },
 ];
 
@@ -43,12 +43,12 @@ const faqs = [
   {
     question: "Is a vapor barrier enough in Greenville's climate?",
     answer:
-      "A vapor barrier alone stops ground moisture but does not seal humid outdoor air entering through foundation vents. In Upstate SC, we typically recommend full encapsulation with vent sealing and a dehumidifier for complete moisture control.",
+      "A vapor barrier alone stops ground moisture but does not seal humid outdoor air entering through foundation vents. In Upstate SC, local specialists typically recommend full encapsulation with vent sealing and a dehumidifier for complete moisture control.",
   },
   {
     question: "How thick should a crawl space vapor barrier be?",
     answer:
-      "We install 20-mil reinforced liners for residential crawl spaces. Thinner 6-mil poly sheeting tears easily on gravel and pier footings and rarely lasts more than a few years.",
+      "Licensed local pros install 20-mil reinforced liners for residential crawl spaces. Thinner 6-mil poly sheeting tears easily on gravel and pier footings and rarely lasts more than a few years.",
   },
   {
     question: "How long does vapor barrier installation take?",
@@ -68,7 +68,7 @@ export default function VaporBarrierPage() {
       h1="Vapor Barrier Installation in Greenville, South Carolina"
       intro={[
         "A properly installed vapor barrier stops ground moisture from evaporating into your crawl space — the first line of defense against mold, rot, and musty odors.",
-        "We install commercial-grade 20-mil reinforced liners throughout Greenville and the Upstate SC region.",
+        "Connect with local specialists who install commercial-grade 20-mil reinforced liners throughout Greenville and the Upstate SC region.",
       ]}
       breadcrumbs={[
         { label: "Services", href: "/vapor-barrier" },
@@ -113,11 +113,11 @@ export default function VaporBarrierPage() {
 
       <ServiceSection title="What Makes a Quality Liner">
         <ServiceComparisonTable
-          headers={["Liner Type", "Thickness", "Durability", "Our Recommendation"]}
+          headers={["Liner Type", "Thickness", "Durability", "Professional Recommendation"]}
           rows={[
             ["Thin polyethylene sheeting", "3–6 mil", "Tears easily, short lifespan", "Not recommended"],
             ["Standard poly barrier", "6–10 mil", "Better, but still prone to punctures", "Minimum acceptable"],
-            ["Reinforced commercial liner", "20 mil", "Puncture-resistant, 20+ year lifespan", "What we install"],
+            ["Reinforced commercial liner", "20 mil", "Puncture-resistant, 20+ year lifespan", "What pros install"],
           ]}
         />
       </ServiceSection>
@@ -135,7 +135,7 @@ export default function VaporBarrierPage() {
         />
       </ServiceSection>
 
-      <ServiceSection title="Our Vapor Barrier Installation Process">
+      <ServiceSection title="Typical Vapor Barrier Installation Process">
         <ProcessSteps steps={installSteps} />
       </ServiceSection>
 
@@ -146,8 +146,9 @@ export default function VaporBarrierPage() {
           on crawl space square footage, clearance height, number of piers, and prep work required.
         </p>
         <p>
-          During your free inspection, we&apos;ll recommend whether barrier-only installation is sufficient
-          for your situation or whether full encapsulation is the better long-term investment.
+          During a free estimate, a local specialist will recommend whether barrier-only installation
+          is sufficient for your situation or whether full encapsulation is the better long-term
+          investment.
         </p>
       </ServiceSection>
     </ServicePageTemplate>

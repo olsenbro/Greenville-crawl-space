@@ -12,7 +12,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata = buildPageMetadata({
   title: "Crawl Space Encapsulation Near Me | Upstate SC Service Area",
   description:
-    "Crawl space encapsulation, vapor barriers, and repair throughout Upstate South Carolina — Greenville, Simpsonville, Greer, Spartanburg, Anderson, Mauldin, and Taylors. Free inspections.",
+    "Connect with local crawl space specialists throughout Upstate South Carolina — Greenville, Simpsonville, Greer, Spartanburg, Anderson, Mauldin, and Taylors. Free estimates.",
   canonical: "/areas-served",
 });
 
@@ -26,15 +26,15 @@ export default function AreasServedPage() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="label-caps mb-4 text-accent-light">Service Areas</p>
             <h1 className="font-display text-4xl font-semibold leading-tight text-balance sm:text-5xl">
-              Crawl Space Services Throughout Upstate South Carolina
+              Crawl Space Specialists Throughout Upstate South Carolina
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-white/90">
               Upstate SC presents a perfect storm for crawl space problems: some of the highest
               humidity in the nation, red clay soil that holds moisture against foundations, older
               homes built with open-vent crawl spaces, and rapid suburban growth putting new
-              construction on disturbed, poorly draining sites. We encapsulate, repair, and
-              dehumidify crawl spaces across Greenville County, Spartanburg County, Anderson County,
-              and surrounding communities.
+              construction on disturbed, poorly draining sites. Connect with licensed local specialists
+              for encapsulation, repair, and dehumidification across Greenville County, Spartanburg
+              County, Anderson County, and surrounding communities.
             </p>
             <PhoneLink className="btn-primary mt-8 inline-flex items-center gap-2 px-8 py-4 text-base">
               <Phone className="h-5 w-5" aria-hidden="true" />
@@ -47,10 +47,11 @@ export default function AreasServedPage() {
       <section className="section-padding bg-neutral">
         <div className="container-narrow">
           <h2 className="text-center font-display text-3xl font-semibold sm:text-4xl">
-            Cities We Serve
+            Cities &amp; Areas We Connect You With Pros
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted">
-            Select your city for local crawl space services, pricing, and scheduling information.
+            Select your city to learn about local crawl space services, pricing, and how to connect
+            with a specialist.
           </p>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -114,10 +115,10 @@ export default function AreasServedPage() {
 
       <section className="bg-white section-padding">
         <div className="container-narrow mx-auto max-w-3xl">
-          <ServiceLinksGrid title="Crawl Space Services Available" />
+          <ServiceLinksGrid title="Find Local Crawl Space Specialists" />
           <p className="mt-6 text-center text-muted">
             <Link href="/contact" className="font-semibold text-primary hover:underline">
-              Schedule a free inspection in your area →
+              {siteConfig.cta.primary} in your area →
             </Link>
           </p>
         </div>
@@ -143,9 +144,9 @@ export default function AreasServedPage() {
             ))}
           </div>
           <p className="mt-8 text-lg text-muted">
-            Not sure if we serve your area? Call{" "}
+            Not sure if we cover your area? Call{" "}
             <PhoneLink className="font-semibold text-primary hover:underline" /> — we&apos;ll confirm
-            coverage and schedule your free inspection.
+            coverage and connect you with a specialist for a free estimate.
           </p>
         </div>
       </section>
@@ -153,10 +154,10 @@ export default function AreasServedPage() {
       <section className="bg-accent section-padding text-white">
         <div className="container-narrow mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            Schedule Service in Your Area
+            Connect With a Specialist in Your Area
           </h2>
           <p className="mt-4 text-lg text-white/90">
-            Free crawl space inspections throughout Upstate SC. Most inspections scheduled within the
+            Free crawl space estimates throughout Upstate SC. Most appointments scheduled within the
             same week.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -168,7 +169,7 @@ export default function AreasServedPage() {
               href="/contact"
               className="inline-flex items-center gap-1 text-base font-semibold text-white underline-offset-4 hover:underline"
             >
-              Request Inspection Online
+              {siteConfig.cta.online}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>

@@ -23,8 +23,7 @@ export function Footer() {
             </span>
           </Link>
           <p className="text-sm leading-relaxed text-neutral/80">
-            Protecting Upstate South Carolina homes from moisture damage since{" "}
-            {siteConfig.foundedYear}.
+            Connecting Upstate South Carolina homeowners with trusted crawl space specialists.
           </p>
           <ul className="space-y-3">
             <li>

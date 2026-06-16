@@ -8,6 +8,7 @@ import {
 } from "@/components/service/ServicePageTemplate";
 import { ServiceLinksGrid } from "@/components/service/ServiceLinksGrid";
 import { buildPageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
   title: "Crawl Space Encapsulation Cost Greenville SC | 2025 Price Guide",
@@ -102,8 +103,8 @@ export default function CrawlSpaceEncapsulationCostPage() {
       ]}
       faqs={costFaqs}
       faqTitle="Crawl Space Encapsulation Cost FAQ"
-      ctaHeading="Get a Free, Itemized Crawl Space Quote"
-      ctaBody="We'll inspect your crawl space and provide a written breakdown — no obligation, no surprises."
+      ctaHeading={siteConfig.cta.defaultHeading}
+      ctaBody={siteConfig.cta.defaultBody}
     >
       <ServiceSection title="2025 Crawl Space Cost Summary — Greenville, SC">
         <div className="mb-6 rounded-lg border-l-4 border-accent bg-accent/10 p-4">
@@ -111,8 +112,8 @@ export default function CrawlSpaceEncapsulationCostPage() {
           <p className="mt-2 text-sm leading-relaxed text-muted">
             Price ranges reflect typical costs from crawl space contractors serving Greenville and
             Upstate South Carolina based on current market rates. Actual pricing varies by crawl
-            space size, condition, and scope of work. Request a free inspection for an itemized
-            quote specific to your home.
+            space size, condition, and scope of work. Request a free estimate for an itemized quote
+            specific to your home.
           </p>
         </div>
         <ServiceComparisonTable
@@ -202,7 +203,7 @@ export default function CrawlSpaceEncapsulationCostPage() {
         <p className="mt-6 text-muted">
           Ready for a quote?{" "}
           <Link href="/contact" className="font-semibold text-primary hover:underline">
-            Schedule a free inspection →
+            {siteConfig.cta.primary} →
           </Link>
         </p>
       </ServiceSection>

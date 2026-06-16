@@ -73,7 +73,7 @@ export const faqCategories: FaqCategory[] = [
       {
         question: "How long does encapsulation take?",
         answer:
-          "Most standard residential encapsulation projects in the Greenville area take 2–4 days depending on crawl space size, clearance height, and prep work required. Homes needing mold treatment, joist repair, or drainage installation before encapsulation may take 4–7 days total. The encapsulation phase itself — liner installation, vent sealing, and dehumidifier setup — is typically 1–2 days for an average home. Your contractor provides a timeline during the free inspection based on your specific conditions.",
+          "Most standard residential encapsulation projects in the Greenville area take 2–4 days depending on crawl space size, clearance height, and prep work required. Homes needing mold treatment, joist repair, or drainage installation before encapsulation may take 4–7 days total. The encapsulation phase itself — liner installation, vent sealing, and dehumidifier setup — is typically 1–2 days for an average home. Your contractor provides a timeline during the free estimate based on your specific conditions.",
       },
       {
         question: "What's the best vapor barrier thickness for a Greenville crawl space?",
@@ -99,7 +99,7 @@ export const faqCategories: FaqCategory[] = [
       {
         question: "What type of mold is in my crawl space?",
         answer:
-          "Common species in Upstate SC crawl spaces include Penicillium (blue/green growth on wood and insulation), Aspergillus (found on damp organic materials), and Stachybotrys (associated with chronically wet cellulose, often called black mold). Identification requires professional assessment — color and appearance alone don't confirm species. If you have health concerns related to mold exposure, consult a medical professional. Our role is eliminating the source through proper treatment and moisture control, not medical diagnosis.",
+          "Common species in Upstate SC crawl spaces include Penicillium (blue/green growth on wood and insulation), Aspergillus (found on damp organic materials), and Stachybotrys (associated with chronically wet cellulose, often called black mold). Identification requires professional assessment — color and appearance alone don't confirm species. If you have health concerns related to mold exposure, consult a medical professional. Proper crawl space treatment focuses on eliminating the source and controlling moisture — not medical diagnosis.",
       },
       {
         question: "Do I need a dehumidifier after encapsulation?",
@@ -117,7 +117,7 @@ export const faqCategories: FaqCategory[] = [
           "Signs visible from inside the home include soft or spongy floor sections, increased squeaking, visible sag in floor lines, and doors that stick or won't latch. From the crawl space, look for dark staining on joists, visible fungal growth, crumbling wood when probed, and insulation saturated with moisture. A professional inspection uses moisture meters and documents conditions with photos. Joists with more than approximately 30% cross-section compromised typically require full replacement rather than sistering.",
       },
       {
-        question: "Can you fix floor sag without replacing all the joists?",
+        question: "Can contractors fix floor sag without replacing all the joists?",
         answer:
           "Yes — in many cases, sistering (bolting a new joist alongside a damaged one) restores structural capacity without full replacement. Sistering is appropriate when damage is localized and the existing joist retains enough integrity to support the repair. Full replacement is required when rot has consumed a significant portion of the joist, when split or failed at support points, or when sistering cannot restore adequate load-bearing capacity. Fixing joists without addressing the moisture source guarantees repeat failure — encapsulation should follow structural repair.",
       },
@@ -130,12 +130,12 @@ export const faqCategories: FaqCategory[] = [
       {
         question: "How much does crawl space encapsulation cost in Greenville?",
         answer:
-          "Full encapsulation in the Greenville area typically runs $3,500–$7,000 for a standard home, depending on square footage and existing conditions. Adding a commercial dehumidifier brings most projects to $5,000–$9,000. Homes requiring mold treatment or joist repair before encapsulation may fall in the $6,000–$15,000 range. Vapor barrier-only installation costs less ($1,500–$3,500) but rarely provides complete moisture control in SC's humid climate. We provide free, itemized inspections so you know the full cost before work begins.",
+          "Full encapsulation in the Greenville area typically runs $3,500–$7,000 for a standard home, depending on square footage and existing conditions. Adding a commercial dehumidifier brings most projects to $5,000–$9,000. Homes requiring mold treatment or joist repair before encapsulation may fall in the $6,000–$15,000 range. Vapor barrier-only installation costs less ($1,500–$3,500) but rarely provides complete moisture control in SC's humid climate. Request a free, itemized estimate from local contractors so you know the full cost before work begins.",
       },
       {
         question: "Does homeowners insurance cover crawl space encapsulation?",
         answer:
-          "Standard homeowners insurance policies typically do not cover crawl space encapsulation because it's considered a preventive improvement, not damage from a covered sudden event. Exceptions may apply if encapsulation is part of repairs following a covered water loss — such as a burst pipe that caused crawl space damage. Gradual moisture damage and mold from humidity are generally excluded as maintenance issues. Check your specific policy and speak with your agent. We provide documentation of conditions and work performed if a claim is involved.",
+          "Standard homeowners insurance policies typically do not cover crawl space encapsulation because it's considered a preventive improvement, not damage from a covered sudden event. Exceptions may apply if encapsulation is part of repairs following a covered water loss — such as a burst pipe that caused crawl space damage. Gradual moisture damage and mold from humidity are generally excluded as maintenance issues. Check your specific policy and speak with your agent. Your contractor can provide documentation of conditions and work performed if a claim is involved.",
       },
       {
         question: "Will encapsulation help my energy bills?",
@@ -145,12 +145,12 @@ export const faqCategories: FaqCategory[] = [
       {
         question: "Do I need a permit for crawl space encapsulation in Greenville County?",
         answer:
-          "Most crawl space encapsulation projects in Greenville County do not require a building permit. Encapsulation is generally classified as an improvement to an existing space rather than structural modification. However, if your project includes major structural repair — replacing floor joists, adding support piers, or installing interior drainage systems — a permit may be required. We research permit requirements as part of our assessment and handle the process when permits are needed.",
+          "Most crawl space encapsulation projects in Greenville County do not require a building permit. Encapsulation is generally classified as an improvement to an existing space rather than structural modification. However, if your project includes major structural repair — replacing floor joists, adding support piers, or installing interior drainage systems — a permit may be required. Licensed contractors research permit requirements as part of their assessment and handle the process when permits are needed.",
       },
       {
         question: "How often should I have my crawl space inspected?",
         answer:
-          "We recommend a professional inspection every 1–2 years after encapsulation, and immediately if you notice musty odors, soft floors, or higher indoor humidity. Annual dehumidifier filter changes and a quick visual check of the liner and drain line are the main ongoing maintenance tasks. Pre-purchase inspections are essential when buying a home in Upstate SC — crawl space conditions are among the most commonly flagged items on home inspection reports in this region.",
+          "Most contractors recommend a professional inspection every 1–2 years after encapsulation, and immediately if you notice musty odors, soft floors, or higher indoor humidity. Annual dehumidifier filter changes and a quick visual check of the liner and drain line are the main ongoing maintenance tasks. Pre-purchase inspections are essential when buying a home in Upstate SC — crawl space conditions are among the most commonly flagged items on home inspection reports in this region.",
       },
       {
         question: "Is crawl space encapsulation required when selling a home in SC?",

@@ -13,17 +13,17 @@ import { getAuthorityForPath } from "@/lib/authorities";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
-  title: "Free Crawl Space Inspection Greenville SC | Schedule Today",
+  title: "Request a Free Crawl Space Estimate Greenville SC",
   description:
-    "Schedule a free crawl space inspection in Greenville, SC. We assess moisture, mold, structural damage, and vapor barriers — no obligation, full written report.",
+    "Connect with trusted local crawl space specialists in Greenville, SC. Request a free estimate for moisture, mold, structural, and vapor barrier concerns — no obligation.",
   canonical: "/contact",
 });
 
 const trustPoints = [
-  "Free Written Inspection Report",
+  "Licensed Local Pros",
   "No Obligation",
-  "Licensed & Insured",
-  "Serving Upstate SC",
+  "Free Estimates Available",
+  "Upstate SC Coverage",
 ];
 
 const testimonials = [
@@ -41,8 +41,8 @@ const testimonials = [
 
 const pageSchema = getWebPageSchema(
   "/contact",
-  "Schedule Your Free Crawl Space Inspection",
-  "Schedule a free crawl space inspection in Greenville, SC with a full written report at no charge.",
+  "Request a Free Crawl Space Estimate",
+  "Connect with a trusted local crawl space specialist in Greenville, SC for a free, no-obligation estimate.",
 );
 
 export default function ContactPage() {
@@ -56,10 +56,11 @@ export default function ContactPage() {
         <div className="container-narrow mx-auto max-w-3xl text-center">
           <p className="label-caps mb-4 text-accent-light">Contact</p>
           <h1 className="font-display text-4xl font-semibold leading-tight text-balance sm:text-5xl">
-            Schedule Your Free Crawl Space Inspection
+            Request a Free Crawl Space Estimate
           </h1>
           <p className="mt-5 text-lg text-white/90">
-            We&apos;ll crawl so you don&apos;t have to. Full written inspection report at no charge.
+            Connect with a licensed local specialist who can assess your crawl space and provide a
+            clear recommendation — at no obligation to you.
           </p>
         </div>
       </section>
@@ -76,7 +77,7 @@ export default function ContactPage() {
                 {siteConfig.phone}
               </PhoneLink>
               <p className="mt-3 text-sm text-muted">
-                Fastest way to schedule your free crawl space inspection.
+                Fastest way to connect with a local crawl space specialist in your area.
               </p>
             </div>
 
@@ -130,7 +131,7 @@ export default function ContactPage() {
                   aria-hidden="true"
                 />
                 <span>
-                  Crawl space moisture problems get worse, not better. Early inspection saves
+                  Crawl space moisture problems get worse, not better. Early assessment saves
                   thousands in structural repair costs.
                 </span>
               </p>
@@ -163,7 +164,7 @@ export default function ContactPage() {
       <section className="border-t border-primary/10 bg-white section-padding">
         <div className="container-narrow">
           <h2 className="text-center font-display text-2xl font-semibold text-primary">
-            Crawl Space Services We Inspect
+            Crawl Space Services Available
           </h2>
           <ul className="mt-6 flex flex-wrap justify-center gap-3">
             {SERVICE_PAGES.map(({ href, label }) => (

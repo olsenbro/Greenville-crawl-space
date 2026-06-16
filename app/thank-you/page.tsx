@@ -11,9 +11,9 @@ import { SchemaScript } from "@/components/SchemaScript";
 
 export const metadata = {
   ...buildPageMetadata({
-    title: "Thank You | Greenville Crawl Space Inspection Request",
+    title: "Thank You | Greenville Crawl Space Estimate Request",
     description:
-      "Your crawl space inspection request was received. We will contact you shortly. For immediate help, call Greenville Crawl Space Pros.",
+      "Your crawl space estimate request was received. We will connect you with a local specialist shortly. For immediate help, call Greenville Crawl Space Pros.",
     canonical: "/thank-you",
     absoluteTitle: true,
   }),
@@ -26,8 +26,8 @@ export default function ThankYouPage() {
       <SchemaScript
         schema={getWebPageSchema(
           "/thank-you",
-          "Thank You — Inspection Request Received",
-          "Confirmation page after submitting a crawl space inspection request.",
+          "Thank You — Estimate Request Received",
+          "Confirmation page after submitting a crawl space estimate request.",
         )}
       />
 
@@ -40,7 +40,7 @@ export default function ThankYouPage() {
             Thank You — We&apos;ll Be in Touch
           </h1>
           <p className="mt-4 text-lg text-muted">
-            Your free crawl space inspection request was submitted. A specialist will contact you
+            Your free crawl space estimate request was submitted. A local specialist will contact you
             shortly — usually within one business day.
           </p>
 

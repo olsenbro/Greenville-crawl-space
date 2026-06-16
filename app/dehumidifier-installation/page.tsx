@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Crawl Space Dehumidifier Installation Greenville SC | Santa Fe & Aprilaire",
   description:
-    "Crawl space dehumidifier installation in Greenville, SC. We install and service commercial-grade units that maintain safe humidity levels year-round. Free estimate.",
+    "Connect with local specialists for crawl space dehumidifier installation in Greenville, SC. Commercial-grade units that maintain safe humidity levels year-round. Free estimate.",
   canonical: "/dehumidifier-installation",
 });
 
@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "What size dehumidifier does my crawl space need?",
     answer:
-      "Sizing depends on crawl space square footage, ceiling height, and current moisture levels. Most Greenville homes require 70–90 pint capacity units. We size correctly during your free inspection — undersized units run constantly and fail to maintain target humidity.",
+      "Sizing depends on crawl space square footage, ceiling height, and current moisture levels. Most Greenville homes require 70–90 pint capacity units. A specialist sizes correctly during your free estimate — undersized units run constantly and fail to maintain target humidity.",
   },
   {
     question: "Where does the water go?",
@@ -27,7 +27,7 @@ const faqs = [
   {
     question: "Can I add a dehumidifier without full encapsulation?",
     answer:
-      "You can, but it's far less effective. Without vent sealing and a complete vapor barrier, the dehumidifier fights a constant influx of humid outdoor air. We recommend pairing dehumidifier installation with at least vent sealing and a quality liner.",
+      "You can, but it's far less effective. Without vent sealing and a complete vapor barrier, the dehumidifier fights a constant influx of humid outdoor air. Most contractors recommend pairing dehumidifier installation with at least vent sealing and a quality liner.",
   },
   {
     question: "How often does a crawl space dehumidifier need maintenance?",
@@ -42,7 +42,7 @@ export default function DehumidifierInstallationPage() {
       h1="Crawl Space Dehumidifier Installation in Greenville, South Carolina"
       intro={[
         "A crawl-space-rated dehumidifier is the engine that keeps your encapsulated space dry year-round — household units aren't built for this job.",
-        "We install and service commercial-grade dehumidifiers throughout Greenville and Upstate SC.",
+        "Connect with local specialists who install and service commercial-grade dehumidifiers throughout Greenville and Upstate SC.",
       ]}
       breadcrumbs={[
         { label: "Services", href: "/dehumidifier-installation" },
@@ -97,16 +97,18 @@ export default function DehumidifierInstallationPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Brands We Install" className="bg-neutral">
+      <ServiceSection title="Brands Local Pros Install" className="bg-neutral">
         <p>
-          We install commercial-grade crawl space dehumidifiers from leading manufacturers including{" "}
+          Licensed local specialists install commercial-grade crawl space dehumidifiers from leading
+          manufacturers including{" "}
           <strong className="text-dark">Santa Fe</strong>,{" "}
           <strong className="text-dark">Aprilaire</strong>, and comparable professional brands
           engineered specifically for crawl space and basement applications.
         </p>
         <p>
-          Brand selection depends on your crawl space size, layout, and drainage options. We recommend
-          the right unit during your free inspection — not the cheapest option that will underperform.
+          Brand selection depends on your crawl space size, layout, and drainage options. A specialist
+          recommends the right unit during your free estimate — not the cheapest option that will
+          underperform.
         </p>
       </ServiceSection>
 
@@ -128,9 +130,9 @@ export default function DehumidifierInstallationPage() {
           AC with the windows open.
         </p>
         <p>
-          If you&apos;ve already had encapsulation done elsewhere, we can add or replace a dehumidifier. If
-          you&apos;re starting fresh, we recommend planning both together for the best result and warranty
-          coverage.
+          If you&apos;ve already had encapsulation done elsewhere, local contractors can add or replace
+          a dehumidifier. If you&apos;re starting fresh, most pros recommend planning both together for
+          the best result and warranty coverage.
         </p>
       </ServiceSection>
     </ServicePageTemplate>

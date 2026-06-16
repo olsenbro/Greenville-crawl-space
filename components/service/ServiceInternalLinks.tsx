@@ -48,7 +48,7 @@ export function ServiceInternalLinks({ currentSlug }: ServiceInternalLinksProps)
               href="/contact"
               className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
             >
-              Schedule a free inspection
+              Request a free estimate
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </li>
@@ -57,7 +57,7 @@ export function ServiceInternalLinks({ currentSlug }: ServiceInternalLinksProps)
               href="/areas-served"
               className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
             >
-              Areas we serve
+              Service areas
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </li>

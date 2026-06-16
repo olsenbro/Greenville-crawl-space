@@ -151,9 +151,9 @@ export default function WhatIsEncapsulationPage() {
         <ProcessSteps
           steps={[
             {
-              title: "Free inspection and moisture assessment",
+              title: "Free estimate and moisture assessment",
               description:
-                "A technician documents current humidity, checks for mold and structural damage, identifies moisture sources, and provides a written report with recommended scope of work.",
+                "A specialist documents current humidity, checks for mold and structural damage, identifies moisture sources, and provides a written report with recommended scope of work.",
             },
             {
               title: "Prep work (if needed)",
@@ -218,10 +218,10 @@ export default function WhatIsEncapsulationPage() {
           ]}
         />
         <p>
-          Any one of these signs warrants a professional inspection. Multiple signs together strongly
+          Any one of these signs warrants a professional assessment. Multiple signs together strongly
           suggest that your crawl space needs more than a partial fix.{" "}
           <Link href="/contact" className="font-semibold text-primary hover:underline">
-            Schedule a free inspection →
+            {siteConfig.cta.primary} →
           </Link>
         </p>
       </ServiceSection>
@@ -270,16 +270,16 @@ export default function WhatIsEncapsulationPage() {
             Find Out If Your Crawl Space Needs Encapsulation
           </h2>
           <p className="mt-4 text-lg text-white/90">
-            A free inspection takes the guesswork out of the decision. We measure humidity, document
-            conditions, and explain exactly what your crawl space needs — with a written report and
-            no obligation.
+            A free estimate takes the guesswork out of the decision. A local specialist will measure
+            humidity, document conditions, and explain exactly what your crawl space needs — with a
+            written report and no obligation.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/contact"
               className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-base"
             >
-              Schedule a Free Inspection
+              {siteConfig.cta.primary}
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Link>
             <PhoneLink className="inline-flex items-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-white hover:text-primary">

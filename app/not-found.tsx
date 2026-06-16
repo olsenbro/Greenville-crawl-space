@@ -41,7 +41,7 @@ export default function NotFound() {
               Back to Homepage
             </Link>
             <Link href="/contact" className="btn-secondary inline-flex items-center gap-2">
-              Schedule Free Inspection
+              {siteConfig.cta.primary}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>

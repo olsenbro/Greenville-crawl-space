@@ -8,8 +8,8 @@ export function ContactMap() {
       <div className="container-narrow">
         <h2 className="font-display text-2xl font-semibold text-primary">Service Area Map</h2>
         <p className="mt-2 text-muted">
-          Serving Greenville and Upstate South Carolina — call {siteConfig.phone} to confirm we cover
-          your address.
+          Connecting Greenville and Upstate South Carolina homeowners with local crawl space
+          specialists — call {siteConfig.phone} to confirm coverage in your area.
         </p>
         <div className="mt-6 overflow-hidden rounded-xl border border-primary/10 shadow-sm">
           <iframe

@@ -281,12 +281,12 @@ export default function EncapsulationVsVaporBarrierPage() {
       </ServiceSection>
 
       <ServiceSection title="How to Choose the Right Solution for Your Home" className="bg-neutral">
-        <p>Start with an inspection — not a product decision. A qualified crawl space inspection
+        <p>Start with a free estimate — not a product decision. A qualified crawl space assessment
           measures current humidity, documents moisture sources, checks joist condition, and
           identifies whether vents, drainage, or ground moisture is the primary driver. That
           assessment determines the right scope of work, not a generic recommendation.</p>
         <p>
-          <strong className="text-dark">Consider vapor barrier only if:</strong> inspection confirms
+          <strong className="text-dark">Consider vapor barrier only if:</strong> the assessment confirms
           ground moisture is the sole issue, vents are already sealed or absent, humidity stays
           below 60% without active dehumidification, and no mold or structural damage is present.
         </p>
@@ -315,17 +315,17 @@ export default function EncapsulationVsVaporBarrierPage() {
             Not Sure Which Option Is Right for Your Home?
           </h2>
           <p className="mt-4 text-lg text-white/90">
-            A free crawl space inspection takes the guesswork out of the decision. We measure
-            humidity, document conditions, and recommend the smallest scope of work that will actually
-            solve the problem — whether that is a vapor barrier, full encapsulation, or something in
-            between.
+            A free crawl space estimate takes the guesswork out of the decision. A local specialist
+            will measure humidity, document conditions, and recommend the smallest scope of work that
+            will actually solve the problem — whether that is a vapor barrier, full encapsulation, or
+            something in between.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/contact"
               className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-base"
             >
-              Schedule a Free Inspection
+              {siteConfig.cta.primary}
               <ArrowRight className="h-5 w-5" aria-hidden="true" />
             </Link>
             <PhoneLink className="inline-flex items-center gap-2 rounded-lg border-2 border-white px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-white hover:text-primary">

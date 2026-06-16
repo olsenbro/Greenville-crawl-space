@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Greenville Crawl Space Pros",
-  tagline: "Crawl Space Encapsulation & Repair in Greenville, SC",
+  tagline: "Connect with Trusted Crawl Space Specialists in Greenville, SC",
   description:
-    "Connect with trusted local crawl space encapsulation, moisture control, and repair specialists serving Greenville and the Upstate South Carolina region. Free inspections and fast referrals.",
+    "Connect with trusted local crawl space encapsulation, moisture control, and repair specialists serving Greenville and the Upstate South Carolina region. Free estimates and fast referrals.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.crawlspacegreenville.com",
   schemaUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.crawlspacegreenville.com",
   phone: "(864) 387-3270",
@@ -35,6 +35,13 @@ export const siteConfig = {
   mapEmbedQuery: "Greenville,+SC",
   logoPath: "/icon-512.png",
   ogImagePath: "/og-image.png",
+  cta: {
+    primary: "Request a Free Estimate",
+    online: "Request a Free Estimate",
+    defaultHeading: "Connect with a Licensed Greenville Crawl Space Specialist",
+    defaultBody:
+      "Get matched with a trusted local specialist — no obligation, no pressure. Receive an honest assessment of your crawl space and a clear recommendation for what it needs.",
+  },
 } as const;
 
 export const serviceLinks = [

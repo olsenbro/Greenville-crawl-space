@@ -10,7 +10,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Floor Joist Repair Greenville SC | Crawl Space Wood Rot & Sagging Floors",
   description:
-    "Sagging floors or wood rot in your Greenville crawl space? We repair and sister damaged floor joists to restore your floor's strength. Free inspection.",
+    "Sagging floors or wood rot in your Greenville crawl space? Connect with local specialists who repair and sister damaged floor joists. Free estimate.",
   canonical: "/floor-joist-repair",
 });
 
@@ -18,12 +18,12 @@ const repairSteps = [
   {
     title: "Inspect from inside and below",
     description:
-      "We assess joist condition from the crawl space and correlate with floor symptoms visible inside the home.",
+      "A specialist assesses joist condition from the crawl space and correlates with floor symptoms visible inside the home.",
   },
   {
     title: "Identify moisture source",
     description:
-      "Before any repair, we determine what's causing rot — drainage failure, missing vapor barrier, open vents, or plumbing leaks.",
+      "Before any repair, the contractor determines what's causing rot — drainage failure, missing vapor barrier, open vents, or plumbing leaks.",
   },
   {
     title: "Sister or replace joists",
@@ -61,7 +61,7 @@ const faqs = [
   {
     question: "Should I repair joists before or after encapsulation?",
     answer:
-      "Structural repair comes first, then encapsulation. However, moisture source must be identified before repair — otherwise new wood will rot the same way. We typically assess everything in one inspection and sequence work correctly.",
+      "Structural repair comes first, then encapsulation. However, moisture source must be identified before repair — otherwise new wood will rot the same way. Qualified contractors typically assess everything in one visit and sequence work correctly.",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function FloorJoistRepairPage() {
       h1="Floor Joist Repair in Greenville, South Carolina"
       intro={[
         "Soft spots, squeaking floors, and visible sag often trace back to moisture-damaged joists in your crawl space.",
-        "We sister and replace damaged floor joists throughout Greenville and Upstate SC — and fix the moisture that caused the damage.",
+        "Connect with local specialists who sister and replace damaged floor joists throughout Greenville and Upstate SC — and address the moisture that caused the damage.",
       ]}
       breadcrumbs={[
         { label: "Services", href: "/floor-joist-repair" },
@@ -85,7 +85,7 @@ export default function FloorJoistRepairPage() {
         path: "/floor-joist-repair",
       })}
       faqs={faqs}
-      ctaBody="Soft floors don't fix themselves. Schedule a free inspection before the damage spreads."
+      ctaBody="Soft floors don't fix themselves. Request a free estimate before the damage spreads."
     >
       <ServiceSection title="What Floor Joists Are and Why They Fail">
         <p>
@@ -129,7 +129,7 @@ export default function FloorJoistRepairPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Our Floor Joist Repair Process" className="bg-neutral">
+      <ServiceSection title="Typical Floor Joist Repair Process" className="bg-neutral">
         <ProcessSteps steps={repairSteps} />
       </ServiceSection>
 
@@ -143,17 +143,17 @@ export default function FloorJoistRepairPage() {
           ]}
         />
         <p>
-          Pricing depends on joist span, access difficulty, and extent of damage. Free inspections
-          include written estimates with no obligation.
+          Pricing depends on joist span, access difficulty, and extent of damage. Free estimates from
+          local specialists include written quotes with no obligation.
         </p>
       </ServiceSection>
 
       <ServiceSection title="Fix the Moisture Source First" className="bg-neutral">
         <p>
           Repairing joists without addressing moisture is a temporary fix. New wood in a damp crawl
-          space will rot on the same timeline as the old. That&apos;s why we always recommend encapsulation
-          — vapor barrier, vent sealing, and dehumidifier — as the final step in any joist repair
-          project.
+          space will rot on the same timeline as the old. That&apos;s why contractors always recommend
+          encapsulation — vapor barrier, vent sealing, and dehumidifier — as the final step in any
+          joist repair project.
         </p>
         <p>
           Encapsulation protects your repair investment and prevents the problem from recurring. Many

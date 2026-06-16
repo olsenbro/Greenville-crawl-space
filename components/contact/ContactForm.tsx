@@ -18,9 +18,9 @@ const primaryConcernOptions = [
   "Musty odor in home",
   "Visible mold or moisture",
   "Soft or bouncy floors",
-  "Buying/selling home and need inspection",
+  "Buying/selling home and need assessment",
   "High energy bills",
-  "Just want an inspection",
+  "Just want an estimate",
   "Other",
 ] as const;
 
@@ -71,10 +71,10 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="rounded-xl bg-white p-8 shadow-sm">
-      <h2 className="font-display text-xl font-semibold text-primary">Request Your Free Inspection</h2>
+      <h2 className="font-display text-xl font-semibold text-primary">Request Your Free Estimate</h2>
       <p className="mt-2 text-sm text-muted">
-        Tell us about your home and we&apos;ll schedule a no-obligation crawl space inspection with
-        a written report.
+        Tell us about your home and we&apos;ll connect you with a local crawl space specialist for a
+        no-obligation estimate.
       </p>
 
       {error ? (
@@ -227,7 +227,7 @@ export function ContactForm() {
         </div>
 
         <button type="submit" disabled={submitting} className="btn-primary w-full py-4 text-base">
-          {submitting ? "Submitting…" : "Request My Free Inspection"}
+          {submitting ? "Submitting…" : "Request My Free Estimate"}
         </button>
       </div>
     </form>

@@ -11,7 +11,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata = buildPageMetadata({
   title: "Crawl Space Encapsulation Greenville SC | Full Moisture Control",
   description:
-    `Professional crawl space encapsulation in Greenville, SC. 20-mil vapor barrier, sealed vents, dehumidifier installation. Free inspection. ${siteConfig.phone}.`,
+    `Connect with local specialists for crawl space encapsulation in Greenville, SC. 20-mil vapor barrier, sealed vents, dehumidifier installation. Free estimate. ${siteConfig.phone}.`,
   canonical: "/crawl-space-encapsulation",
 });
 
@@ -49,7 +49,7 @@ export default function CrawlSpaceEncapsulationPage() {
       h1="Crawl Space Encapsulation in Greenville, South Carolina"
       intro={[
         "Full crawl space encapsulation seals your crawl space from ground moisture and humid outdoor air — then conditions the space to stay dry year-round.",
-        "We serve Greenville, Spartanburg, Anderson, and the broader Upstate SC region with free inspections and itemized quotes.",
+        "Connect with trusted crawl space specialists serving Greenville, Spartanburg, Anderson, and the broader Upstate SC region — free estimates and itemized quotes from licensed local pros.",
       ]}
       breadcrumbs={[
         { label: "Services", href: "/crawl-space-encapsulation" },
@@ -63,7 +63,7 @@ export default function CrawlSpaceEncapsulationPage() {
         path: "/crawl-space-encapsulation",
       })}
       faqs={faqs}
-      ctaBody="Get a free crawl space inspection and written report — we'll tell you exactly what your space needs."
+      ctaBody="Get matched with a local specialist for a free crawl space estimate and written report — so you know exactly what your space needs."
     >
       <ServiceSection title="What Crawl Space Encapsulation Means">
         <p>
@@ -143,8 +143,8 @@ export default function CrawlSpaceEncapsulationPage() {
           ]}
         />
         <p>
-          We provide free, itemized inspections so you know the full cost before work begins — no
-          surprises.
+          Local specialists provide free, itemized estimates so you know the full cost before work
+          begins — no surprises.
         </p>
       </ServiceSection>
 
@@ -156,8 +156,8 @@ export default function CrawlSpaceEncapsulationPage() {
         </p>
         <p>
           Annual dehumidifier filter changes and a quick visual inspection keep your warranty valid and
-          your crawl space performing as designed. We walk you through all warranty terms at project
-          completion.
+          your crawl space performing as designed. Your contractor will walk you through all warranty
+          terms at project completion.
         </p>
       </ServiceSection>
     </ServicePageTemplate>

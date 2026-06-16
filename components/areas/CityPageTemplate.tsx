@@ -50,7 +50,7 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-lg border-2 border-white px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-white hover:text-primary"
               >
-                Request a Free Inspection
+                {siteConfig.cta.primary}
               </Link>
             </div>
           </div>
@@ -73,8 +73,8 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
             Crawl Space Services in {city.name}
           </h2>
           <p className="mt-4 text-lg text-muted">
-            Full crawl space services are available throughout {city.name} and surrounding Upstate
-            communities:
+            Connect with local specialists for these crawl space services throughout {city.name} and
+            surrounding Upstate communities:
           </p>
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
             {serviceLinks.map(({ href, label }) => (
@@ -142,11 +142,11 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
       <section className="bg-accent section-padding text-white">
         <div className="container-narrow mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            Schedule a Free {city.name} Crawl Space Inspection
+            Request a Free {city.name} Crawl Space Estimate
           </h2>
           <p className="mt-4 text-lg text-white/90">
-            We serve {city.name}, {city.stateName} and all of Upstate South Carolina. Most inspections
-            are scheduled within the same week.
+            Connect with licensed crawl space specialists serving {city.name}, {city.stateName} and
+            all of Upstate South Carolina.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <PhoneLink className="inline-flex items-center gap-3 rounded-lg bg-primary px-10 py-4 text-lg font-semibold text-white shadow-lg transition-colors hover:bg-primary-dark">
@@ -157,7 +157,7 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
               href="/contact"
               className="inline-flex items-center gap-1 text-base font-semibold text-white underline-offset-4 hover:underline"
             >
-              Request Inspection Online
+              {siteConfig.cta.online}
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
