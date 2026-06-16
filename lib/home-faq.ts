@@ -24,4 +24,9 @@ export const homeFaqPreview: HomeFaqItem[] = [
     answer:
       "Yes, but the mold must be properly treated first. Encapsulating over active mold traps it and allows it to continue growing. Mold must be properly treated first, then encapsulation follows — never the other way around. Confirm your contractor follows this sequence.",
   },
+  {
+    question: "How long does crawl space encapsulation take in Greenville?",
+    answer:
+      "Most Greenville homes take 2–4 days for full encapsulation. Mold treatment, joist repair, or drainage work needed first can add one or two days.",
+  },
 ];

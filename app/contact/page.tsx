@@ -5,13 +5,14 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { ContactMap } from "@/components/contact/ContactMap";
 import { FaqOutline, PricingOutline } from "@/components/seo/PageOutlineSections";
 import { LocationLinksOutline, RelatedGuidesLinks } from "@/components/seo/InternalLinksSections";
+import { PageQuickAnswer } from "@/components/seo/PageQuickAnswer";
 import { AuthoritySection } from "@/components/AuthorityCitation";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SERVICE_PAGES } from "@/components/service/ServiceInternalLinks";
 import { SchemaScript } from "@/components/SchemaScript";
 import { getWebPageSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
-import { getAuthorityForPath } from "@/lib/authorities";
+import { getAuthoritiesForPath } from "@/lib/authorities";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
@@ -60,6 +61,10 @@ export default function ContactPage() {
           <h1 className="font-display text-4xl font-semibold leading-tight text-balance sm:text-5xl">
             Free Crawl Space Estimate in Greenville, SC
           </h1>
+          <PageQuickAnswer className="mx-auto mt-4 max-w-3xl text-xl font-semibold leading-snug text-white sm:text-2xl">
+            Request a free crawl space estimate in Greenville, SC — a licensed local specialist
+            inspects your crawl space and provides a written quote, usually within one business day.
+          </PageQuickAnswer>
           <p className="mt-5 text-lg text-white/90">
             Connect with a licensed local specialist who can assess your crawl space and provide a
             clear recommendation — at no obligation to you.
@@ -159,12 +164,13 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <AuthoritySection source={getAuthorityForPath("/contact")} className="bg-white" />
+      <AuthoritySection sources={getAuthoritiesForPath("/contact")} className="bg-white" />
 
       <PricingOutline className="bg-neutral section-padding border-t border-primary/10" />
 
       <FaqOutline
         className="bg-white section-padding border-t border-primary/10"
+        schemaPath="/contact"
         items={[
           {
             question: "How much does crawl space encapsulation cost in Greenville?",
@@ -191,7 +197,7 @@ export default function ContactPage() {
       <section className="border-t border-primary/10 bg-white section-padding">
         <div className="container-narrow">
           <h2 className="text-center font-display text-2xl font-semibold text-primary">
-            Crawl Space Services Available
+            Which Crawl Space Services Are Available?
           </h2>
           <ul className="mt-6 flex flex-wrap justify-center gap-3">
             {SERVICE_PAGES.map(({ href, label }) => (

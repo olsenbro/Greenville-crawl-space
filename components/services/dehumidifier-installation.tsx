@@ -3,6 +3,8 @@ import {
   ServicePageTemplate,
   ServiceSection,
 } from "@/components/service/ServicePageTemplate";
+import { AuthorityLink } from "@/components/AuthorityCitation";
+import { authorities } from "@/lib/authorities";
 import { getServiceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -10,7 +12,7 @@ export const metadata = buildPageMetadata({
   title: "Crawl Space Dehumidifier Installation Greenville SC",
   description:
     "Crawl space dehumidifier installation in Greenville, SC. Commercial-grade units keep humidity safe year-round and help prevent mold. Get a free estimate today.",
-  canonical: "/dehumidifier-installation",
+  canonical: "/services/dehumidifier-installation",
 });
 
 const faqs = [
@@ -34,18 +36,24 @@ const faqs = [
     answer:
       "Filter changes and a general inspection once per year, typically $150–$300. Units are designed for continuous operation and require minimal ongoing attention when installed correctly.",
   },
+  {
+    question: "How much does crawl space dehumidifier installation cost?",
+    answer:
+      "Installed crawl space dehumidifiers typically cost $1,200–$2,500 in Greenville, including condensate drainage. Pairing with encapsulation is strongly recommended in Upstate SC.",
+  },
 ];
 
 export default function DehumidifierInstallationPage() {
   return (
     <ServicePageTemplate
       h1="Crawl Space Dehumidifier Installation in Greenville, South Carolina"
+      quickAnswer="Crawl space dehumidifier installation in Greenville, SC typically costs $1,200–$2,500 installed and keeps humidity at 45–55% year-round in an encapsulated space."
       intro={[
         "A crawl-space-rated dehumidifier is the engine that keeps your encapsulated space dry year-round — household units aren't built for this job.",
         "Connect with local specialists who install and service commercial-grade dehumidifiers throughout Greenville and Upstate SC.",
       ]}
       breadcrumbs={[
-        { label: "Services", href: "/dehumidifier-installation" },
+        { label: "Services", href: "/services/dehumidifier-installation" },
         { label: "Dehumidifier Installation" },
       ]}
       serviceSlug="dehumidifier-installation"
@@ -53,11 +61,11 @@ export default function DehumidifierInstallationPage() {
         name: "Dehumidifier Installation",
         description:
           "Commercial-grade crawl space dehumidifier installation and setup in Greenville, SC.",
-        path: "/dehumidifier-installation",
+        path: "/services/dehumidifier-installation",
       })}
       faqs={faqs}
     >
-      <ServiceSection title="Why Crawl Space Dehumidifiers Are Different">
+      <ServiceSection title="Why Are Crawl Space Dehumidifiers Different?">
         <p>
           The dehumidifier in your living room wasn&apos;t designed for a crawl space. Crawl-space-rated
           units are built for <strong className="text-dark">continuous duty</strong> — running 24/7 in
@@ -74,16 +82,18 @@ export default function DehumidifierInstallationPage() {
         />
       </ServiceSection>
 
-      <ServiceSection title="Target Humidity for Crawl Spaces" className="bg-neutral">
+      <ServiceSection title="What Is the Target Humidity for Crawl Spaces?" className="bg-neutral">
         <p>
           The industry standard target for encapsulated crawl spaces is{" "}
           <strong className="text-dark">45–55% relative humidity (RH)</strong>. Above 60% RH, mold
-          growth becomes likely on organic surfaces. Below 40% RH, wood can become overly dry. A
-          properly sized and programmed dehumidifier maintains this range automatically.
+          growth becomes likely on organic surfaces — the threshold noted in{" "}
+          <AuthorityLink href={authorities.epaHumidity.url}>EPA humidity guidance</AuthorityLink>.
+          Below 40% RH, wood can become overly dry. A properly sized and programmed dehumidifier
+          maintains this range automatically.
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Why Standard Dehumidifiers Fail in Greenville">
+      <ServiceSection title="Why Do Standard Dehumidifiers Fail in Greenville?">
         <p>
           Greenville&apos;s average relative humidity hovers around 70% outdoors — and often higher in crawl
           spaces. Household dehumidifiers are overwhelmed by the volume of air and moisture load in a
@@ -97,7 +107,7 @@ export default function DehumidifierInstallationPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Brands Local Pros Install" className="bg-neutral">
+      <ServiceSection title="Which Dehumidifier Brands Do Local Pros Install?" className="bg-neutral">
         <p>
           Licensed local specialists install commercial-grade crawl space dehumidifiers from leading
           manufacturers including{" "}
@@ -112,7 +122,7 @@ export default function DehumidifierInstallationPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Dehumidifier Installation Cost">
+      <ServiceSection title="How Much Does Crawl Space Dehumidifier Installation Cost in Greenville, SC?">
         <BulletList
           items={[
             "Installed crawl space dehumidifier: $1,200–$2,500 depending on capacity and drainage setup",
@@ -122,7 +132,7 @@ export default function DehumidifierInstallationPage() {
         />
       </ServiceSection>
 
-      <ServiceSection title="Pairing With Encapsulation" className="bg-neutral">
+      <ServiceSection title="Should You Pair a Dehumidifier With Encapsulation?" className="bg-neutral">
         <p>
           A dehumidifier works best as part of a complete system. Encapsulation seals the space — vapor
           barrier, vent covers, wall sealing — so the dehumidifier isn&apos;t fighting a constant influx of

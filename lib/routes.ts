@@ -1,5 +1,6 @@
 import { siteConfig } from "./site-config";
 import { cityAreas } from "./areas-served";
+import { neighborhoodAreas } from "./neighborhood-areas";
 
 export type SiteRoute = {
   path: string;
@@ -10,12 +11,12 @@ export type SiteRoute = {
 /** Sitemap registry — exact priorities for SEO */
 export const siteRoutes: SiteRoute[] = [
   { path: "/", changeFrequency: "weekly", priority: 1.0 },
-  { path: "/crawl-space-encapsulation", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/vapor-barrier", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/crawl-space-repair", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/dehumidifier-installation", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/mold-in-crawl-space", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/floor-joist-repair", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/services/crawl-space-encapsulation", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/services/vapor-barrier", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/services/crawl-space-repair", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/services/dehumidifier-installation", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/services/mold-in-crawl-space", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/services/floor-joist-repair", changeFrequency: "monthly", priority: 0.8 },
   { path: "/crawl-space-encapsulation-cost", changeFrequency: "monthly", priority: 0.9 },
   { path: "/encapsulation-vs-vapor-barrier", changeFrequency: "monthly", priority: 0.8 },
   { path: "/what-is-encapsulation", changeFrequency: "monthly", priority: 0.8 },
@@ -24,6 +25,11 @@ export const siteRoutes: SiteRoute[] = [
     path: `/areas-served/${city.slug}`,
     changeFrequency: "monthly" as const,
     priority: 0.7,
+  })),
+  ...neighborhoodAreas.map((area) => ({
+    path: `/areas/${area.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
   })),
   { path: "/faq", changeFrequency: "monthly", priority: 0.7 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.6 },

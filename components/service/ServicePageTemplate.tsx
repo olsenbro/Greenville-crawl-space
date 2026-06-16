@@ -10,8 +10,10 @@ import {
   LocationLinksOutline,
   RelatedGuidesLinks,
 } from "@/components/seo/InternalLinksSections";
+import { PageQuickAnswer } from "@/components/seo/PageQuickAnswer";
 import type { AuthoritySource } from "@/lib/authorities";
-import { getAuthorityForPath } from "@/lib/authorities";
+import { getAuthoritiesForPath } from "@/lib/authorities";
+import { getFaqPageSchema } from "@/lib/schema";
 import type { SchemaObject } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
@@ -22,6 +24,8 @@ export type ServiceFaq = {
 
 type ServicePageTemplateProps = {
   h1: string;
+  /** Direct one-sentence answer shown immediately below the H1 */
+  quickAnswer: string;
   intro: string[];
   breadcrumbs: BreadcrumbItem[];
   breadcrumbPath?: string;
@@ -31,30 +35,41 @@ type ServicePageTemplateProps = {
   faqTitle?: string;
   ctaHeading?: string;
   ctaBody?: string;
-  authority?: AuthoritySource;
+  authority?: AuthoritySource | AuthoritySource[];
   children: React.ReactNode;
 };
 
 export function ServicePageTemplate({
   h1,
+  quickAnswer,
   intro,
   breadcrumbs,
   breadcrumbPath,
   serviceSlug,
   schema,
   faqs,
-  faqTitle = "Frequently Asked Questions",
+  faqTitle = "What Questions Do Greenville Homeowners Ask?",
   ctaHeading = siteConfig.cta.defaultHeading,
   ctaBody = siteConfig.cta.defaultBody,
   authority,
   children,
 }: ServicePageTemplateProps) {
-  const pagePath = breadcrumbPath ?? (serviceSlug ? `/${serviceSlug}` : undefined);
-  const citation = authority ?? (pagePath ? getAuthorityForPath(pagePath) : undefined);
+  const pagePath =
+    breadcrumbPath ?? (serviceSlug ? `/services/${serviceSlug}` : undefined);
+  const citationSources = authority
+    ? Array.isArray(authority)
+      ? authority
+      : [authority]
+    : pagePath
+      ? getAuthoritiesForPath(pagePath)
+      : undefined;
 
   return (
     <>
       {schema ? <SchemaScript schema={schema} /> : null}
+      {faqs.length > 0 && pagePath ? (
+        <SchemaScript schema={getFaqPageSchema(faqs, pagePath)} />
+      ) : null}
 
       <Breadcrumbs
         items={breadcrumbs}
@@ -68,6 +83,7 @@ export function ServicePageTemplate({
             <h1 className="font-display text-4xl font-semibold leading-tight text-balance sm:text-5xl">
               {h1}
             </h1>
+            <PageQuickAnswer>{quickAnswer}</PageQuickAnswer>
             {intro.map((paragraph) => (
               <p key={paragraph.slice(0, 48)} className="mt-5 text-lg leading-relaxed text-white/90">
                 {paragraph}
@@ -109,10 +125,10 @@ export function ServicePageTemplate({
         className="border-t border-primary/10 bg-white section-padding"
       />
 
-      {citation ? (
+      {citationSources && citationSources.length > 0 ? (
         <section className="bg-neutral section-padding">
           <div className="container-narrow mx-auto max-w-3xl">
-            <AuthorityCitation source={citation} />
+            <AuthorityCitation sources={citationSources} />
           </div>
         </section>
       ) : null}

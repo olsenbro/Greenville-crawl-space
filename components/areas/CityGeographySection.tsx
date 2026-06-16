@@ -1,4 +1,6 @@
+import Link from "next/link";
 import type { CityArea } from "@/lib/areas-served";
+import { getNeighborhoodHref } from "@/lib/neighborhood-areas";
 
 type CityGeographySectionProps = {
   city: CityArea;
@@ -19,6 +21,23 @@ function GeographyList({ items }: { items: string[] }) {
   );
 }
 
+function NeighborhoodLinks({ city }: { city: CityArea }) {
+  return (
+    <ul className="mt-3 flex flex-wrap gap-2">
+      {city.neighborhoods.map((neighborhood) => (
+        <li key={neighborhood}>
+          <Link
+            href={getNeighborhoodHref(city.slug, neighborhood)}
+            className="rounded-full bg-white px-4 py-2 text-sm font-medium text-primary shadow-sm transition-colors hover:bg-primary hover:text-white"
+          >
+            {neighborhood}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export function CityGeographySection({ city }: CityGeographySectionProps) {
   return (
     <section
@@ -30,7 +49,7 @@ export function CityGeographySection({ city }: CityGeographySectionProps) {
           id={`${city.slug}-geography-heading`}
           className="font-display text-3xl font-semibold sm:text-4xl"
         >
-          {city.name} ZIP Codes, Neighborhoods &amp; Landmarks
+          Which Areas in {city.name}, {city.state} Do We Serve?
         </h2>
         <p className="mt-4 text-lg leading-relaxed text-muted">
           Crawl space encapsulation, repair, and moisture control specialists serve homeowners
@@ -46,7 +65,7 @@ export function CityGeographySection({ city }: CityGeographySectionProps) {
 
           <div>
             <h3 className="font-display text-xl font-semibold text-primary">Neighborhoods &amp; Areas</h3>
-            <GeographyList items={city.neighborhoods} />
+            <NeighborhoodLinks city={city} />
           </div>
 
           <div>

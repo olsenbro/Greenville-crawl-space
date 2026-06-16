@@ -4,6 +4,8 @@ import {
   ServicePageTemplate,
   ServiceSection,
 } from "@/components/service/ServicePageTemplate";
+import { AuthorityLink } from "@/components/AuthorityCitation";
+import { authorities } from "@/lib/authorities";
 import { getServiceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -11,7 +13,7 @@ export const metadata = buildPageMetadata({
   title: "Floor Joist Repair Greenville SC | Crawl Space Pros",
   description:
     "Sagging floors or wood rot in your Greenville, SC crawl space? Local pros repair and sister damaged floor joists before problems spread. Get a free estimate.",
-  canonical: "/floor-joist-repair",
+  canonical: "/services/floor-joist-repair",
 });
 
 const repairSteps = [
@@ -63,18 +65,24 @@ const faqs = [
     answer:
       "Structural repair comes first, then encapsulation. However, moisture source must be identified before repair — otherwise new wood will rot the same way. Qualified contractors typically assess everything in one visit and sequence work correctly.",
   },
+  {
+    question: "How much does floor joist repair cost in Greenville?",
+    answer:
+      "Sistering a single joist runs $100–$300. Most multi-joist repair projects cost $2,000–$5,000. Encapsulation to stop future moisture damage is usually recommended afterward.",
+  },
 ];
 
 export default function FloorJoistRepairPage() {
   return (
     <ServicePageTemplate
       h1="Floor Joist Repair in Greenville, South Carolina"
+      quickAnswer="Floor joist repair in Greenville, SC sistering or replaces moisture-damaged joists — most projects cost $2,000–$5,000 and take 2–4 days depending on how many joists are affected."
       intro={[
         "Soft spots, squeaking floors, and visible sag often trace back to moisture-damaged joists in your crawl space.",
         "Connect with local specialists who sister and replace damaged floor joists throughout Greenville and Upstate SC — and address the moisture that caused the damage.",
       ]}
       breadcrumbs={[
-        { label: "Services", href: "/floor-joist-repair" },
+        { label: "Services", href: "/services/floor-joist-repair" },
         { label: "Floor Joist Repair" },
       ]}
       serviceSlug="floor-joist-repair"
@@ -82,12 +90,12 @@ export default function FloorJoistRepairPage() {
         name: "Floor Joist Repair",
         description:
           "Floor joist sistering, replacement, and structural repair for moisture-damaged crawl spaces in Greenville, SC.",
-        path: "/floor-joist-repair",
+        path: "/services/floor-joist-repair",
       })}
       faqs={faqs}
       ctaBody="Soft floors don't fix themselves. Request a free estimate before the damage spreads."
     >
-      <ServiceSection title="What Floor Joists Are and Why They Fail">
+      <ServiceSection title="What Are Floor Joists and Why Do They Fail?">
         <p>
           Floor joists are the horizontal structural members that support your subfloor and everything
           above it. They&apos;re typically made of dimensional lumber (2×8, 2×10, or 2×12) and span from
@@ -97,11 +105,16 @@ export default function FloorJoistRepairPage() {
           In Greenville&apos;s humid climate, joists in unencapsulated crawl spaces absorb moisture over
           time. Persistent moisture leads to{" "}
           <strong className="text-dark">wood rot, loss of structural integrity, and sagging floors</strong>
-          . The failure chain is predictable: moisture → rot → flex → structural compromise.
+          .{" "}
+          <AuthorityLink href={authorities.usdaWoodDecay.url}>
+            USDA Forest Products Laboratory research
+          </AuthorityLink>{" "}
+          shows fungal decay accelerates when wood moisture stays above 20%. The failure chain is
+          predictable: moisture → rot → flex → structural compromise.
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Signs of Joist Damage Inside Your Home" className="bg-neutral">
+      <ServiceSection title="What Are the Signs of Floor Joist Damage?" className="bg-neutral">
         <BulletList
           items={[
             "Soft or spongy spots when walking on the floor",
@@ -114,7 +127,7 @@ export default function FloorJoistRepairPage() {
         />
       </ServiceSection>
 
-      <ServiceSection title="Sistering vs. Full Joist Replacement">
+      <ServiceSection title="When Do You Need Sistering vs. Full Joist Replacement?">
         <p>
           <strong className="text-dark">Sistering</strong> attaches a new joist of equal or greater
           dimension alongside the damaged one, bolted through the full length. It&apos;s faster, less
@@ -129,11 +142,11 @@ export default function FloorJoistRepairPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Typical Floor Joist Repair Process" className="bg-neutral">
+      <ServiceSection title="What Is the Typical Floor Joist Repair Process?" className="bg-neutral">
         <ProcessSteps steps={repairSteps} />
       </ServiceSection>
 
-      <ServiceSection title="Floor Joist Repair Cost in Greenville">
+      <ServiceSection title="How Much Does Floor Joist Repair Cost in Greenville, SC?">
         <BulletList
           items={[
             "Single joist sistering: $800–$1,500",
@@ -148,7 +161,7 @@ export default function FloorJoistRepairPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Fix the Moisture Source First" className="bg-neutral">
+      <ServiceSection title="Why Should You Fix the Moisture Source First?" className="bg-neutral">
         <p>
           Repairing joists without addressing moisture is a temporary fix. New wood in a damp crawl
           space will rot on the same timeline as the old. That&apos;s why contractors always recommend

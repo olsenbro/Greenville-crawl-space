@@ -4,10 +4,11 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/PhoneLink";
 import { AuthoritySection } from "@/components/AuthorityCitation";
 import { getWebPageSchema } from "@/lib/schema";
-import { getAuthorityForPath } from "@/lib/authorities";
+import { getAuthoritiesForPath } from "@/lib/authorities";
 import { buildPageMetadata } from "@/lib/seo";
 import { FaqOutline, PricingOutline, ServicesOutline, ServiceAreaOutline } from "@/components/seo/PageOutlineSections";
 import { LocationLinksOutline, RelatedGuidesLinks } from "@/components/seo/InternalLinksSections";
+import { PageQuickAnswer } from "@/components/seo/PageQuickAnswer";
 import { siteConfig } from "@/lib/site-config";
 import { SchemaScript } from "@/components/SchemaScript";
 
@@ -41,6 +42,10 @@ export default function ThankYouPage() {
           <h1 className="font-display text-4xl font-semibold text-primary sm:text-5xl">
             Thank You — Greenville Crawl Space Estimate Request
           </h1>
+          <PageQuickAnswer variant="light" className="mt-4 text-xl font-semibold leading-snug text-primary sm:text-2xl">
+            Your free crawl space estimate request was received — a Greenville-area specialist will
+            contact you within one business day.
+          </PageQuickAnswer>
           <p className="mt-4 text-lg text-muted">
             Your free crawl space estimate request was submitted. A local specialist will contact you
             shortly — usually within one business day.
@@ -79,7 +84,7 @@ export default function ThankYouPage() {
       <ServiceAreaOutline className="bg-white section-padding border-t border-primary/10" showMap={false} />
       <FaqOutline className="bg-neutral section-padding border-t border-primary/10" />
 
-      <AuthoritySection source={getAuthorityForPath("/thank-you")} className="bg-white" />
+      <AuthoritySection sources={getAuthoritiesForPath("/thank-you")} className="bg-white" />
     </>
   );
 }

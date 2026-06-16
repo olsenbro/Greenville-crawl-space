@@ -1,32 +1,71 @@
-# Crawl Space Greenville
+# Greenville Crawl Space Pros
 
-> Greenville Crawl Space Pros connects homeowners with trusted local crawl space encapsulation, vapor barrier, repair, and moisture control specialists in Greenville, SC and Upstate South Carolina.
+> Greenville Crawl Space Pros connects homeowners in Greenville, SC and Upstate South Carolina with licensed crawl space encapsulation, vapor barrier, repair, dehumidifier, mold treatment, and floor joist specialists. Free estimates, no obligation.
+
+## About This Site
+
+This is a local crawl space services referral and education site for Greenville County and the Upstate SC region. Pages include pricing ranges, FAQs, service descriptions, and city-specific crawl space information. Primary service area: humid-climate crawl spaces with open vents, clay soil moisture, mold, and structural joist damage.
 
 ## Contact
 
 - Phone: (864) 387-3270
 - Email: info@crawlspacegreenville.com
+- Hours: Monday–Saturday, 7:00 AM – 6:00 PM
 - Website: https://www.crawlspacegreenville.com
+- Request a free estimate: https://www.crawlspacegreenville.com/contact
 
 ## Services
 
-- Crawl Space Encapsulation: https://www.crawlspacegreenville.com/crawl-space-encapsulation
-- Vapor Barrier Installation: https://www.crawlspacegreenville.com/vapor-barrier
-- Crawl Space Repair: https://www.crawlspacegreenville.com/crawl-space-repair
-- Dehumidifier Installation: https://www.crawlspacegreenville.com/dehumidifier-installation
-- Mold in Crawl Space: https://www.crawlspacegreenville.com/mold-in-crawl-space
-- Floor Joist Repair: https://www.crawlspacegreenville.com/floor-joist-repair
+- Crawl Space Encapsulation: https://www.crawlspacegreenville.com/services/crawl-space-encapsulation — Full seal with 20-mil vapor barrier, vent sealing, wall coverage, and dehumidifier. Typical cost $5,000–$9,000 in Greenville.
+- Vapor Barrier Installation: https://www.crawlspacegreenville.com/services/vapor-barrier — Professional 20-mil ground and wall liner. Typical cost $1,500–$3,500.
+- Crawl Space Repair: https://www.crawlspacegreenville.com/services/crawl-space-repair — Joist sistering, pier repair, mold-damaged wood, and drainage correction.
+- Dehumidifier Installation: https://www.crawlspacegreenville.com/services/dehumidifier-installation — Commercial crawl-space-rated units sized for 45–55% RH. Typical cost $1,200–$2,500.
+- Mold in Crawl Space: https://www.crawlspacegreenville.com/services/mold-in-crawl-space — Professional mold treatment before encapsulation. Typical cost $500–$2,500.
+- Floor Joist Repair: https://www.crawlspacegreenville.com/services/floor-joist-repair — Sistering and replacement for moisture-damaged joists causing soft or sagging floors.
 
-## Key Pages
+## Guides & Key Pages
 
-- Home: https://www.crawlspacegreenville.com/
-- Cost Guide: https://www.crawlspacegreenville.com/crawl-space-encapsulation-cost
-- Encapsulation vs Vapor Barrier: https://www.crawlspacegreenville.com/encapsulation-vs-vapor-barrier
-- What Is Encapsulation: https://www.crawlspacegreenville.com/what-is-encapsulation
-- FAQ: https://www.crawlspacegreenville.com/faq
-- Contact: https://www.crawlspacegreenville.com/contact
-- Areas Served: https://www.crawlspacegreenville.com/areas-served
+- Home: https://www.crawlspacegreenville.com/ — Greenville crawl space encapsulation overview, symptoms, process, and FAQs.
+- 2025 Cost Guide: https://www.crawlspacegreenville.com/crawl-space-encapsulation-cost — Itemized pricing for encapsulation, vapor barrier, mold, joist repair, and drainage in Greenville, SC.
+- What Is Encapsulation: https://www.crawlspacegreenville.com/what-is-encapsulation — Explains full encapsulation systems and why they matter in South Carolina humidity.
+- Encapsulation vs Vapor Barrier: https://www.crawlspacegreenville.com/encapsulation-vs-vapor-barrier — Comparison guide for humid-climate crawl spaces in Upstate SC.
+- FAQ: https://www.crawlspacegreenville.com/faq — Common crawl space questions on cost, mold, humidity, process, and repairs.
+- Areas Served Hub: https://www.crawlspacegreenville.com/areas-served — All Upstate SC cities and counties covered.
 
-## Service Area
+## City Pages
 
-Greenville, Spartanburg, Anderson, Mauldin, Simpsonville, Greer, Taylors, Easley, Duncan, Fountain Inn — Upstate South Carolina.
+- Simpsonville, SC: https://www.crawlspacegreenville.com/areas-served/simpsonville
+- Greer, SC: https://www.crawlspacegreenville.com/areas-served/greer
+- Spartanburg, SC: https://www.crawlspacegreenville.com/areas-served/spartanburg
+- Anderson, SC: https://www.crawlspacegreenville.com/areas-served/anderson
+- Mauldin, SC: https://www.crawlspacegreenville.com/areas-served/mauldin
+- Taylors, SC: https://www.crawlspacegreenville.com/areas-served/taylors
+- Easley, SC: https://www.crawlspacegreenville.com/areas-served/easley
+- Duncan, SC: https://www.crawlspacegreenville.com/areas-served/duncan
+- Fountain Inn, SC: https://www.crawlspacegreenville.com/areas-served/fountain-inn
+
+## Neighborhood Pages
+
+54 neighborhood location pages under `/areas/[slug]` — each with unique copy, ZIP codes, and local landmarks. Examples:
+
+- Five Forks, Simpsonville: https://www.crawlspacegreenville.com/areas/simpsonville-five-forks
+- Pelham Falls, Greer: https://www.crawlspacegreenville.com/areas/greer-pelham-falls
+- Converse Heights, Spartanburg: https://www.crawlspacegreenville.com/areas/spartanburg-converse-heights
+- Downtown Anderson: https://www.crawlspacegreenville.com/areas/anderson-downtown-anderson
+
+Full list: see city pages at /areas-served/[city] — each links to its neighborhoods.
+
+
+Greenville County, Spartanburg County, Anderson County, Pickens County, Laurens County — including Greenville, Spartanburg, Anderson, Greer, Simpsonville, Mauldin, Taylors, Easley, Duncan, and Fountain Inn.
+
+## Quick Facts
+
+- Full encapsulation in Greenville typically costs $5,000–$9,000 including dehumidifier.
+- Encapsulation projects usually take 2–4 days for a standard home.
+- Target crawl space humidity after encapsulation: 45–55% relative humidity.
+- Open-vent crawl spaces underperform sealed systems in humid climates like Upstate SC.
+
+## Optional
+
+- Sitemap: https://www.crawlspacegreenville.com/sitemap.xml
+- Robots: https://www.crawlspacegreenville.com/robots.txt

@@ -7,10 +7,11 @@ import { SchemaScript } from "@/components/SchemaScript";
 import { SiteLogo } from "@/components/SiteLogo";
 import type { CityArea } from "@/lib/areas-served";
 import { getNeighborHref } from "@/lib/areas-served";
-import { getAuthorityForPath } from "@/lib/authorities";
+import { getAuthoritiesForPath } from "@/lib/authorities";
 import { getLocalBusinessSchema } from "@/lib/schema";
 import { FaqOutline } from "@/components/seo/PageOutlineSections";
 import { LocationLinksOutline, RelatedGuidesLinks } from "@/components/seo/InternalLinksSections";
+import { PageQuickAnswer } from "@/components/seo/PageQuickAnswer";
 import { CityGeographySection } from "@/components/areas/CityGeographySection";
 import { serviceLinks, siteConfig } from "@/lib/site-config";
 
@@ -19,7 +20,7 @@ type CityPageTemplateProps = {
 };
 
 export function CityPageTemplate({ city }: CityPageTemplateProps) {
-  const authority = getAuthorityForPath(`/areas-served/${city.slug}`);
+  const authoritySources = getAuthoritiesForPath(`/areas-served/${city.slug}`);
 
   return (
     <>
@@ -41,6 +42,7 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
             <h1 className="font-display text-4xl font-semibold leading-tight text-balance sm:text-5xl">
               {city.h1}
             </h1>
+            <PageQuickAnswer>{city.quickAnswer}</PageQuickAnswer>
             {city.intro.map((paragraph) => (
               <p key={paragraph.slice(0, 48)} className="mt-5 text-lg leading-relaxed text-white/90">
                 {paragraph}
@@ -65,7 +67,7 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
       <section className="bg-white section-padding">
         <div className="container-narrow mx-auto max-w-3xl">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            Crawl Space Conditions in {city.name}, {city.state}
+            What Crawl Space Problems Are Common in {city.name}, {city.state}?
           </h2>
           <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted">
             {city.body.map((paragraph) => (
@@ -77,12 +79,12 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
 
       <CityGeographySection city={city} />
 
-      <AuthoritySection source={authority} />
+      <AuthoritySection sources={authoritySources} />
 
       <section className="bg-neutral section-padding">
         <div className="container-narrow mx-auto max-w-3xl">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            Crawl Space Services in {city.name}
+            What Crawl Space Services Are Available in {city.name}?
           </h2>
           <p className="mt-4 text-lg text-muted">
             Connect with local specialists for these crawl space services throughout {city.name} and
@@ -109,7 +111,7 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
       <section className="bg-white section-padding">
         <div className="container-narrow mx-auto max-w-3xl">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            Crawl Space Encapsulation Cost in {city.name}
+            How Much Does Crawl Space Encapsulation Cost in {city.name}, {city.state}?
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted">
             Most full crawl space encapsulation projects in {city.name} run $5,000–$9,000 including a
@@ -128,7 +130,9 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
 
       <section className="bg-primary/5 section-padding">
         <div className="container-narrow mx-auto max-w-3xl">
-          <h2 className="font-display text-2xl font-semibold">Service Area — {city.name} &amp; Nearby</h2>
+          <h2 className="font-display text-2xl font-semibold">
+            Which Nearby Cities Do We Serve From {city.name}?
+          </h2>
           <p className="mt-4 text-lg text-muted">
             Also serving homeowners near {city.name}.{" "}
             <Link href="/areas-served" className="font-semibold text-primary hover:underline">
@@ -181,7 +185,7 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
       <section className="bg-accent section-padding text-white">
         <div className="container-narrow mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            Request a Free {city.name} Crawl Space Estimate
+            How Do You Request a Free Crawl Space Estimate in {city.name}?
           </h2>
           <p className="mt-4 text-lg text-white/90">
             Connect with licensed crawl space specialists serving {city.name}, {city.stateName} and

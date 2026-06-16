@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/PhoneLink";
-import { AuthoritySection } from "@/components/AuthorityCitation";
+import { AuthorityLink, AuthoritySection } from "@/components/AuthorityCitation";
 import { SchemaScript } from "@/components/SchemaScript";
 import {
   BulletList,
@@ -15,8 +15,9 @@ import {
   ServicesOutline,
 } from "@/components/seo/PageOutlineSections";
 import { LocationLinksOutline, RelatedGuidesLinks } from "@/components/seo/InternalLinksSections";
+import { PageQuickAnswer } from "@/components/seo/PageQuickAnswer";
 import { getArticleSchema, getFaqPageSchema } from "@/lib/schema";
-import { getAuthorityForPath } from "@/lib/authorities";
+import { getAuthoritiesForPath, authorities } from "@/lib/authorities";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -56,7 +57,7 @@ export default function EncapsulationVsVaporBarrierPage() {
             description:
               "An educational guide for South Carolina homeowners comparing crawl space vapor barriers and full encapsulation systems.",
           }),
-          getFaqPageSchema(comparisonFaqs),
+          getFaqPageSchema(comparisonFaqs, "/encapsulation-vs-vapor-barrier"),
         ]}
       />
 
@@ -68,6 +69,11 @@ export default function EncapsulationVsVaporBarrierPage() {
           <h1 className="mt-3 font-display text-4xl font-semibold leading-tight text-balance text-primary sm:text-5xl">
             Encapsulation vs. Vapor Barrier in Greenville, SC
           </h1>
+          <PageQuickAnswer variant="light">
+            In Greenville&apos;s humid climate, a vapor barrier blocks ground moisture only
+            ($1,500–$3,500), while full encapsulation also seals vents and adds dehumidification
+            ($5,000–$9,000) for complete moisture control.
+          </PageQuickAnswer>
           <p className="mt-5 text-lg leading-relaxed text-muted">
             If you are researching crawl space moisture solutions, you have probably encountered two
             terms that sound similar but describe very different approaches. This guide explains
@@ -95,7 +101,7 @@ export default function EncapsulationVsVaporBarrierPage() {
         </div>
       </section>
 
-      <ServiceSection title="What a Vapor Barrier Is — and What It Actually Does">
+      <ServiceSection title="What Does a Vapor Barrier Actually Do?">
         <p>
           A crawl space vapor barrier is a sheet of plastic — typically polyethylene — installed over
           the soil floor of your crawl space. Its purpose is straightforward: stop ground moisture
@@ -111,13 +117,13 @@ export default function EncapsulationVsVaporBarrierPage() {
           What it does <em>not</em> do: seal foundation vents, cover foundation walls, condition the
           air, or actively remove humidity already present in the crawl space. It is a passive
           barrier — effective against ground evaporation, but silent on every other moisture pathway.{" "}
-          <Link href="/vapor-barrier" className="font-semibold text-primary hover:underline">
+          <Link href="/services/vapor-barrier" className="font-semibold text-primary hover:underline">
             Learn more about vapor barrier installation →
           </Link>
         </p>
       </ServiceSection>
 
-      <ServiceSection title="What Full Encapsulation Includes That a Vapor Barrier Doesn't" className="bg-neutral">
+      <ServiceSection title="What Does Full Encapsulation Include That a Vapor Barrier Does Not?" className="bg-neutral">
         <p>
           Crawl space encapsulation treats the entire space as a conditioned zone — similar in concept
           to how your home&apos;s interior is sealed and climate-controlled. A complete encapsulation
@@ -138,7 +144,7 @@ export default function EncapsulationVsVaporBarrierPage() {
           regardless of outdoor conditions. This is fundamentally different from laying plastic on
           the floor and hoping for the best.{" "}
           <Link
-            href="/crawl-space-encapsulation"
+            href="/services/crawl-space-encapsulation"
             className="font-semibold text-primary hover:underline"
           >
             See what full encapsulation involves →
@@ -146,7 +152,7 @@ export default function EncapsulationVsVaporBarrierPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Why South Carolina's Climate Requires More Than a Vapor Barrier">
+      <ServiceSection title="Why Does South Carolina Need More Than a Vapor Barrier?">
         <p>
           Building codes in much of the United States historically required crawl space foundation
           vents — the theory being that outdoor air would dry the space below. That theory was
@@ -170,15 +176,20 @@ export default function EncapsulationVsVaporBarrierPage() {
           from forming on joists.
         </p>
         <p>
-          Research from building science organizations — including work popularized by Advanced
-          Energy and the U.S. Department of Energy — consistently shows that sealed, conditioned
-          crawl spaces outperform vented ones in humid climates across every measured metric:
-          humidity control, energy efficiency, mold prevention, and indoor air quality.
+          Research from building science organizations — including work from{" "}
+          <AuthorityLink href={authorities.advancedEnergyClosedCrawlspaces.url}>
+            Advanced Energy
+          </AuthorityLink>{" "}
+          and the{" "}
+          <AuthorityLink href={authorities.doeCrawlspace.url}>U.S. Department of Energy</AuthorityLink>{" "}
+          — consistently shows that sealed, conditioned crawl spaces outperform vented ones in humid
+          climates across every measured metric: humidity control, energy efficiency, mold prevention,
+          and indoor air quality.
         </p>
       </ServiceSection>
 
       <ServiceSection
-        title="When a Vapor Barrier Alone Might Be Sufficient"
+        title="When Might a Vapor Barrier Alone Be Sufficient?"
         className="bg-neutral"
       >
         <p>
@@ -201,7 +212,7 @@ export default function EncapsulationVsVaporBarrierPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Feature-by-Feature Comparison">
+      <ServiceSection title="How Do Encapsulation and Vapor Barriers Compare Feature by Feature?">
         <ServiceComparisonTable
           headers={["Feature", "Vapor Barrier Only", "Full Encapsulation"]}
           rows={[
@@ -219,7 +230,7 @@ export default function EncapsulationVsVaporBarrierPage() {
         />
       </ServiceSection>
 
-      <ServiceSection title="Cost Comparison" className="bg-neutral">
+      <ServiceSection title="How Do Encapsulation and Vapor Barriers Compare on Cost?" className="bg-neutral">
         <p>
           Cost is one of the most common reasons homeowners choose vapor barrier-only installation.
           Understanding what you are paying for — and what you are not — helps set realistic
@@ -263,7 +274,7 @@ export default function EncapsulationVsVaporBarrierPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="What Most Greenville Contractors Actually Recommend — and Why">
+      <ServiceSection title="What Do Greenville Contractors Recommend — and Why?">
         <p>
           Ask ten crawl space contractors in the Upstate what they recommend for a typical home with
           moisture concerns, and the majority will point toward full encapsulation with
@@ -286,7 +297,7 @@ export default function EncapsulationVsVaporBarrierPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="How to Choose the Right Solution for Your Home" className="bg-neutral">
+      <ServiceSection title="How Do You Choose the Right Solution for Your Home?" className="bg-neutral">
         <p>Start with a free estimate — not a product decision. A qualified crawl space assessment
           measures current humidity, documents moisture sources, checks joist condition, and
           identifies whether vents, drainage, or ground moisture is the primary driver. That
@@ -315,7 +326,7 @@ export default function EncapsulationVsVaporBarrierPage() {
 
       <FaqOutline
         items={comparisonFaqs}
-        heading="Encapsulation vs. Vapor Barrier FAQ — Greenville, SC"
+        heading="What Questions Do Homeowners Ask About Encapsulation vs. Vapor Barriers?"
         className="border-t border-primary/10 bg-white section-padding"
       />
 
@@ -330,7 +341,7 @@ export default function EncapsulationVsVaporBarrierPage() {
 
       <ServiceAreaOutline className="border-t border-primary/10 bg-white section-padding" />
 
-      <AuthoritySection source={getAuthorityForPath("/encapsulation-vs-vapor-barrier")} />
+      <AuthoritySection sources={getAuthoritiesForPath("/encapsulation-vs-vapor-barrier")} />
 
       <section className="border-t border-primary/10 bg-primary section-padding text-white">
         <div className="container-narrow mx-auto max-w-3xl text-center">

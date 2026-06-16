@@ -11,7 +11,7 @@ type ServiceLinksGridProps = {
 
 export function ServiceLinksGrid({
   excludeSlug,
-  title = "Find Local Crawl Space Specialists",
+  title = "What Crawl Space Services Are Available in Greenville, SC?",
   showTitle = true,
   className = "",
 }: ServiceLinksGridProps) {

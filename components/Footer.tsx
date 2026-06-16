@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SiteLogo } from "@/components/SiteLogo";
+import { getNeighborHref } from "@/lib/areas-served";
 import { serviceAreas, serviceLinks, siteConfig } from "@/lib/site-config";
 
 export function Footer() {
@@ -80,11 +81,23 @@ export function Footer() {
         <div>
           <h3 className="label-caps text-neutral/60">Service Areas</h3>
           <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2">
-            {serviceAreas.map((area) => (
-              <li key={area} className="text-sm text-neutral/80">
-                {area}
-              </li>
-            ))}
+            {serviceAreas.map((area) => {
+              const href = getNeighborHref(area);
+              return (
+                <li key={area}>
+                  {href ? (
+                    <Link
+                      href={href}
+                      className="text-sm text-neutral/80 transition-colors hover:text-accent-light"
+                    >
+                      {area}
+                    </Link>
+                  ) : (
+                    <span className="text-sm text-neutral/80">{area}</span>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

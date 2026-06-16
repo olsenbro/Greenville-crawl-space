@@ -1,9 +1,16 @@
 import { homeFaqPreview } from "@/lib/home-faq";
-import type { FaqItem } from "@/lib/faq-page-data";
 import { homeProcessSteps } from "@/lib/home-process-steps";
 import { siteConfig, serviceAreas } from "@/lib/site-config";
 
 export type SchemaObject = Record<string, unknown>;
+
+function getAreaServedCities(): SchemaObject[] {
+  return serviceAreas.map((area) => ({
+    "@type": "City",
+    name: area,
+    containedInPlace: { "@type": "State", name: "South Carolina" },
+  }));
+}
 
 /** Serialize schema for dangerouslySetInnerHTML in script tags */
 export function schemaToScriptHtml(schema: SchemaObject): string {
@@ -33,11 +40,7 @@ export function getLocalBusinessSchema(city?: string, state?: string): SchemaObj
       latitude: siteConfig.geo.latitude,
       longitude: siteConfig.geo.longitude,
     },
-    areaServed: serviceAreas.map((area) => ({
-      "@type": "City",
-      name: area,
-      containedInPlace: { "@type": "State", name: "South Carolina" },
-    })),
+    areaServed: getAreaServedCities(),
     serviceType: [
       "Crawl Space Encapsulation",
       "Vapor Barrier Installation",
@@ -111,22 +114,23 @@ export function getServiceSchema(options: {
   name: string;
   description: string;
   path: string;
-  areaServed?: string;
 }): SchemaObject {
   const url = `${siteConfig.schemaUrl}${options.path}`;
   return {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${url}#service`,
     name: options.name,
     description: options.description,
     url,
     provider: {
       "@type": "LocalBusiness",
+      "@id": `${siteConfig.schemaUrl}/#organization`,
       name: siteConfig.name,
       telephone: siteConfig.phone,
       url: siteConfig.schemaUrl,
     },
-    areaServed: options.areaServed ?? "Greenville, SC",
+    areaServed: getAreaServedCities(),
   };
 }
 
@@ -143,7 +147,7 @@ export function serviceSchema(name: string, description: string, url: string): s
       telephone: siteConfig.phone,
       url: siteConfig.schemaUrl,
     },
-    areaServed: siteConfig.serviceArea,
+    areaServed: getAreaServedCities(),
   });
 }
 
@@ -163,11 +167,17 @@ export function faqSchema(questions: { q: string; a: string }[]): string {
   return schemaToScriptHtml(getFAQPageSchema(questions));
 }
 
-function buildFaqPageSchema(items: FaqItem[], idSuffix = "faq"): SchemaObject {
+function buildFaqPageSchema(
+  items: { question: string; answer: string }[],
+  pagePath: string,
+): SchemaObject {
+  const normalizedPath = pagePath === "/" ? "" : pagePath;
+  const url = `${siteConfig.schemaUrl}${normalizedPath}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": `${siteConfig.schemaUrl}/#${idSuffix}`,
+    "@id": `${url}#faq`,
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
@@ -180,11 +190,14 @@ function buildFaqPageSchema(items: FaqItem[], idSuffix = "faq"): SchemaObject {
 }
 
 export function getHomeFaqSchema(): SchemaObject {
-  return buildFaqPageSchema(homeFaqPreview);
+  return buildFaqPageSchema(homeFaqPreview, "/");
 }
 
-export function getFaqPageSchema(items: FaqItem[]): SchemaObject {
-  return buildFaqPageSchema(items, "faq-page");
+export function getFaqPageSchema(
+  items: { question: string; answer: string }[],
+  pagePath = "/faq",
+): SchemaObject {
+  return buildFaqPageSchema(items, pagePath);
 }
 
 export function getArticleSchema(options: {
@@ -236,12 +249,11 @@ export function getHowToSchema(): SchemaObject {
   };
 }
 
-/** LocalBusiness, WebSite, FAQ, and HowTo schemas for document head */
+/** LocalBusiness, WebSite, and HowTo schemas for document head */
 export function getSiteHeadSchemas(): SchemaObject[] {
   return [
     getLocalBusinessSchema(),
     getWebSiteSchema(),
-    getHomeFaqSchema(),
     getHowToSchema(),
   ];
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
-import { AuthoritySection } from "@/components/AuthorityCitation";
+import { AuthorityLink, AuthoritySection } from "@/components/AuthorityCitation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SchemaScript } from "@/components/SchemaScript";
@@ -15,7 +15,8 @@ import {
   ServicesOutline,
 } from "@/components/seo/PageOutlineSections";
 import { LocationLinksOutline, RelatedGuidesLinks } from "@/components/seo/InternalLinksSections";
-import { getAuthorityForPath } from "@/lib/authorities";
+import { PageQuickAnswer } from "@/components/seo/PageQuickAnswer";
+import { getAuthoritiesForPath, authorities } from "@/lib/authorities";
 import { getArticleSchema, getFaqPageSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
@@ -71,7 +72,7 @@ export default function WhatIsEncapsulationPage() {
             description:
               "An educational guide explaining crawl space encapsulation — what it is, how it works, and why Greenville homeowners use it to control moisture and mold.",
           }),
-          getFaqPageSchema(pageFaqs),
+          getFaqPageSchema(pageFaqs, "/what-is-encapsulation"),
         ]}
       />
 
@@ -83,6 +84,11 @@ export default function WhatIsEncapsulationPage() {
           <h1 className="mt-3 font-display text-4xl font-semibold leading-tight text-balance text-primary sm:text-5xl">
             What Is Crawl Space Encapsulation? (Greenville, SC Guide)
           </h1>
+          <PageQuickAnswer variant="light">
+            Crawl space encapsulation seals the area beneath your home with a vapor barrier, closed
+            vents, and a dehumidifier to keep humidity at 45–55% and stop mold, musty odors, and wood
+            rot.
+          </PageQuickAnswer>
           <p className="mt-5 text-lg leading-relaxed text-muted">
             If you own a home with a crawl space in Greenville or anywhere in Upstate South
             Carolina, you have probably heard the term &ldquo;encapsulation&rdquo; — but what it
@@ -107,7 +113,7 @@ export default function WhatIsEncapsulationPage() {
         </div>
       </section>
 
-      <ServiceSection title="The Problem Encapsulation Solves">
+      <ServiceSection title="What Problem Does Encapsulation Solve?">
         <p>
           Traditional crawl spaces in Greenville were built with a simple assumption: open foundation
           vents would allow air to circulate and keep the space dry. In theory, that works in dry
@@ -118,8 +124,9 @@ export default function WhatIsEncapsulationPage() {
         <p>
           At the same time, moisture evaporates constantly from the soil floor and red clay
           surrounding your foundation. The result is a persistently damp environment where mold grows
-          on wood framing, musty air rises into your living space through the stack effect, and
-          floor joists slowly rot from sustained moisture exposure.
+          on wood framing, musty air rises into your living space through the{" "}
+          <AuthorityLink href={authorities.epaIndoorAir.url}>stack effect</AuthorityLink>, and floor
+          joists slowly rot from sustained moisture exposure.
         </p>
         <p>
           Encapsulation addresses all of these pathways — ground moisture, vent infiltration, and
@@ -127,7 +134,7 @@ export default function WhatIsEncapsulationPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="What a Full Encapsulation System Includes" className="bg-neutral">
+      <ServiceSection title="What Does a Full Encapsulation System Include?" className="bg-neutral">
         <p>
           Professional crawl space encapsulation is not a single product. It is a combination of
           materials and steps designed to work together:
@@ -147,13 +154,13 @@ export default function WhatIsEncapsulationPage() {
           Each component serves a specific purpose. The liner blocks ground moisture. Sealed vents
           stop humid outdoor air. The dehumidifier actively removes moisture already in the air and
           prevents it from climbing back above mold-growth thresholds.{" "}
-          <Link href="/crawl-space-encapsulation" className="font-semibold text-primary hover:underline">
+          <Link href="/services/crawl-space-encapsulation" className="font-semibold text-primary hover:underline">
             See our encapsulation service details →
           </Link>
         </p>
       </ServiceSection>
 
-      <ServiceSection title="How the Encapsulation Process Works">
+      <ServiceSection title="How Does the Encapsulation Process Work?">
         <ProcessSteps
           steps={[
             {
@@ -185,7 +192,7 @@ export default function WhatIsEncapsulationPage() {
         />
       </ServiceSection>
 
-      <ServiceSection title="Encapsulation vs. Other Crawl Space Solutions" className="bg-neutral">
+      <ServiceSection title="How Does Encapsulation Compare to Other Crawl Space Solutions?" className="bg-neutral">
         <p>
           Encapsulation is often confused with simpler approaches that address only part of the
           problem:
@@ -211,7 +218,7 @@ export default function WhatIsEncapsulationPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Signs Your Greenville Home May Need Encapsulation">
+      <ServiceSection title="How Do You Know Your Greenville Home Needs Encapsulation?">
         <BulletList
           items={[
             "Musty or earthy odors on the first floor, especially near bathrooms and closets",
@@ -232,7 +239,7 @@ export default function WhatIsEncapsulationPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Common Questions About Encapsulation" className="bg-neutral">
+      <ServiceSection title="What Are Common Questions About Encapsulation?" className="bg-neutral">
         <div className="space-y-6">
           {pageFaqs.map(({ question, answer }) => (
             <article
@@ -273,12 +280,12 @@ export default function WhatIsEncapsulationPage() {
 
       <ServiceAreaOutline className="border-t border-primary/10 bg-white section-padding" />
 
-      <AuthoritySection source={getAuthorityForPath("/what-is-encapsulation")} />
+      <AuthoritySection sources={getAuthoritiesForPath("/what-is-encapsulation")} />
 
       <section className="border-t border-primary/10 bg-primary section-padding text-white">
         <div className="container-narrow mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            Find Out If Your Crawl Space Needs Encapsulation
+            Does Your Crawl Space Need Encapsulation?
           </h2>
           <p className="mt-4 text-lg text-white/90">
             A free estimate takes the guesswork out of the decision. A local specialist will measure

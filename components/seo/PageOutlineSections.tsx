@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { SchemaScript } from "@/components/SchemaScript";
 import { ServiceAreaMap } from "@/components/ServiceAreaMap";
 import { SERVICE_PAGES } from "@/components/service/ServiceInternalLinks";
+import { getFaqPageSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 
 type OutlineProps = {
@@ -31,7 +33,7 @@ export function ServicesOutline({
           id="services-outline-heading"
           className="font-display text-3xl font-semibold text-primary sm:text-4xl"
         >
-          {heading ?? `Crawl Space Services in ${city}`}
+          {heading ?? `What Crawl Space Services Are Available in ${city}?`}
         </h2>
         <p className="mt-4 text-lg text-muted">
           Connect with local specialists for encapsulation, moisture control, mold treatment, and
@@ -75,7 +77,7 @@ export function PricingOutline({
           id="pricing-outline-heading"
           className="font-display text-3xl font-semibold text-primary sm:text-4xl"
         >
-          Crawl Space Pricing in {city}
+          How Much Does Crawl Space Work Cost in {city}?
         </h2>
         <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted">
           <p>
@@ -109,7 +111,7 @@ export function ServiceAreaOutline({
       <div className="container-narrow mx-auto max-w-3xl">
         <ServiceAreaMap
           headingId="service-area-outline-heading"
-          heading={`Service Area — ${city} & Upstate South Carolina`}
+          heading={`Where Is the ${city} Crawl Space Service Area?`}
           description={`Greenville Crawl Space Pros connects homeowners across Greenville County and the Upstate with licensed crawl space specialists. Call ${siteConfig.phone} to confirm coverage in your area.`}
           showMap={showMap}
         />
@@ -126,22 +128,29 @@ type FaqOutlineItem = {
 type FaqOutlineProps = OutlineProps & {
   items?: FaqOutlineItem[];
   heading?: string;
+  /** Page path for FAQPage JSON-LD when items are provided (e.g. "/contact") */
+  schemaPath?: string;
 };
 
 export function FaqOutline({
   city = "Greenville, SC",
   items,
   heading,
+  schemaPath,
   className = "bg-white section-padding",
 }: FaqOutlineProps) {
   return (
-    <section className={className} aria-labelledby="faq-outline-heading">
+    <>
+      {items && items.length > 0 && schemaPath ? (
+        <SchemaScript schema={getFaqPageSchema(items, schemaPath)} />
+      ) : null}
+      <section className={className} aria-labelledby="faq-outline-heading">
       <div className="container-narrow mx-auto max-w-3xl">
         <h2
           id="faq-outline-heading"
           className="font-display text-3xl font-semibold text-primary sm:text-4xl"
         >
-          {heading ?? `Crawl Space FAQ — ${city}`}
+          {heading ?? `What Are Common Crawl Space Questions in ${city}?`}
         </h2>
         {items && items.length > 0 ? (
           <div className="mt-8 space-y-6">
@@ -174,5 +183,6 @@ export function FaqOutline({
         </p>
       </div>
     </section>
+    </>
   );
 }

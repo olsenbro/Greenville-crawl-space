@@ -1,3 +1,5 @@
+import { getServicePath } from "./service-pages";
+
 export const siteConfig = {
   name: "Greenville Crawl Space Pros",
   tagline: "Connect with Trusted Crawl Space Specialists in Greenville, SC",
@@ -30,7 +32,7 @@ export const siteConfig = {
   ],
   businessHoursLabel: "Monday–Saturday: 7:00 AM – 6:00 PM",
   serviceArea: "Greenville, Spartanburg, Anderson, Greer, Simpsonville, and the Upstate SC region",
-  gaId: process.env.NEXT_PUBLIC_GA_ID ?? "",
+  gaId: process.env.NEXT_PUBLIC_GA_ID ?? "G-WLBWCSRS3L",
   mapEmbedQuery: "Greenville,+SC",
   logoPath: "/icon-512.png",
   ogImagePath: "/og-image.png",
@@ -47,19 +49,19 @@ export const siteConfig = {
   cta: {
     primary: "Request a Free Estimate",
     online: "Request a Free Estimate",
-    defaultHeading: "Connect with a Licensed Greenville Crawl Space Specialist",
+    defaultHeading: "Need a Licensed Greenville Crawl Space Specialist?",
     defaultBody:
       "Get matched with a trusted local specialist — no obligation, no pressure. Receive an honest assessment of your crawl space and a clear recommendation for what it needs.",
   },
 } as const;
 
 export const serviceLinks = [
-  { href: "/crawl-space-encapsulation", label: "Crawl Space Encapsulation" },
-  { href: "/vapor-barrier", label: "Vapor Barrier Installation" },
-  { href: "/crawl-space-repair", label: "Crawl Space Repair" },
-  { href: "/dehumidifier-installation", label: "Dehumidifier Installation" },
-  { href: "/mold-in-crawl-space", label: "Mold in Crawl Space" },
-  { href: "/floor-joist-repair", label: "Floor Joist Repair" },
+  { href: getServicePath("crawl-space-encapsulation"), label: "Crawl Space Encapsulation" },
+  { href: getServicePath("vapor-barrier"), label: "Vapor Barrier Installation" },
+  { href: getServicePath("crawl-space-repair"), label: "Crawl Space Repair" },
+  { href: getServicePath("dehumidifier-installation"), label: "Dehumidifier Installation" },
+  { href: getServicePath("mold-in-crawl-space"), label: "Mold in Crawl Space" },
+  { href: getServicePath("floor-joist-repair"), label: "Floor Joist Repair" },
 ] as const;
 
 export const mainNavLinks = [

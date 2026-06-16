@@ -5,6 +5,8 @@ import {
   ServicePageTemplate,
   ServiceSection,
 } from "@/components/service/ServicePageTemplate";
+import { AuthorityLink } from "@/components/AuthorityCitation";
+import { authorities } from "@/lib/authorities";
 import { getServiceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -12,7 +14,7 @@ export const metadata = buildPageMetadata({
   title: "Vapor Barrier Installation Greenville SC | Crawl Space",
   description:
     "Stop crawl space moisture in Greenville, SC with pro vapor barrier installation. 20-mil liners prevent mold, rot, and musty odors upstairs. Get a free estimate.",
-  canonical: "/vapor-barrier",
+  canonical: "/services/vapor-barrier",
 });
 
 const installSteps = [
@@ -59,18 +61,24 @@ const faqs = [
     answer:
       "DIY installation is possible but difficult to do correctly in a tight crawl space. Proper seam sealing, wall attachment, and pier wrapping require experience — gaps and tears are the most common failure points in DIY jobs.",
   },
+  {
+    question: "How much does vapor barrier installation cost in Greenville?",
+    answer:
+      "Professional 20-mil vapor barrier installation typically runs $1,500–$3,500 in Greenville, depending on crawl space size and any prep work required.",
+  },
 ];
 
 export default function VaporBarrierPage() {
   return (
     <ServicePageTemplate
       h1="Vapor Barrier Installation in Greenville, South Carolina"
+      quickAnswer="Vapor barrier installation in Greenville, SC starts at $1,500–$3,500 for a professional 20-mil liner and usually completes in one day for a standard crawl space."
       intro={[
         "A properly installed vapor barrier stops ground moisture from evaporating into your crawl space — the first line of defense against mold, rot, and musty odors.",
         "Connect with local specialists who install commercial-grade 20-mil reinforced liners throughout Greenville and the Upstate SC region.",
       ]}
       breadcrumbs={[
-        { label: "Services", href: "/vapor-barrier" },
+        { label: "Services", href: "/services/vapor-barrier" },
         { label: "Vapor Barrier Installation" },
       ]}
       serviceSlug="vapor-barrier"
@@ -78,11 +86,11 @@ export default function VaporBarrierPage() {
         name: "Vapor Barrier Installation",
         description:
           "Professional 20-mil reinforced vapor barrier installation for crawl spaces in Greenville, SC.",
-        path: "/vapor-barrier",
+        path: "/services/vapor-barrier",
       })}
       faqs={faqs}
     >
-      <ServiceSection title="What a Vapor Barrier Does">
+      <ServiceSection title="What Does a Vapor Barrier Do?">
         <p>
           Ground moisture constantly evaporates upward from soil. Without a barrier, that moisture
           saturates the air in your crawl space, condenses on floor joists and insulation, and creates
@@ -92,11 +100,14 @@ export default function VaporBarrierPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Vapor Barrier vs. Full Encapsulation" className="bg-neutral">
+      <ServiceSection title="How Does a Vapor Barrier Compare to Full Encapsulation?" className="bg-neutral">
         <p>
           The key difference: a vapor barrier addresses ground moisture only. It does not seal
           foundation vents or condition the air. In humid climates, outdoor air still enters through
-          vents and can keep relative humidity above safe levels even with a floor liner in place.
+          vents and can keep relative humidity above safe levels even with a floor liner in place — why
+          the{" "}
+          <AuthorityLink href={authorities.doeCrawlspace.url}>DOE recommends sealing crawl spaces</AuthorityLink>{" "}
+          in regions like Upstate South Carolina.
         </p>
         <ServiceComparisonTable
           headers={["", "Vapor Barrier", "Full Encapsulation"]}
@@ -110,7 +121,7 @@ export default function VaporBarrierPage() {
         />
       </ServiceSection>
 
-      <ServiceSection title="What Makes a Quality Liner">
+      <ServiceSection title="What Makes a Quality Vapor Barrier Liner?">
         <ServiceComparisonTable
           headers={["Liner Type", "Thickness", "Durability", "Professional Recommendation"]}
           rows={[
@@ -121,7 +132,7 @@ export default function VaporBarrierPage() {
         />
       </ServiceSection>
 
-      <ServiceSection title="Signs Your Current Vapor Barrier Has Failed" className="bg-neutral">
+      <ServiceSection title="How Do You Know Your Vapor Barrier Has Failed?" className="bg-neutral">
         <BulletList
           items={[
             "Visible tears, holes, or sections pulled away from walls",
@@ -134,11 +145,11 @@ export default function VaporBarrierPage() {
         />
       </ServiceSection>
 
-      <ServiceSection title="Typical Vapor Barrier Installation Process">
+      <ServiceSection title="What Is the Vapor Barrier Installation Process?">
         <ProcessSteps steps={installSteps} />
       </ServiceSection>
 
-      <ServiceSection title="Vapor Barrier Installation Cost" className="bg-neutral">
+      <ServiceSection title="How Much Does Vapor Barrier Installation Cost in Greenville, SC?" className="bg-neutral">
         <p>
           Vapor barrier installation only — without vent sealing or dehumidifier — typically runs{" "}
           <strong className="text-dark">$1,200 to $3,000</strong> in the Greenville area, depending

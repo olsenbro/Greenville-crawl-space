@@ -8,13 +8,14 @@ import {
   LocationLinksOutline,
   RelatedGuidesLinks,
 } from "@/components/seo/InternalLinksSections";
+import { PageQuickAnswer } from "@/components/seo/PageQuickAnswer";
 import {
   FaqOutline,
   PricingOutline,
   ServicesOutline,
   ServiceAreaOutline,
 } from "@/components/seo/PageOutlineSections";
-import { getAuthorityForPath } from "@/lib/authorities";
+import { getAuthoritiesForPath } from "@/lib/authorities";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -35,6 +36,10 @@ export default function NotFound() {
           <h1 className="font-display text-4xl font-semibold text-primary sm:text-5xl">
             Crawl Space Services in Greenville, SC — Page Not Found
           </h1>
+          <PageQuickAnswer variant="light" className="mt-4 text-xl font-semibold leading-snug text-primary sm:text-2xl">
+            This page could not be found — browse crawl space encapsulation, repair, and moisture
+            control services in Greenville, SC, or call for immediate help.
+          </PageQuickAnswer>
           <p className="mt-4 text-lg text-muted">
             The page you&apos;re looking for doesn&apos;t exist or may have been moved. Try one of
             the links below, or call us directly.
@@ -65,7 +70,7 @@ export default function NotFound() {
           </div>
 
           <div className="mt-8">
-            <h2 className="font-display text-2xl font-semibold text-primary">Popular Crawl Space Services</h2>
+            <h2 className="font-display text-2xl font-semibold text-primary">Which Crawl Space Services Are Most Popular?</h2>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
               {SERVICE_PAGES.slice(0, 4).map(({ href, label }) => (
                 <li key={href}>
@@ -91,7 +96,7 @@ export default function NotFound() {
       <ServiceAreaOutline className="bg-white section-padding border-t border-primary/10" showMap={false} />
       <FaqOutline className="bg-neutral section-padding border-t border-primary/10" />
 
-      <AuthoritySection source={getAuthorityForPath("/404")} className="bg-white" />
+      <AuthoritySection sources={getAuthoritiesForPath("/404")} className="bg-white" />
     </>
   );
 }

@@ -4,6 +4,8 @@ import {
   ServicePageTemplate,
   ServiceSection,
 } from "@/components/service/ServicePageTemplate";
+import { AuthorityLink } from "@/components/AuthorityCitation";
+import { authorities } from "@/lib/authorities";
 import { getServiceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -11,7 +13,7 @@ export const metadata = buildPageMetadata({
   title: "Crawl Space Mold Removal Greenville SC | Local Pros",
   description:
     "Mold in your Greenville, SC crawl space? Local specialists treat and remove mold at the source before encapsulation. Protect your home — get a free estimate.",
-  canonical: "/mold-in-crawl-space",
+  canonical: "/services/mold-in-crawl-space",
 });
 
 const treatmentSteps = [
@@ -63,18 +65,24 @@ const faqs = [
     answer:
       "Not if the moisture source is eliminated. Mold treatment without fixing humidity and moisture is temporary. That's why reputable contractors always pair treatment with encapsulation — treating mold without stopping moisture is a band-aid.",
   },
+  {
+    question: "How much does crawl space mold treatment cost in Greenville?",
+    answer:
+      "Mold treatment alone typically runs $500–$2,500 depending on coverage. Most homeowners budget $1,500–$4,000 when treatment is combined with moisture control or encapsulation.",
+  },
 ];
 
 export default function MoldInCrawlSpacePage() {
   return (
     <ServicePageTemplate
       h1="Crawl Space Mold Removal in Greenville, SC"
+      quickAnswer="Crawl space mold treatment in Greenville, SC removes active mold on joists and subfloor, fixes the moisture source, and typically costs $1,500–$4,000 before encapsulation."
       intro={[
         "Mold in your crawl space isn't just a nuisance below your floor — it affects the air your family breathes every day.",
         "Connect with local specialists who treat crawl space mold at the source, then encapsulate to stop it from coming back.",
       ]}
       breadcrumbs={[
-        { label: "Services", href: "/mold-in-crawl-space" },
+        { label: "Services", href: "/services/mold-in-crawl-space" },
         { label: "Mold in Crawl Space" },
       ]}
       serviceSlug="mold-in-crawl-space"
@@ -82,13 +90,13 @@ export default function MoldInCrawlSpacePage() {
         name: "Crawl Space Mold Treatment",
         description:
           "Professional crawl space mold treatment and remediation before encapsulation in Greenville, SC.",
-        path: "/mold-in-crawl-space",
+        path: "/services/mold-in-crawl-space",
       })}
       faqs={faqs}
       ctaHeading="Mold Won't Fix Itself — Act Now"
       ctaBody="Request a free crawl space estimate. A local specialist will identify the mold, find the moisture source, and outline a treatment plan."
     >
-      <ServiceSection title="Why Crawl Space Mold Is Common in Greenville">
+      <ServiceSection title="Why Is Crawl Space Mold Common in Greenville, SC?">
         <p>
           Greenville&apos;s combination of high humidity, clay soil that holds moisture against foundations,
           and older open-vent crawl space construction creates ideal mold conditions. Many Upstate homes
@@ -97,12 +105,13 @@ export default function MoldInCrawlSpacePage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="How Mold Spreads From Your Crawl Space to Your Home" className="bg-neutral">
+      <ServiceSection title="How Does Mold Spread From Your Crawl Space to Your Home?" className="bg-neutral">
         <p>
           As air in your home heats and rises, it creates negative pressure that pulls replacement air
           upward from the crawl space through gaps in flooring, HVAC ducts, and plumbing penetrations.
           This <strong className="text-dark">stack effect</strong> means up to 50% of the air on your
-          first floor may originate below your home — carrying mold spores with it.
+          first floor may originate below your home — carrying mold spores with it, as explained in{" "}
+          <AuthorityLink href={authorities.epaIndoorAir.url}>EPA indoor air quality research</AuthorityLink>.
         </p>
         <p>
           You may never see mold in your crawl space, but if you smell mustiness indoors, your HVAC
@@ -110,7 +119,7 @@ export default function MoldInCrawlSpacePage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Types of Mold Commonly Found in SC Crawl Spaces">
+      <ServiceSection title="What Types of Mold Are Commonly Found in SC Crawl Spaces?">
         <p>Common species found in Upstate crawl spaces include:</p>
         <BulletList
           items={[
@@ -126,20 +135,21 @@ export default function MoldInCrawlSpacePage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Typical Mold Treatment Process" className="bg-neutral">
+      <ServiceSection title="What Is the Typical Mold Treatment Process?" className="bg-neutral">
         <ProcessSteps steps={treatmentSteps} />
       </ServiceSection>
 
-      <ServiceSection title="Why Encapsulation Alone Won't Fix Mold">
+      <ServiceSection title="Why Won't Encapsulation Alone Fix Mold?">
         <p>
           Encapsulating over active mold traps moisture and spores against wood surfaces and allows
           mold to continue growing in the dark, sealed environment.{" "}
           <strong className="text-dark">Treatment must come first</strong> — then encapsulation prevents
-          recurrence by controlling humidity permanently.
+          recurrence by controlling humidity permanently, matching{" "}
+          <AuthorityLink href={authorities.epaMold.url}>EPA mold cleanup guidance</AuthorityLink>.
         </p>
       </ServiceSection>
 
-      <ServiceSection title="What NOT to Do" className="bg-neutral">
+      <ServiceSection title="What Should You NOT Do About Crawl Space Mold?" className="bg-neutral">
         <BulletList
           items={[
             "Don't use bleach on porous wood — it kills surface mold but not roots embedded in joists",
@@ -151,7 +161,7 @@ export default function MoldInCrawlSpacePage() {
         />
       </ServiceSection>
 
-      <ServiceSection title="Crawl Space Mold Treatment Cost">
+      <ServiceSection title="How Much Does Crawl Space Mold Treatment Cost in Greenville, SC?">
         <p>
           Mold treatment before encapsulation typically runs{" "}
           <strong className="text-dark">$500 to $2,000</strong> depending on extent, affected surface

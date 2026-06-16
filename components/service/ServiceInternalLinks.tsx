@@ -1,22 +1,8 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { SERVICE_PAGES } from "@/lib/service-pages";
 
-export const SERVICE_PAGES = [
-  {
-    slug: "crawl-space-encapsulation",
-    href: "/crawl-space-encapsulation",
-    label: "Crawl Space Encapsulation",
-  },
-  { slug: "vapor-barrier", href: "/vapor-barrier", label: "Vapor Barrier Installation" },
-  { slug: "crawl-space-repair", href: "/crawl-space-repair", label: "Crawl Space Repair" },
-  {
-    slug: "dehumidifier-installation",
-    href: "/dehumidifier-installation",
-    label: "Dehumidifier Installation",
-  },
-  { slug: "mold-in-crawl-space", href: "/mold-in-crawl-space", label: "Mold in Crawl Space" },
-  { slug: "floor-joist-repair", href: "/floor-joist-repair", label: "Floor Joist Repair" },
-] as const;
+export { SERVICE_PAGES };
 
 export function getRelatedServices(currentSlug: string, count = 2) {
   return SERVICE_PAGES.filter((service) => service.slug !== currentSlug).slice(0, count);
@@ -32,7 +18,7 @@ export function ServiceInternalLinks({ currentSlug }: ServiceInternalLinksProps)
   return (
     <section className="border-t border-primary/10 bg-neutral section-padding">
       <div className="container-narrow mx-auto max-w-3xl">
-        <h2 className="font-display text-xl font-semibold text-primary">Explore More</h2>
+        <h2 className="font-display text-xl font-semibold text-primary">Where Should You Go Next?</h2>
         <ul className="mt-4 space-y-2 text-muted">
           <li>
             <Link

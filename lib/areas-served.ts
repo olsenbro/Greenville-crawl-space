@@ -8,6 +8,8 @@ export type CityArea = {
   title: string;
   description: string;
   h1: string;
+  /** Direct one-sentence answer shown immediately below the H1 */
+  quickAnswer: string;
   intro: string[];
   body: string[];
   neighbors: string[];
@@ -31,6 +33,8 @@ const cityAreasBase: CityAreaBase[] = [
     description:
       "Crawl space encapsulation in Simpsonville, SC. Local specialists for moisture control, vapor barriers, and mold in Golden Strip homes. Get a free estimate.",
     h1: "Crawl Space Encapsulation in Simpsonville, South Carolina",
+    quickAnswer:
+      "Crawl space encapsulation in Simpsonville, SC costs $5,000–$9,000 for a full system and connects Golden Strip homeowners with licensed local specialists for a free estimate.",
     intro: [
       "Simpsonville homeowners face crawl space moisture problems rooted in the town's rapid growth along the Fairview Road corridor — a mix of 1990s and 2000s homes with original open-vent crawl spaces, and newer subdivisions built on disturbed red clay that holds water long after rain.",
       "Get matched with licensed crawl space specialists serving Simpsonville and all of Upstate SC — same-day scheduling available for free estimates throughout the Golden Strip.",
@@ -53,6 +57,8 @@ const cityAreasBase: CityAreaBase[] = [
     description:
       "Crawl space encapsulation and repair in Greer, SC. Local specialists serve railroad district homes and BMW corridor subdivisions. Request a free estimate today.",
     h1: "Crawl Space Encapsulation in Greer, South Carolina",
+    quickAnswer:
+      "Crawl space encapsulation in Greer, SC costs $5,000–$9,000 and fixes moisture problems in both downtown railroad-district homes and I-85 corridor subdivisions.",
     intro: [
       "Greer crawl spaces tell two different stories: post-war homes near the historic railroad district that have never had a proper vapor barrier, and newer BMW/Michelin corridor suburbs built on cut-and-fill lots where drainage was an afterthought.",
       "Connect with local specialists who encapsulate, repair, and dehumidify crawl spaces throughout Greer — from downtown's established streets to Tyger River area developments.",
@@ -75,6 +81,8 @@ const cityAreasBase: CityAreaBase[] = [
     description:
       "Crawl space encapsulation in Spartanburg, SC. Local specialists handle historic homes and rolling-terrain drainage challenges. Request your free estimate today.",
     h1: "Crawl Space Encapsulation in Spartanburg, South Carolina",
+    quickAnswer:
+      "Crawl space encapsulation in Spartanburg, SC costs $5,000–$9,000 and addresses humidity damage common in historic neighborhoods and rolling-terrain homes across the county.",
     intro: [
       "Spartanburg's historic housing stock — much of it pre-1970 — combined with rolling terrain that channels water toward foundations makes crawl space moisture one of the most common hidden problems in the county.",
       "Get matched with licensed contractors who provide encapsulation, mold treatment, and structural repair throughout Spartanburg, where humidity levels often exceed even Greenville's.",
@@ -97,6 +105,8 @@ const cityAreasBase: CityAreaBase[] = [
     description:
       "Crawl space encapsulation in Anderson, SC. Local specialists for vapor barriers, mold treatment, and repair near Lake Hartwell. Get a free estimate today.",
     h1: "Crawl Space Encapsulation in Anderson, South Carolina",
+    quickAnswer:
+      "Crawl space encapsulation in Anderson, SC costs $5,000–$9,000 and helps homeowners near Lake Hartwell and across Anderson County stop crawl space moisture and mold.",
     intro: [
       "Anderson County's mix of rural farmhouses, semi-rural properties, and homes on low-lying lots near Lake Hartwell tributaries creates crawl space moisture challenges that standard builder solutions rarely address.",
       "Get matched with licensed contractors in Anderson and surrounding communities for full encapsulation, mold treatment, and structural repair.",
@@ -119,6 +129,8 @@ const cityAreasBase: CityAreaBase[] = [
     description:
       "Crawl space encapsulation in Mauldin, SC. Replace failed builder-grade vapor barriers in 1980s–2000s neighborhoods with 20-mil systems. Free estimate today.",
     h1: "Crawl Space Encapsulation in Mauldin, South Carolina",
+    quickAnswer:
+      "Crawl space encapsulation in Mauldin, SC costs $5,000–$9,000 and replaces failed builder-grade vapor barriers in 1980s–2000s suburban homes throughout Greenville County.",
     intro: [
       "Mauldin's established suburban neighborhoods — largely built between the 1980s and 2000s — contain thousands of crawl spaces with original builder-grade vapor barriers that have torn, gapped, or degraded to the point of uselessness.",
       "Get matched with local contractors who replace failed barriers with professional 20-mil encapsulation systems throughout Mauldin and greater Greenville County.",
@@ -141,6 +153,8 @@ const cityAreasBase: CityAreaBase[] = [
     description:
       "Crawl space encapsulation in Taylors, SC for Blue Ridge foothill homes where humidity and Piedmont clay cause moisture problems. Get a free estimate today.",
     h1: "Crawl Space Encapsulation in Taylors, South Carolina",
+    quickAnswer:
+      "Crawl space encapsulation in Taylors, SC costs $5,000–$9,000 and controls foothill humidity problems common in north Greenville County crawl spaces.",
     intro: [
       "Taylors sits where the Piedmont lowlands meet the Blue Ridge foothills — a geography that creates crawl space moisture patterns distinct from Greenville proper, with seasonal runoff from higher elevations and cooler nighttime temperatures that drive condensation.",
       "Get matched with licensed contractors in Taylors and north Greenville County for full encapsulation, dehumidifier installation, and crawl space repair.",
@@ -163,6 +177,8 @@ const cityAreasBase: CityAreaBase[] = [
     description:
       "Crawl space encapsulation in Easley, SC. Local specialists for moisture control, mold, and repair in Pickens County homes. Request your free estimate today.",
     h1: "Crawl Space Encapsulation in Easley, South Carolina",
+    quickAnswer:
+      "Crawl space encapsulation in Easley, SC costs $5,000–$9,000 and serves Pickens County homeowners along the Greenville–Clemson corridor with licensed local specialists.",
     intro: [
       "Easley sits at the crossroads of Pickens County growth — older ranch homes near downtown, newer subdivisions along Highway 123, and rural properties on rolling land where crawl spaces often go years without inspection.",
       "Get matched with licensed crawl space specialists serving Easley, Powdersville, and all of Pickens County for encapsulation, mold treatment, and structural repair.",
@@ -185,6 +201,8 @@ const cityAreasBase: CityAreaBase[] = [
     description:
       "Crawl space encapsulation in Duncan, SC along the I-85 growth corridor. Local pros for vapor barriers, mold, and repair near Greer and Spartanburg. Free estimate.",
     h1: "Crawl Space Encapsulation in Duncan, South Carolina",
+    quickAnswer:
+      "Crawl space encapsulation in Duncan, SC costs $5,000–$9,000 and fixes moisture problems in fast-growing I-85 corridor subdivisions between Greenville and Spartanburg.",
     intro: [
       "Duncan's rapid growth along the I-85 corridor brought thousands of homes built on cut-and-fill lots — crawl spaces where builder-grade vapor barriers tore within years and open vents pull humid Upstate air inside year-round.",
       "Connect with local specialists who encapsulate, repair, and dehumidify crawl spaces throughout Duncan, Reidville, and the Spartanburg–Greenville county line.",
@@ -207,6 +225,8 @@ const cityAreasBase: CityAreaBase[] = [
     description:
       "Crawl space encapsulation in Fountain Inn, SC on the Golden Strip. Local specialists for moisture, mold, and vapor barriers in southern Greenville County. Free estimate.",
     h1: "Crawl Space Encapsulation in Fountain Inn, South Carolina",
+    quickAnswer:
+      "Crawl space encapsulation in Fountain Inn, SC costs $5,000–$9,000 and protects Golden Strip homes from Upstate humidity, red clay moisture, and failing builder-grade barriers.",
     intro: [
       "Fountain Inn anchors the southern end of the Golden Strip — a blend of historic downtown homes, 1980s–2000s subdivisions, and newer growth toward Laurens County where crawl spaces with failed builder-grade barriers are the norm, not the exception.",
       "Get matched with licensed specialists who encapsulate, repair, and dehumidify crawl spaces throughout Fountain Inn and southern Greenville County.",

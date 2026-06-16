@@ -12,7 +12,7 @@ export type FaqCategory = {
 export const faqCategories: FaqCategory[] = [
   {
     id: "problems",
-    title: "Understanding Crawl Space Problems",
+    title: "What Crawl Space Problems Do Greenville Homeowners Face?",
     items: [
       {
         question: "Why is my crawl space wet even when it hasn't rained?",
@@ -48,7 +48,7 @@ export const faqCategories: FaqCategory[] = [
   },
   {
     id: "encapsulation",
-    title: "Encapsulation & Vapor Barriers",
+    title: "How Do Encapsulation and Vapor Barriers Work?",
     items: [
       {
         question: "What is crawl space encapsulation?",
@@ -89,7 +89,7 @@ export const faqCategories: FaqCategory[] = [
   },
   {
     id: "mold-repair",
-    title: "Mold, Repair & Dehumidifiers",
+    title: "What About Mold, Repair, and Dehumidifiers?",
     items: [
       {
         question: "Can I encapsulate over existing mold?",
@@ -125,7 +125,7 @@ export const faqCategories: FaqCategory[] = [
   },
   {
     id: "cost-process",
-    title: "Cost, Process & SC-Specific",
+    title: "How Much Does Crawl Space Work Cost in Greenville, SC?",
     items: [
       {
         question: "How much does crawl space encapsulation cost in Greenville?",

@@ -32,7 +32,7 @@ export function LocationLinksOutline({
           id="location-links-heading"
           className="font-display text-3xl font-semibold text-primary sm:text-4xl"
         >
-          Crawl Space Service Areas in Upstate SC
+          Which Upstate SC Cities Have Crawl Space Service Areas?
         </h2>
         <p className="mt-4 text-lg text-muted">
           Find crawl space encapsulation, repair, and moisture control specialists by city — or{" "}
@@ -94,7 +94,7 @@ export function RelatedGuidesLinks({
           id="related-guides-heading"
           className="font-display text-3xl font-semibold text-primary sm:text-4xl"
         >
-          Related Crawl Space Pages
+          Which Crawl Space Pages Should You Read Next?
         </h2>
         <div className="mt-8 grid gap-8 lg:grid-cols-2">
           <div>

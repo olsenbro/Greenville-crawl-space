@@ -8,8 +8,9 @@ import { SchemaScript } from "@/components/SchemaScript";
 import { ServiceLinksGrid } from "@/components/service/ServiceLinksGrid";
 import { PricingOutline, ServiceAreaOutline } from "@/components/seo/PageOutlineSections";
 import { LocationLinksOutline, RelatedGuidesLinks } from "@/components/seo/InternalLinksSections";
+import { PageQuickAnswer } from "@/components/seo/PageQuickAnswer";
 import { allFaqItems, faqCategories } from "@/lib/faq-page-data";
-import { getAuthorityForPath } from "@/lib/authorities";
+import { getAuthoritiesForPath } from "@/lib/authorities";
 import { getFaqPageSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
@@ -24,7 +25,7 @@ export const metadata = buildPageMetadata({
 export default function FaqPage() {
   return (
     <>
-      <SchemaScript schema={getFaqPageSchema(allFaqItems)} />
+      <SchemaScript schema={getFaqPageSchema(allFaqItems, "/faq")} />
 
       <Breadcrumbs items={[{ label: "FAQ" }]} path="/faq" />
 
@@ -35,6 +36,10 @@ export default function FaqPage() {
             <h1 className="font-display text-4xl font-semibold leading-tight text-balance sm:text-5xl">
               Crawl Space Encapsulation FAQ — Greenville, South Carolina
             </h1>
+            <PageQuickAnswer className="mx-auto mt-4 max-w-3xl text-xl font-semibold leading-snug text-white sm:text-2xl">
+              Crawl space encapsulation in Greenville, SC costs $5,000–$9,000, takes 2–4 days, and
+              includes a 20-mil vapor barrier, sealed vents, and a commercial dehumidifier.
+            </PageQuickAnswer>
             <p className="mt-6 text-lg leading-relaxed text-white/90">
               Honest answers about crawl space moisture, encapsulation, mold, dehumidifiers, costs,
               and what to expect — connecting Greenville-area homeowners with trusted local specialists.
@@ -53,13 +58,13 @@ export default function FaqPage() {
         </div>
       </section>
 
-      <AuthoritySection source={getAuthorityForPath("/faq")} className="bg-neutral" />
+      <AuthoritySection sources={getAuthoritiesForPath("/faq")} className="bg-neutral" />
 
       <PricingOutline className="bg-white section-padding border-t border-primary/10" />
 
       <section className="bg-neutral section-padding border-t border-primary/10">
         <div className="container-narrow mx-auto max-w-3xl">
-          <ServiceLinksGrid title="Crawl Space Services in Greenville, SC" />
+          <ServiceLinksGrid title="What Crawl Space Services Are Available in Greenville, SC?" />
           <p className="mt-6 text-center">
             <Link
               href="/crawl-space-encapsulation-cost"

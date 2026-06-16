@@ -7,7 +7,8 @@ import { ServiceLinksGrid } from "@/components/service/ServiceLinksGrid";
 import { hubAreaCards } from "@/lib/areas-served";
 import { FaqOutline, PricingOutline } from "@/components/seo/PageOutlineSections";
 import { RelatedGuidesLinks } from "@/components/seo/InternalLinksSections";
-import { getAuthorityForPath } from "@/lib/authorities";
+import { PageQuickAnswer } from "@/components/seo/PageQuickAnswer";
+import { getAuthoritiesForPath } from "@/lib/authorities";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -30,6 +31,11 @@ export default function AreasServedPage() {
             <h1 className="font-display text-4xl font-semibold leading-tight text-balance sm:text-5xl">
               Crawl Space Services in Greenville, SC &amp; Upstate South Carolina
             </h1>
+            <PageQuickAnswer className="mx-auto mt-4 max-w-3xl text-xl font-semibold leading-snug text-white sm:text-2xl">
+              Greenville Crawl Space Pros connects homeowners across Upstate SC — including
+              Greenville, Spartanburg, Anderson, Greer, and Simpsonville — with licensed crawl space
+              specialists for free estimates.
+            </PageQuickAnswer>
             <p className="mt-6 text-lg leading-relaxed text-white/90">
               Upstate SC presents a perfect storm for crawl space problems: some of the highest
               humidity in the nation, red clay soil that holds moisture against foundations, older
@@ -49,7 +55,7 @@ export default function AreasServedPage() {
       <section className="section-padding bg-neutral">
         <div className="container-narrow">
           <h2 className="text-center font-display text-3xl font-semibold sm:text-4xl">
-            Cities &amp; Areas We Connect You With Pros
+            Which Upstate SC Cities Do We Serve?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-lg text-muted">
             Select your city to learn about local crawl space services, pricing, and how to connect
@@ -138,11 +144,11 @@ export default function AreasServedPage() {
         </div>
       </section>
 
-      <AuthoritySection source={getAuthorityForPath("/areas-served")} />
+      <AuthoritySection sources={getAuthoritiesForPath("/areas-served")} />
 
       <section className="bg-white section-padding">
         <div className="container-narrow mx-auto max-w-3xl">
-          <ServiceLinksGrid title="Crawl Space Services in Greenville, SC" />
+          <ServiceLinksGrid title="What Crawl Space Services Are Available in Greenville, SC?" />
           <p className="mt-6 text-center text-muted">
             <Link href="/contact" className="font-semibold text-primary hover:underline">
               {siteConfig.cta.primary} in your area →
@@ -162,7 +168,7 @@ export default function AreasServedPage() {
 
       <section className="bg-neutral section-padding">
         <div className="container-narrow mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-3xl font-semibold">Counties &amp; Regions Covered</h2>
+          <h2 className="font-display text-3xl font-semibold">Which Counties and Regions Do We Cover?</h2>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {[
               "Greenville County",
@@ -190,7 +196,7 @@ export default function AreasServedPage() {
       <section className="bg-accent section-padding text-white">
         <div className="container-narrow mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
-            Connect With a Specialist in Your Area
+            How Do You Connect With a Specialist in Your Area?
           </h2>
           <p className="mt-4 text-lg text-white/90">
             Free crawl space estimates throughout Upstate SC. Most appointments scheduled within the

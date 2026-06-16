@@ -4,6 +4,8 @@ import {
   ServicePageTemplate,
   ServiceSection,
 } from "@/components/service/ServicePageTemplate";
+import { AuthorityLink } from "@/components/AuthorityCitation";
+import { authorities } from "@/lib/authorities";
 import { getServiceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -11,7 +13,7 @@ export const metadata = buildPageMetadata({
   title: "Crawl Space Repair Greenville SC | Mold & Structure",
   description:
     "Crawl space repair in Greenville, SC for sagging joists, wood rot, mold damage, and failing piers. Connect with local specialists and get a free estimate today.",
-  canonical: "/crawl-space-repair",
+  canonical: "/services/crawl-space-repair",
 });
 
 const repairSteps = [
@@ -63,18 +65,24 @@ const faqs = [
     answer:
       "Standard homeowners policies typically do not cover gradual moisture damage or rot. Sudden events like plumbing leaks may be covered. Contractors document everything during assessment to support any claim you choose to file.",
   },
+  {
+    question: "How much does crawl space repair cost in Greenville?",
+    answer:
+      "Minor repairs start around $500–$2,000. Structural joist work with mold treatment typically runs $2,000–$8,000 depending on how many joists are affected.",
+  },
 ];
 
 export default function CrawlSpaceRepairPage() {
   return (
     <ServicePageTemplate
       h1="Crawl Space Repair in Greenville, South Carolina"
+      quickAnswer="Crawl space repair in Greenville, SC addresses sagging joists, wood rot, and mold damage — most projects take 2–5 days and cost $2,000–$8,000 depending on severity."
       intro={[
         "If your floors are bouncing, doors are sticking, or an inspector flagged your crawl space — you need repair now, not later.",
         "Connect with local specialists who repair sagging joists, wood rot, mold damage, and failing support systems throughout Greenville and Upstate SC.",
       ]}
       breadcrumbs={[
-        { label: "Services", href: "/crawl-space-repair" },
+        { label: "Services", href: "/services/crawl-space-repair" },
         { label: "Crawl Space Repair" },
       ]}
       serviceSlug="crawl-space-repair"
@@ -82,13 +90,13 @@ export default function CrawlSpaceRepairPage() {
         name: "Crawl Space Repair",
         description:
           "Crawl space structural repair including joist sistering, pier repair, mold treatment, and drainage correction in Greenville, SC.",
-        path: "/crawl-space-repair",
+        path: "/services/crawl-space-repair",
       })}
       faqs={faqs}
       ctaHeading="Don't Wait — Structural Damage Gets Worse"
       ctaBody="Request a free crawl space estimate. A local specialist will document the damage and outline a clear repair plan."
     >
-      <ServiceSection title="Types of Crawl Space Damage Local Pros Repair">
+      <ServiceSection title="What Types of Crawl Space Damage Do Local Pros Repair?">
         <BulletList
           items={[
             "Sagging or rotted floor joists from long-term moisture exposure",
@@ -101,10 +109,13 @@ export default function CrawlSpaceRepairPage() {
         />
       </ServiceSection>
 
-      <ServiceSection title="Warning Signs of Serious Structural Damage" className="bg-neutral">
+      <ServiceSection title="What Are the Warning Signs of Crawl Space Structural Damage?" className="bg-neutral">
         <p>
           Do not ignore these signals — they often mean moisture damage has progressed beyond the crawl
-          space:
+          space.{" "}
+          <AuthorityLink href={authorities.hudHealthyHomes.url}>HUD healthy homes guidance</AuthorityLink>{" "}
+          recommends addressing crawl space moisture promptly to protect structural framing and indoor
+          air quality:
         </p>
         <BulletList
           items={[
@@ -118,11 +129,11 @@ export default function CrawlSpaceRepairPage() {
         />
       </ServiceSection>
 
-      <ServiceSection title="Typical Crawl Space Repair Process">
+      <ServiceSection title="What Is the Typical Crawl Space Repair Process?">
         <ProcessSteps steps={repairSteps} />
       </ServiceSection>
 
-      <ServiceSection title="Repair vs. Full Joist Replacement" className="bg-neutral">
+      <ServiceSection title="When Do You Need Repair vs. Full Joist Replacement?" className="bg-neutral">
         <p>
           <strong className="text-dark">Sistering</strong> — bolting a new joist alongside a damaged
           one — is faster, less invasive, and costs significantly less when the existing joist retains
@@ -137,7 +148,7 @@ export default function CrawlSpaceRepairPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Crawl Space Repair Cost in Greenville">
+      <ServiceSection title="How Much Does Crawl Space Repair Cost in Greenville, SC?">
         <BulletList
           items={[
             "Minor repairs (small mold treatment, liner patches, pier adjustment): $500–$2,000",
@@ -151,7 +162,7 @@ export default function CrawlSpaceRepairPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Real Estate Disclosure: What Inspectors Look For" className="bg-neutral">
+      <ServiceSection title="What Do Inspectors Look For During Real Estate Disclosure?" className="bg-neutral">
         <p>
           South Carolina home inspectors routinely enter crawl spaces and document moisture, mold, wood
           rot, and structural deficiencies. Findings appear on inspection reports and often become

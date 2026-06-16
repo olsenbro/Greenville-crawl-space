@@ -1,3 +1,6 @@
+import { getServicePath, legacyServiceRedirects } from "./service-pages";
+import { getNeighborhoodBySlug } from "./neighborhood-areas";
+
 export type AuthoritySource = {
   org: string;
   title: string;
@@ -27,6 +30,13 @@ export const authorities = {
     context:
       "EPA guidance stresses fixing the moisture source before treating mold — the same sequence used before crawl space encapsulation.",
   },
+  epaHumidity: {
+    org: "U.S. EPA",
+    title: "Condensation, Humidity, and Your Home",
+    url: "https://www.epa.gov/mold/condensation-humidity-and-your-home",
+    context:
+      "EPA guidance notes that keeping indoor relative humidity below 60% helps prevent mold growth on wood and organic surfaces.",
+  },
   cdcMold: {
     org: "CDC",
     title: "Basic Facts About Mold and Dampness",
@@ -40,6 +50,13 @@ export const authorities = {
     url: "https://www.buildingscience.com/documents/insights/bsi-009-new-light-in-crawlspaces",
     context:
       "Building science research shows that sealed, conditioned crawl spaces outperform traditional vented designs in humid regions like the Southeast.",
+  },
+  advancedEnergyClosedCrawlspaces: {
+    org: "Advanced Energy",
+    title: "Closed Crawlspaces",
+    url: "https://www.advancedenergy.org/buildings/buildingscience/closed-crawlspaces",
+    context:
+      "Advanced Energy field research in humid climates found that sealed crawl spaces maintain lower humidity and reduce HVAC load compared to vented designs.",
   },
   ashraeHumidity: {
     org: "ASHRAE",
@@ -76,36 +93,60 @@ export const authorities = {
     context:
       "HUD's healthy homes guidance recommends keeping crawl spaces dry and well-maintained to protect structural components and indoor air quality.",
   },
+  santaFeDehumidifiers: {
+    org: "Santa Fe Dehumidifiers",
+    title: "Crawl Space Dehumidifier Specifications",
+    url: "https://www.santafedehumidifiers.com/residential/santa-fe-dehumidifiers",
+    context:
+      "Commercial crawl-space dehumidifiers are engineered for continuous duty, automatic condensate drainage, and sustained humidity control below 60% RH.",
+  },
 } as const satisfies Record<string, AuthoritySource>;
 
-const pageAuthorities: Record<string, AuthoritySource> = {
-  "/": authorities.epaIndoorAir,
-  "/crawl-space-encapsulation": authorities.doeCrawlspace,
-  "/vapor-barrier": authorities.doeCrawlspace,
-  "/crawl-space-repair": authorities.hudHealthyHomes,
-  "/dehumidifier-installation": authorities.ashraeHumidity,
-  "/mold-in-crawl-space": authorities.epaMold,
-  "/floor-joist-repair": authorities.usdaWoodDecay,
-  "/crawl-space-encapsulation-cost": authorities.buildingScienceCrawlspaces,
-  "/encapsulation-vs-vapor-barrier": authorities.buildingScienceCrawlspaces,
-  "/what-is-encapsulation": authorities.doeCrawlspace,
-  "/areas-served": authorities.noaaHumidity,
-  "/areas-served/simpsonville": authorities.scDhecMold,
-  "/areas-served/greer": authorities.doeCrawlspace,
-  "/areas-served/spartanburg": authorities.epaIndoorAir,
-  "/areas-served/anderson": authorities.cdcMold,
-  "/areas-served/mauldin": authorities.buildingScienceCrawlspaces,
-  "/areas-served/taylors": authorities.hudHealthyHomes,
-  "/areas-served/easley": authorities.scDhecMold,
-  "/areas-served/duncan": authorities.doeCrawlspace,
-  "/areas-served/fountain-inn": authorities.epaIndoorAir,
-  "/faq": authorities.doeCrawlspace,
-  "/contact": authorities.epaMold,
-  "/thank-you": authorities.epaIndoorAir,
-  "/404": authorities.epaIndoorAir,
+const { doeCrawlspace, epaIndoorAir, epaMold, epaHumidity, cdcMold, buildingScienceCrawlspaces, advancedEnergyClosedCrawlspaces, ashraeHumidity, usdaWoodDecay, scDhecMold, noaaHumidity, hudHealthyHomes, santaFeDehumidifiers } =
+  authorities;
+
+const pageAuthorities: Record<string, AuthoritySource[]> = {
+  "/": [epaIndoorAir, buildingScienceCrawlspaces, noaaHumidity],
+  "/services/crawl-space-encapsulation": [doeCrawlspace, buildingScienceCrawlspaces, epaIndoorAir],
+  "/services/vapor-barrier": [doeCrawlspace, buildingScienceCrawlspaces, noaaHumidity],
+  "/services/crawl-space-repair": [hudHealthyHomes, usdaWoodDecay, epaMold],
+  "/services/dehumidifier-installation": [ashraeHumidity, epaHumidity, santaFeDehumidifiers],
+  "/services/mold-in-crawl-space": [epaMold, cdcMold, scDhecMold],
+  "/services/floor-joist-repair": [usdaWoodDecay, hudHealthyHomes, epaMold],
+  "/crawl-space-encapsulation-cost": [buildingScienceCrawlspaces, doeCrawlspace, noaaHumidity],
+  "/encapsulation-vs-vapor-barrier": [buildingScienceCrawlspaces, advancedEnergyClosedCrawlspaces, doeCrawlspace],
+  "/what-is-encapsulation": [doeCrawlspace, buildingScienceCrawlspaces, epaIndoorAir],
+  "/areas-served": [noaaHumidity, scDhecMold, doeCrawlspace],
+  "/areas-served/simpsonville": [scDhecMold, doeCrawlspace, epaIndoorAir],
+  "/areas-served/greer": [doeCrawlspace, buildingScienceCrawlspaces, noaaHumidity],
+  "/areas-served/spartanburg": [epaIndoorAir, scDhecMold, buildingScienceCrawlspaces],
+  "/areas-served/anderson": [cdcMold, epaMold, noaaHumidity],
+  "/areas-served/mauldin": [buildingScienceCrawlspaces, scDhecMold, epaIndoorAir],
+  "/areas-served/taylors": [hudHealthyHomes, usdaWoodDecay, doeCrawlspace],
+  "/areas-served/easley": [scDhecMold, noaaHumidity, buildingScienceCrawlspaces],
+  "/areas-served/duncan": [doeCrawlspace, epaIndoorAir, advancedEnergyClosedCrawlspaces],
+  "/areas-served/fountain-inn": [epaIndoorAir, noaaHumidity, scDhecMold],
+  "/faq": [doeCrawlspace, epaIndoorAir, buildingScienceCrawlspaces],
+  "/contact": [epaMold, doeCrawlspace, scDhecMold],
+  "/thank-you": [epaIndoorAir, doeCrawlspace, buildingScienceCrawlspaces],
+  "/404": [epaIndoorAir, doeCrawlspace, buildingScienceCrawlspaces],
 };
 
-export function getAuthorityForPath(path: string): AuthoritySource {
+const defaultAuthorities: AuthoritySource[] = [doeCrawlspace, epaIndoorAir, buildingScienceCrawlspaces];
+
+export function getAuthoritiesForPath(path: string): AuthoritySource[] {
   const normalized = path.startsWith("/") ? path : `/${path}`;
-  return pageAuthorities[normalized] ?? authorities.doeCrawlspace;
+  const legacySlug = legacyServiceRedirects[normalized];
+  if (legacySlug) {
+    return pageAuthorities[getServicePath(legacySlug)] ?? defaultAuthorities;
+  }
+  const neighborhood = getNeighborhoodBySlug(normalized.replace(/^\/areas\//, ""));
+  if (neighborhood) {
+    return pageAuthorities[`/areas-served/${neighborhood.citySlug}`] ?? defaultAuthorities;
+  }
+  return pageAuthorities[normalized] ?? defaultAuthorities;
+}
+
+export function getAuthorityForPath(path: string): AuthoritySource {
+  return getAuthoritiesForPath(path)[0];
 }

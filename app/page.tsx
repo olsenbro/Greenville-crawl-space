@@ -10,14 +10,17 @@ import {
 } from "lucide-react";
 import { CrossHatchOverlay } from "@/components/home/CrossHatchOverlay";
 import { HomeFaqAccordion } from "@/components/home/HomeFaqAccordion";
-import { AuthoritySection } from "@/components/AuthorityCitation";
+import { AuthorityLink, AuthoritySection } from "@/components/AuthorityCitation";
 import { PhoneLink } from "@/components/PhoneLink";
+import { SchemaScript } from "@/components/SchemaScript";
 import { ServiceAreaMap } from "@/components/ServiceAreaMap";
 import { PricingOutline, ServicesOutline } from "@/components/seo/PageOutlineSections";
 import { LocationLinksOutline } from "@/components/seo/InternalLinksSections";
+import { PageQuickAnswer } from "@/components/seo/PageQuickAnswer";
 import { homeFaqPreview } from "@/lib/home-faq";
 import { homeProcessSteps } from "@/lib/home-process-steps";
-import { getAuthorityForPath } from "@/lib/authorities";
+import { getAuthoritiesForPath, authorities } from "@/lib/authorities";
+import { getHomeFaqSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -115,6 +118,7 @@ const trustBadges = [
 export default function Home() {
   return (
     <>
+      <SchemaScript schema={getHomeFaqSchema()} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary text-white">
         <CrossHatchOverlay />
@@ -127,10 +131,10 @@ export default function Home() {
           <h1 className="mt-5 max-w-5xl text-balance font-display text-display-sm sm:text-display">
             Crawl Space Encapsulation in Greenville, SC
           </h1>
-          <p className="mt-4 max-w-3xl text-xl font-medium leading-relaxed text-white/95 sm:text-2xl">
-            Your crawl space is the foundation of your home&apos;s health — is yours protecting you,
-            or hurting you?
-          </p>
+          <PageQuickAnswer className="mt-4 max-w-3xl text-xl font-semibold leading-snug text-white/95 sm:text-2xl">
+            Crawl space encapsulation in Greenville, SC costs $5,000–$9,000, takes 2–4 days, and
+            connects you with licensed local specialists for a free estimate.
+          </PageQuickAnswer>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/90 sm:text-xl">
             Moisture, mold, and rot in your crawl space affect your air quality, your floors, and
             your home&apos;s structure. We connect Greenville homeowners with trusted local crawl
@@ -142,7 +146,7 @@ export default function Home() {
               {siteConfig.cta.primary}
             </Link>
             <Link
-              href="/crawl-space-encapsulation"
+              href="/services/crawl-space-encapsulation"
               className="inline-flex items-center justify-center rounded-lg border-2 border-white px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               What Is Encapsulation?
@@ -179,7 +183,7 @@ export default function Home() {
           <div className="max-w-3xl">
             <p className="label-caps">Don&apos;t Wait Until It&apos;s Too Late</p>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl">
-              Warning Signs You Have a Crawl Space Problem
+              Do You Have Signs of a Crawl Space Problem?
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted">
               Most Greenville homeowners don&apos;t think about their crawl space until something goes
@@ -226,9 +230,10 @@ export default function Home() {
             </h3>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-muted">
               <p>
-                South Carolina&apos;s humidity is among the highest in the nation. Traditional
-                open-vent crawl spaces were designed for drier climates and actually draw humid
-                outdoor air in — the opposite of what&apos;s needed here.
+                South Carolina&apos;s humidity is among the highest in the nation — confirmed in{" "}
+                <AuthorityLink href={authorities.noaaHumidity.url}>NOAA climate data</AuthorityLink>.
+                Traditional open-vent crawl spaces were designed for drier climates and actually draw
+                humid outdoor air in — the opposite of what&apos;s needed here.
               </p>
             </div>
 
@@ -249,7 +254,7 @@ export default function Home() {
           <div className="max-w-2xl">
             <p className="label-caps">The Process</p>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl">
-              How the Crawl Space Encapsulation Process Works
+              How Does the Crawl Space Encapsulation Process Work?
             </h2>
           </div>
 
@@ -288,7 +293,7 @@ export default function Home() {
             id="before-after-heading"
             className="font-display text-3xl sm:text-4xl"
           >
-            Before &amp; After Crawl Space Encapsulation
+            Before &amp; After Crawl Space Encapsulation: What Changes?
           </h2>
           <div className="mt-10 grid gap-8 lg:grid-cols-2">
             <article className="rounded-2xl border border-danger/20 bg-danger/5 p-8">
@@ -348,7 +353,7 @@ export default function Home() {
       <section className="section-padding" aria-labelledby="testimonials-heading">
         <div className="container-narrow">
           <h2 id="testimonials-heading" className="font-display text-3xl sm:text-4xl">
-            What Greenville Homeowners Say
+            What Do Greenville Homeowners Say About Crawl Space Work?
           </h2>
           <div className="mt-10 grid items-start gap-6 lg:grid-cols-3">
             {testimonials.map(({ quote, author }) => (
@@ -371,7 +376,7 @@ export default function Home() {
         </div>
       </section>
 
-      <AuthoritySection source={getAuthorityForPath("/")} />
+      <AuthoritySection sources={getAuthoritiesForPath("/")} />
 
       {/* FAQ Preview */}
       <section className="bg-neutral section-padding" aria-labelledby="home-faq-heading">
@@ -379,7 +384,7 @@ export default function Home() {
           <div className="max-w-3xl">
             <p className="label-caps">Got Questions?</p>
             <h2 id="home-faq-heading" className="mt-3 font-display text-3xl sm:text-4xl">
-              Frequently Asked Questions
+              What Do Greenville Homeowners Ask About Crawl Spaces?
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted">
               Common crawl space encapsulation questions from Greenville homeowners.
@@ -405,7 +410,7 @@ export default function Home() {
         <div className="container-narrow">
           <ServiceAreaMap
             headingId="service-area-heading"
-            heading="Service Area — Greenville & Upstate South Carolina"
+            heading="Where Is the Greenville Crawl Space Service Area?"
             description={`Greenville Crawl Space Pros connects homeowners across Greenville County and the Upstate with licensed crawl space specialists. Call ${siteConfig.phone} to confirm service in your area.`}
           />
         </div>
@@ -416,7 +421,9 @@ export default function Home() {
       {/* CTA Banner */}
       <section className="bg-accent text-white section-padding">
         <div className="container-narrow text-center">
-          <h2 className="font-display text-3xl sm:text-4xl">Ready to Protect Your Greenville Home?</h2>
+          <h2 className="font-display text-3xl sm:text-4xl">
+            Ready to Fix Your Greenville Crawl Space?
+          </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
             Connect with a licensed Greenville crawl space specialist — no obligation, no pressure.
             Get an honest assessment of your crawl space and a clear recommendation for what it

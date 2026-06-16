@@ -7,6 +7,9 @@ import {
   ServiceSection,
 } from "@/components/service/ServicePageTemplate";
 import { ServiceLinksGrid } from "@/components/service/ServiceLinksGrid";
+import { AuthorityLink } from "@/components/AuthorityCitation";
+import { authorities } from "@/lib/authorities";
+import { getServiceSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -96,17 +99,24 @@ export default function CrawlSpaceEncapsulationCostPage() {
   return (
     <ServicePageTemplate
       h1="Crawl Space Encapsulation Cost in Greenville, SC (2025 Guide)"
+      quickAnswer="Crawl space encapsulation in Greenville, SC costs $5,000–$9,000 for a full system with dehumidifier, or $1,500–$3,500 for vapor barrier only."
       breadcrumbPath="/crawl-space-encapsulation-cost"
       breadcrumbs={[{ label: "Cost Guide" }]}
       intro={[
         "If you've had a crawl space inspection and you're now looking at a proposal for encapsulation, you're probably trying to figure out whether the quote is fair — and whether the investment is worth it. Here's a transparent look at what crawl space work costs in the Greenville, SC area and what drives the price.",
       ]}
       faqs={costFaqs}
-      faqTitle="Crawl Space Encapsulation Cost FAQ"
+      faqTitle="What Questions Do Homeowners Ask About Encapsulation Cost?"
       ctaHeading={siteConfig.cta.defaultHeading}
       ctaBody={siteConfig.cta.defaultBody}
+      schema={getServiceSchema({
+        name: "Crawl Space Encapsulation",
+        description:
+          "Crawl space encapsulation pricing and cost guide for Greenville, SC and Upstate South Carolina, including vapor barrier, dehumidifier, mold treatment, and full system estimates.",
+        path: "/crawl-space-encapsulation-cost",
+      })}
     >
-      <ServiceSection title="2025 Crawl Space Cost Summary — Greenville, SC">
+      <ServiceSection title="How Much Does Crawl Space Encapsulation Cost in Greenville, SC in 2025?">
         <div className="mb-6 rounded-lg border-l-4 border-accent bg-accent/10 p-4">
           <p className="font-semibold text-dark">About These Estimates</p>
           <p className="mt-2 text-sm leading-relaxed text-muted">
@@ -157,14 +167,18 @@ export default function CrawlSpaceEncapsulationCostPage() {
       </ServiceSection>
 
       <ServiceSection
-        title="Vapor Barrier vs. Full Encapsulation — What's the Difference?"
+        title="How Does a Vapor Barrier Compare to Full Encapsulation?"
         className="bg-neutral"
       >
         <p>
           In high-humidity climates like Upstate South Carolina, a vapor barrier alone is rarely
           sufficient. It stops ground moisture from evaporating upward — but it does not prevent
           warm, humid outdoor air from entering through open foundation vents. That air condenses on
-          cool surfaces and keeps relative humidity dangerously high.
+          cool surfaces and keeps relative humidity dangerously high, as documented in{" "}
+          <AuthorityLink href={authorities.buildingScienceCrawlspaces.url}>
+            building science crawl space research
+          </AuthorityLink>
+          .
         </p>
         <p>
           Full encapsulation seals the entire space — floor, walls, and vents — and conditions the
@@ -185,7 +199,7 @@ export default function CrawlSpaceEncapsulationCostPage() {
         />
       </ServiceSection>
 
-      <ServiceSection title="Getting an Honest Quote in Greenville">
+      <ServiceSection title="How Do You Get an Honest Crawl Space Quote in Greenville?">
         <p>
           Not all crawl space quotes are created equal. Use this checklist when comparing proposals
           from Greenville-area contractors:
@@ -198,7 +212,7 @@ export default function CrawlSpaceEncapsulationCostPage() {
         </p>
       </ServiceSection>
 
-      <ServiceSection title="Related Crawl Space Services" className="bg-neutral">
+      <ServiceSection title="Which Crawl Space Services Are Related?" className="bg-neutral">
         <ServiceLinksGrid showTitle={false} />
         <p className="mt-6 text-muted">
           Ready for a quote?{" "}
