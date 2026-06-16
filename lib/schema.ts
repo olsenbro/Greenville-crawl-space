@@ -4,6 +4,22 @@ import { siteConfig, serviceAreas } from "@/lib/site-config";
 
 export type SchemaObject = Record<string, unknown>;
 
+export const HOME_PAGE_DESCRIPTION =
+  "Wet or musty crawl space in Greenville, SC? Connect with local specialists for encapsulation, mold treatment, and moisture control. Get a free estimate.";
+
+const HOME_PAGE_AREA_SERVED = [
+  "Greenville SC",
+  "Spartanburg SC",
+  "Anderson SC",
+  "Simpsonville SC",
+  "Greer SC",
+  "Taylors SC",
+  "Easley SC",
+  "Mauldin SC",
+  "Duncan SC",
+  "Fountain Inn SC",
+] as const;
+
 function getAreaServedCities(): SchemaObject[] {
   return serviceAreas.map((area) => ({
     "@type": "City",
@@ -189,8 +205,29 @@ function buildFaqPageSchema(
   };
 }
 
+export function getHomePageLocalBusinessSchema(): SchemaObject {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${siteConfig.schemaUrl}/#organization`,
+    name: "Greenville Crawl Space Pros",
+    url: siteConfig.schemaUrl,
+    telephone: siteConfig.phoneHref.replace("tel:", ""),
+    email: siteConfig.email,
+    description: HOME_PAGE_DESCRIPTION,
+    areaServed: [...HOME_PAGE_AREA_SERVED],
+    serviceType: "Crawl Space Encapsulation and Repair",
+    priceRange: "$$$",
+    image: `${siteConfig.schemaUrl}${siteConfig.ogImagePath}`,
+  };
+}
+
 export function getHomeFaqSchema(): SchemaObject {
-  return buildFaqPageSchema(homeFaqPreview, "/");
+  return buildFaqPageSchema(homeFaqPreview.slice(0, 4), "/");
+}
+
+export function getHomePageHeadSchemas(): SchemaObject[] {
+  return [getHomePageLocalBusinessSchema(), getHomeFaqSchema()];
 }
 
 export function getFaqPageSchema(
@@ -204,6 +241,8 @@ export function getArticleSchema(options: {
   path: string;
   headline: string;
   description: string;
+  datePublished?: string;
+  dateModified?: string;
 }): SchemaObject {
   return {
     "@context": "https://schema.org",
@@ -211,6 +250,8 @@ export function getArticleSchema(options: {
     headline: options.headline,
     description: options.description,
     url: `${siteConfig.schemaUrl}${options.path}`,
+    ...(options.datePublished ? { datePublished: options.datePublished } : {}),
+    ...(options.dateModified ? { dateModified: options.dateModified } : {}),
     author: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -249,13 +290,9 @@ export function getHowToSchema(): SchemaObject {
   };
 }
 
-/** LocalBusiness, WebSite, and HowTo schemas for document head */
+/** WebSite and HowTo schemas for document head (LocalBusiness is homepage-only) */
 export function getSiteHeadSchemas(): SchemaObject[] {
-  return [
-    getLocalBusinessSchema(),
-    getWebSiteSchema(),
-    getHowToSchema(),
-  ];
+  return [getWebSiteSchema(), getHowToSchema()];
 }
 
 /** @deprecated Use getSiteHeadSchemas() for separate script tags */

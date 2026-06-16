@@ -1,12 +1,29 @@
 import { getServicePath } from "./service-pages";
 
+const DEFAULT_SITE_URL = "https://www.crawlspacegreenville.com";
+
+/** Ensures apex crawlspacegreenville.com URLs resolve to the www host for canonicals. */
+export function toCanonicalUrl(url: string): string {
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname === "crawlspacegreenville.com") {
+      parsed.hostname = "www.crawlspacegreenville.com";
+    }
+    return parsed.origin;
+  } catch {
+    return url;
+  }
+}
+
+const siteUrl = toCanonicalUrl(process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL);
+
 export const siteConfig = {
   name: "Greenville Crawl Space Pros",
   tagline: "Connect with Trusted Crawl Space Specialists in Greenville, SC",
   description:
     "Connect with trusted local crawl space encapsulation, moisture control, and repair specialists serving Greenville and the Upstate South Carolina region. Free estimates and fast referrals.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.crawlspacegreenville.com",
-  schemaUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.crawlspacegreenville.com",
+  url: siteUrl,
+  schemaUrl: siteUrl,
   phone: "(864) 387-3270",
   phoneHref: "tel:+18643873270",
   email: "info@crawlspacegreenville.com",

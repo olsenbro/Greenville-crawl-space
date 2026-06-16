@@ -10,9 +10,9 @@ import {
 } from "lucide-react";
 import { CrossHatchOverlay } from "@/components/home/CrossHatchOverlay";
 import { HomeFaqAccordion } from "@/components/home/HomeFaqAccordion";
+import { HomeBlogSection } from "@/components/blog/HomeBlogSection";
 import { AuthorityLink, AuthoritySection } from "@/components/AuthorityCitation";
 import { PhoneLink } from "@/components/PhoneLink";
-import { SchemaScript } from "@/components/SchemaScript";
 import { ServiceAreaMap } from "@/components/ServiceAreaMap";
 import { PricingOutline, ServicesOutline } from "@/components/seo/PageOutlineSections";
 import { LocationLinksOutline } from "@/components/seo/InternalLinksSections";
@@ -20,14 +20,13 @@ import { PageQuickAnswer } from "@/components/seo/PageQuickAnswer";
 import { homeFaqPreview } from "@/lib/home-faq";
 import { homeProcessSteps } from "@/lib/home-process-steps";
 import { getAuthoritiesForPath, authorities } from "@/lib/authorities";
-import { getHomeFaqSchema } from "@/lib/schema";
+import { HOME_PAGE_DESCRIPTION } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
   title: "Crawl Space Encapsulation Greenville SC | Local Pros",
-  description:
-    "Wet or musty crawl space in Greenville, SC? Connect with local specialists for encapsulation, mold treatment, and moisture control. Get a free estimate.",
+  description: HOME_PAGE_DESCRIPTION,
   canonical: "/",
   ogImage: siteConfig.ogImagePath,
 });
@@ -118,7 +117,6 @@ const trustBadges = [
 export default function Home() {
   return (
     <>
-      <SchemaScript schema={getHomeFaqSchema()} />
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary text-white">
         <CrossHatchOverlay />
@@ -375,6 +373,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <HomeBlogSection />
 
       <AuthoritySection sources={getAuthoritiesForPath("/")} />
 

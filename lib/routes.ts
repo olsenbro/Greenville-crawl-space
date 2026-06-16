@@ -1,6 +1,7 @@
 import { siteConfig } from "./site-config";
 import { cityAreas } from "./areas-served";
 import { neighborhoodAreas } from "./neighborhood-areas";
+import { blogPosts, getBlogPostPath } from "./blog-posts";
 
 export type SiteRoute = {
   path: string;
@@ -20,6 +21,12 @@ export const siteRoutes: SiteRoute[] = [
   { path: "/crawl-space-encapsulation-cost", changeFrequency: "monthly", priority: 0.9 },
   { path: "/encapsulation-vs-vapor-barrier", changeFrequency: "monthly", priority: 0.8 },
   { path: "/what-is-encapsulation", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
+  ...blogPosts.map((post) => ({
+    path: getBlogPostPath(post.slug),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  })),
   { path: "/areas-served", changeFrequency: "monthly", priority: 0.7 },
   ...cityAreas.map((city) => ({
     path: `/areas-served/${city.slug}`,

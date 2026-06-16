@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { MetadataRoute } from "next";
-import { siteConfig } from "./site-config";
+import { siteConfig, toCanonicalUrl } from "./site-config";
 
 type GenerateMetadataOptions = {
   title: string;
@@ -14,8 +14,10 @@ type GenerateMetadataOptions = {
 };
 
 function resolveCanonical(canonical: string): string {
-  if (canonical.startsWith("http")) return canonical;
-  return `${siteConfig.schemaUrl}${canonical.startsWith("/") ? canonical : `/${canonical}`}`;
+  const url = canonical.startsWith("http")
+    ? canonical
+    : `${siteConfig.schemaUrl}${canonical.startsWith("/") ? canonical : `/${canonical}`}`;
+  return toCanonicalUrl(url);
 }
 
 /** Shared metadata helper for all pages */
