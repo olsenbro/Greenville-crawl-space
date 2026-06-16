@@ -8,9 +8,6 @@ export const siteConfig = {
   phone: "(864) 387-3270",
   phoneHref: "tel:+18643873270",
   email: "info@crawlspacegreenville.com",
-  leadApiUrl:
-    process.env.NEXT_PUBLIC_LEAD_API_URL ??
-    "/api/public/leads/989dcdf4-fcda-4ea7-9496-664150ee3ecb",
   foundedYear: 2015,
   address: {
     city: "Greenville",

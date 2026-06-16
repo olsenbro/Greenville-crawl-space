@@ -31,7 +31,6 @@ const inputClassName =
 
 function buildMessage(data: Record<string, FormDataEntryValue>): string {
   const lines = [
-    data.email ? `Email: ${data.email}` : null,
     data.address ? `Address: ${data.address}` : null,
     data.homeAge ? `Home age: ${data.homeAge}` : null,
     data.primaryConcern ? `Primary concern: ${data.primaryConcern}` : null,
@@ -58,10 +57,12 @@ export function ContactForm() {
     try {
       await submitLead({
         name: String(data.name),
+        email: String(data.email),
         phone: String(data.phone),
         message: buildMessage(data),
-        source: "contact_form",
+        source: "crawlspacegreenville.com",
       });
+      form.reset();
       router.push("/thank-you");
     } catch {
       setError("Something went wrong submitting your request. Please call us directly.");
