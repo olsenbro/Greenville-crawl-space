@@ -17,6 +17,7 @@ export const siteRoutes: SiteRoute[] = [
   { path: "/floor-joist-repair", changeFrequency: "monthly", priority: 0.8 },
   { path: "/crawl-space-encapsulation-cost", changeFrequency: "monthly", priority: 0.9 },
   { path: "/encapsulation-vs-vapor-barrier", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/what-is-encapsulation", changeFrequency: "monthly", priority: 0.8 },
   { path: "/areas-served", changeFrequency: "monthly", priority: 0.7 },
   { path: "/areas-served/simpsonville", changeFrequency: "monthly", priority: 0.7 },
   { path: "/areas-served/greer", changeFrequency: "monthly", priority: 0.7 },

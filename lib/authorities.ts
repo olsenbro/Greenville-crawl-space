@@ -88,6 +88,7 @@ const pageAuthorities: Record<string, AuthoritySource> = {
   "/floor-joist-repair": authorities.usdaWoodDecay,
   "/crawl-space-encapsulation-cost": authorities.buildingScienceCrawlspaces,
   "/encapsulation-vs-vapor-barrier": authorities.buildingScienceCrawlspaces,
+  "/what-is-encapsulation": authorities.doeCrawlspace,
   "/areas-served": authorities.noaaHumidity,
   "/areas-served/simpsonville": authorities.scDhecMold,
   "/areas-served/greer": authorities.doeCrawlspace,
