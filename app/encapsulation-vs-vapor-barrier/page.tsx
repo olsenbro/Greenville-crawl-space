@@ -60,7 +60,7 @@ export default function EncapsulationVsVaporBarrierPage() {
         <div className="container-narrow mx-auto max-w-3xl">
           <p className="label-caps">Guide</p>
           <h1 className="mt-3 font-display text-4xl font-semibold leading-tight text-balance text-primary sm:text-5xl">
-            Crawl Space Encapsulation vs. Vapor Barrier: What&apos;s the Difference? (SC Guide)
+            Encapsulation vs. Vapor Barrier in Greenville, SC
           </h1>
           <p className="mt-5 text-lg leading-relaxed text-muted">
             If you are researching crawl space moisture solutions, you have probably encountered two

@@ -26,7 +26,7 @@ export default function AreasServedPage() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="label-caps mb-4 text-accent-light">Service Areas</p>
             <h1 className="font-display text-4xl font-semibold leading-tight text-balance sm:text-5xl">
-              Crawl Space Specialists Throughout Upstate South Carolina
+              Crawl Space Services in Greenville, SC &amp; Upstate South Carolina
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-white/90">
               Upstate SC presents a perfect storm for crawl space problems: some of the highest

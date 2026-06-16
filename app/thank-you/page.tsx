@@ -37,7 +37,7 @@ export default function ThankYouPage() {
         <div className="container-narrow mx-auto max-w-xl text-center">
           <p className="label-caps mb-3 text-primary">Request Received</p>
           <h1 className="font-display text-4xl font-semibold text-primary sm:text-5xl">
-            Thank You — We&apos;ll Be in Touch
+            Thank You — Greenville Crawl Space Estimate Request
           </h1>
           <p className="mt-4 text-lg text-muted">
             Your free crawl space estimate request was submitted. A local specialist will contact you

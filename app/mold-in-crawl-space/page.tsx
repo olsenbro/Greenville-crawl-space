@@ -68,7 +68,7 @@ const faqs = [
 export default function MoldInCrawlSpacePage() {
   return (
     <ServicePageTemplate
-      h1="Crawl Space Mold in Greenville, SC — What to Know and What to Do"
+      h1="Crawl Space Mold Removal in Greenville, SC"
       intro={[
         "Mold in your crawl space isn't just a nuisance below your floor — it affects the air your family breathes every day.",
         "Connect with local specialists who treat crawl space mold at the source, then encapsulate to stop it from coming back.",

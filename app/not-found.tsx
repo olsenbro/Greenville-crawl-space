@@ -23,7 +23,7 @@ export default function NotFound() {
         <div className="container-narrow mx-auto max-w-xl text-center">
           <p className="label-caps mb-3">404</p>
           <h1 className="font-display text-4xl font-semibold text-primary sm:text-5xl">
-            Page Not Found
+            Crawl Space Services in Greenville, SC — Page Not Found
           </h1>
           <p className="mt-4 text-lg text-muted">
             The page you&apos;re looking for doesn&apos;t exist or may have been moved. Try one of
