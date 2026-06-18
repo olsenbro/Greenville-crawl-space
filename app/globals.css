@@ -23,7 +23,7 @@
 
 @layer components {
   .label-caps {
-    @apply font-sans text-xs font-semibold uppercase tracking-widest text-muted;
+    @apply font-sans text-xs font-semibold uppercase tracking-widest text-dark/70;
   }
 
   .btn-primary {

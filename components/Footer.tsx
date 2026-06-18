@@ -33,7 +33,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="label-caps text-neutral/75">Contact</h3>
+          <h3 className="font-sans text-xs font-semibold uppercase tracking-widest text-neutral/85">Contact</h3>
           <address className="mt-4 space-y-3 not-italic">
             <p className="text-sm font-semibold text-neutral">{siteConfig.name}</p>
             <p className="flex items-start gap-2 text-sm text-neutral/80">
@@ -63,7 +63,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="label-caps text-neutral/75">Services</h3>
+          <h3 className="font-sans text-xs font-semibold uppercase tracking-widest text-neutral/85">Services</h3>
           <ul className="mt-4 space-y-2">
             {serviceLinks.map(({ href, label }) => (
               <li key={href}>
@@ -79,7 +79,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="label-caps text-neutral/75">Service Areas</h3>
+          <h3 className="font-sans text-xs font-semibold uppercase tracking-widest text-neutral/85">Service Areas</h3>
           <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2">
             {serviceAreas.map((area) => {
               const href = getNeighborHref(area);

@@ -83,7 +83,6 @@ export function Navigation() {
                 isServicesActive && navLinkActive,
               )}
               aria-expanded={servicesOpen}
-              aria-haspopup="menu"
               aria-controls="services-menu"
               onClick={() => setServicesOpen((open) => !open)}
             >
@@ -101,10 +100,14 @@ export function Navigation() {
                   ? "pointer-events-auto visible translate-y-0 opacity-100"
                   : "pointer-events-none invisible -translate-y-1 opacity-0",
               )}
+              aria-hidden={!servicesOpen}
             >
               <ul
                 id="services-menu"
-                className="overflow-hidden rounded-lg border border-primary/10 bg-white py-2 shadow-lg"
+                className={cn(
+                  "overflow-hidden rounded-lg border border-primary/10 bg-white py-2 shadow-lg",
+                  !servicesOpen && "hidden",
+                )}
               >
                 {serviceLinks.map(({ href, label }) => (
                   <li key={href}>
@@ -156,9 +159,11 @@ export function Navigation() {
 
       <div
         id="mobile-nav"
+        aria-hidden={!mobileOpen}
         className={cn(
           "overflow-hidden border-t border-primary/10 bg-white transition-all duration-300 ease-in-out lg:hidden",
           mobileOpen ? "max-h-[calc(100vh-4rem)] opacity-100" : "max-h-0 opacity-0",
+          !mobileOpen && "hidden",
         )}
       >
         <nav className="container-narrow px-4 pb-6 pt-2 sm:px-6" aria-label="Mobile navigation">
@@ -172,6 +177,7 @@ export function Navigation() {
                 )}
                 onClick={() => setMobileServicesOpen((open) => !open)}
                 aria-expanded={mobileServicesOpen}
+                aria-controls="mobile-services-menu"
               >
                 Services
                 <ChevronDown
@@ -180,9 +186,12 @@ export function Navigation() {
                 />
               </button>
               <div
+                id="mobile-services-menu"
+                aria-hidden={!mobileServicesOpen}
                 className={cn(
                   "overflow-hidden transition-all duration-300 ease-in-out",
                   mobileServicesOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
+                  !mobileServicesOpen && "hidden",
                 )}
               >
                 <ul className="ml-3 border-l border-primary/10 py-1 pl-3">

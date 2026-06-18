@@ -126,7 +126,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(200,136,42,0.12),transparent_50%)]" />
 
         <div className="container-narrow relative section-padding">
-          <p className="label-caps text-accent-light">
+          <p className="font-sans text-xs font-semibold uppercase tracking-widest text-white/90">
             Upstate South Carolina&apos;s Crawl Space Specialists
           </p>
           <h1 className="mt-5 max-w-5xl text-balance font-display text-display-sm sm:text-display">

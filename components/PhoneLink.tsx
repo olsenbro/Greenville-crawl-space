@@ -21,7 +21,7 @@ export function PhoneLink({ className, children, source = "phone_link" }: PhoneL
       onClick={handleClick}
       data-phone-source={source}
       className={cn(className)}
-      aria-label={`Call ${siteConfig.phone}`}
+      {...(children ? {} : { "aria-label": `Call ${siteConfig.phone}` })}
     >
       {children ?? siteConfig.phone}
     </a>
