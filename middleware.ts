@@ -12,7 +12,11 @@ export function middleware(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.protocol = "https:";
     url.host = CANONICAL_HOST;
-    return NextResponse.redirect(url, 301);
+    const pathname = request.nextUrl.pathname === "/" ? "" : request.nextUrl.pathname;
+    const canonical = `https://${CANONICAL_HOST}${pathname}`;
+    const response = NextResponse.redirect(url, 301);
+    response.headers.set("Link", `<${canonical}>; rel="canonical"`);
+    return response;
   }
 
   return NextResponse.next({ request: { headers: requestHeaders } });

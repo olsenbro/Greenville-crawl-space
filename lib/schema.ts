@@ -7,19 +7,6 @@ export type SchemaObject = Record<string, unknown>;
 export const HOME_PAGE_DESCRIPTION =
   "Wet or musty crawl space in Greenville, SC? Connect with local specialists for encapsulation, mold treatment, and moisture control. Get a free estimate.";
 
-const HOME_PAGE_AREA_SERVED = [
-  "Greenville SC",
-  "Spartanburg SC",
-  "Anderson SC",
-  "Simpsonville SC",
-  "Greer SC",
-  "Taylors SC",
-  "Easley SC",
-  "Mauldin SC",
-  "Duncan SC",
-  "Fountain Inn SC",
-] as const;
-
 function getAreaServedCities(): SchemaObject[] {
   return serviceAreas.map((area) => ({
     "@type": "City",
@@ -90,7 +77,24 @@ export function getWebSiteSchema(): SchemaObject {
     url: siteConfig.schemaUrl,
     name: siteConfig.name,
     description: siteConfig.description,
+    inLanguage: "en-US",
     publisher: { "@id": `${siteConfig.schemaUrl}/#organization` },
+    about: {
+      "@type": "Place",
+      name: siteConfig.locationLabel,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: siteConfig.address.city,
+        addressRegion: siteConfig.address.state,
+        postalCode: siteConfig.address.zip,
+        addressCountry: siteConfig.address.country,
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: siteConfig.geo.latitude,
+        longitude: siteConfig.geo.longitude,
+      },
+    },
   };
 }
 
@@ -193,7 +197,7 @@ function buildFaqPageSchema(
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": `${url}#faq`,
+    "@id": `${url}/#faq`,
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
@@ -207,23 +211,14 @@ function buildFaqPageSchema(
 
 export function getHomePageLocalBusinessSchema(): SchemaObject {
   return {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${siteConfig.schemaUrl}/#organization`,
-    name: "Greenville Crawl Space Pros",
-    url: siteConfig.schemaUrl,
-    telephone: siteConfig.phoneHref.replace("tel:", ""),
-    email: siteConfig.email,
+    ...getLocalBusinessSchema(),
     description: HOME_PAGE_DESCRIPTION,
-    areaServed: [...HOME_PAGE_AREA_SERVED],
-    serviceType: "Crawl Space Encapsulation and Repair",
-    priceRange: "$$$",
     image: `${siteConfig.schemaUrl}${siteConfig.ogImagePath}`,
   };
 }
 
 export function getHomeFaqSchema(): SchemaObject {
-  return buildFaqPageSchema(homeFaqPreview.slice(0, 4), "/");
+  return buildFaqPageSchema(homeFaqPreview, "/");
 }
 
 export function getHomePageHeadSchemas(): SchemaObject[] {

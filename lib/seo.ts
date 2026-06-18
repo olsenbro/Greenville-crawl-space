@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import type { MetadataRoute } from "next";
 import { siteConfig, toCanonicalUrl } from "./site-config";
 
+const geoMetaTags = {
+  "geo.region": "US-SC",
+  "geo.placename": siteConfig.locationLabel,
+  "geo.position": `${siteConfig.geo.latitude};${siteConfig.geo.longitude}`,
+  ICBM: `${siteConfig.geo.latitude}, ${siteConfig.geo.longitude}`,
+} as const;
+
 type GenerateMetadataOptions = {
   title: string;
   description: string;
@@ -38,6 +45,7 @@ export function buildPageMetadata({
     title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: canonicalUrl },
+    other: geoMetaTags,
     openGraph: {
       title,
       description,

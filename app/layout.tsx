@@ -33,12 +33,18 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.schemaUrl),
   title: {
-    default: siteConfig.name,
+    default: `${siteConfig.name} | Greenville, SC`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   robots: { index: true, follow: true },
   manifest: "/site.webmanifest",
+  other: {
+    "geo.region": "US-SC",
+    "geo.placename": siteConfig.locationLabel,
+    "geo.position": `${siteConfig.geo.latitude};${siteConfig.geo.longitude}`,
+    ICBM: `${siteConfig.geo.latitude}, ${siteConfig.geo.longitude}`,
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },

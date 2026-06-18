@@ -2,23 +2,39 @@ import { getServicePath } from "./service-pages";
 
 const DEFAULT_SITE_URL = "https://www.crawlspacegreenville.com";
 
-/** Ensures apex crawlspacegreenville.com URLs resolve to the www host for canonicals. */
+function normalizeSiteHost(url: URL): URL {
+  if (url.hostname === "crawlspacegreenville.com") {
+    url.hostname = "www.crawlspacegreenville.com";
+  }
+  return url;
+}
+
+/** Base site origin (always www) for schema URLs and metadataBase. */
+function resolveSiteOrigin(rawUrl: string): string {
+  try {
+    return normalizeSiteHost(new URL(rawUrl)).origin;
+  } catch {
+    return DEFAULT_SITE_URL;
+  }
+}
+
+/** Ensures apex URLs resolve to www and preserves the path for page-level canonicals. */
 export function toCanonicalUrl(url: string): string {
   try {
-    const parsed = new URL(url);
-    if (parsed.hostname === "crawlspacegreenville.com") {
-      parsed.hostname = "www.crawlspacegreenville.com";
-    }
-    return parsed.origin;
+    const parsed = normalizeSiteHost(new URL(url));
+    const pathname = parsed.pathname === "/" ? "" : parsed.pathname.replace(/\/$/, "");
+    return `${parsed.origin}${pathname}`;
   } catch {
     return url;
   }
 }
 
-const siteUrl = toCanonicalUrl(process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL);
+const siteUrl = resolveSiteOrigin(process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL);
 
 export const siteConfig = {
   name: "Greenville Crawl Space Pros",
+  /** Explicit SC disambiguation — Greenville, NC is a separate market. */
+  locationLabel: "Greenville, South Carolina",
   tagline: "Connect with Trusted Crawl Space Specialists in Greenville, SC",
   description:
     "Connect with trusted local crawl space encapsulation, moisture control, and repair specialists serving Greenville and the Upstate South Carolina region. Free estimates and fast referrals.",
