@@ -30,7 +30,7 @@ export function getLocalBusinessSchema(city?: string, state?: string): SchemaObj
 
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
     "@id": `${siteConfig.schemaUrl}/#organization`,
     name: siteConfig.name,
     alternateName: `${siteConfig.name} — ${siteConfig.locationLabel}`,
@@ -262,8 +262,13 @@ export function getHomeWebPageSchema(): SchemaObject {
   };
 }
 
+export function getHomePageSchemas(): SchemaObject[] {
+  return [getHomePageLocalBusinessSchema(), getHomeFaqSchema(), getHomeWebPageSchema()];
+}
+
+/** @deprecated Use getHomePageSchemas() — homepage schema is injected from page.tsx */
 export function getHomePageHeadSchemas(): SchemaObject[] {
-  return [getHomePageLocalBusinessSchema(), getHomeWebPageSchema()];
+  return getHomePageSchemas();
 }
 
 export function getFaqPageSchema(

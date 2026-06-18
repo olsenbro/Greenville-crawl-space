@@ -21,7 +21,7 @@ import { SchemaScript } from "@/components/SchemaScript";
 import { homeFaqPreview } from "@/lib/home-faq";
 import { homeProcessSteps } from "@/lib/home-process-steps";
 import { getAuthoritiesForPath, authorities } from "@/lib/authorities";
-import { HOME_PAGE_DESCRIPTION, getHomeFaqSchema } from "@/lib/schema";
+import { HOME_PAGE_DESCRIPTION, getHomePageSchemas } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -118,7 +118,7 @@ const trustBadges = [
 export default function Home() {
   return (
     <>
-      <SchemaScript schema={getHomeFaqSchema()} />
+      <SchemaScript schema={getHomePageSchemas()} />
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary text-white">

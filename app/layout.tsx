@@ -1,13 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { headers } from "next/headers";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { PhoneClickTracker } from "@/components/PhoneClickTracker";
 import { StickyCallButton } from "@/components/StickyCallButton";
 import { SchemaScript } from "@/components/SchemaScript";
-import { getHomePageHeadSchemas, getSiteHeadSchemas } from "@/lib/schema";
+import { getSiteHeadSchemas } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
@@ -85,14 +84,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const gaId = siteConfig.gaId;
-  const pathname = headers().get("x-pathname");
-  const isHome = pathname === "/";
 
   return (
     <html lang="en" className={`${inter.variable} ${sourceSerif.variable}`}>
       <head>
         <SchemaScript schema={getSiteHeadSchemas()} />
-        {isHome ? <SchemaScript schema={getHomePageHeadSchemas()} /> : null}
         {gaId ? (
           <>
             <Script
