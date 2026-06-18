@@ -7,11 +7,15 @@ export type SchemaObject = Record<string, unknown>;
 export const HOME_PAGE_DESCRIPTION =
   "Wet or musty crawl space in Greenville, SC? Connect with local specialists for encapsulation, mold treatment, and moisture control. Get a free estimate.";
 
+function getSouthCarolinaPlace(): SchemaObject {
+  return { "@type": "State", name: siteConfig.stateName, addressRegion: "SC" };
+}
+
 function getAreaServedCities(): SchemaObject[] {
   return serviceAreas.map((area) => ({
     "@type": "City",
-    name: area,
-    containedInPlace: { "@type": "State", name: "South Carolina" },
+    name: `${area}, SC`,
+    containedInPlace: getSouthCarolinaPlace(),
   }));
 }
 
@@ -21,11 +25,15 @@ export function schemaToScriptHtml(schema: SchemaObject): string {
 }
 
 export function getLocalBusinessSchema(city?: string, state?: string): SchemaObject {
+  const locality = city ?? siteConfig.address.city;
+  const region = state ?? siteConfig.address.state;
+
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${siteConfig.schemaUrl}/#organization`,
     name: siteConfig.name,
+    alternateName: `${siteConfig.name} — ${siteConfig.locationLabel}`,
     description: siteConfig.description,
     telephone: siteConfig.phone,
     email: siteConfig.email,
@@ -33,8 +41,8 @@ export function getLocalBusinessSchema(city?: string, state?: string): SchemaObj
     foundingDate: String(siteConfig.foundedYear),
     address: {
       "@type": "PostalAddress",
-      addressLocality: city ?? siteConfig.address.city,
-      addressRegion: state ?? siteConfig.address.state,
+      addressLocality: locality,
+      addressRegion: region,
       postalCode: siteConfig.address.zip,
       addressCountry: siteConfig.address.country,
     },
@@ -43,7 +51,8 @@ export function getLocalBusinessSchema(city?: string, state?: string): SchemaObj
       latitude: siteConfig.geo.latitude,
       longitude: siteConfig.geo.longitude,
     },
-    areaServed: getAreaServedCities(),
+    containedInPlace: getSouthCarolinaPlace(),
+    areaServed: [getSouthCarolinaPlace(), ...getAreaServedCities()],
     serviceType: [
       "Crawl Space Encapsulation",
       "Vapor Barrier Installation",
@@ -75,13 +84,15 @@ export function getWebSiteSchema(): SchemaObject {
     "@type": "WebSite",
     "@id": `${siteConfig.schemaUrl}/#website`,
     url: siteConfig.schemaUrl,
-    name: siteConfig.name,
+    name: `${siteConfig.name} — ${siteConfig.locationLabel}`,
+    alternateName: siteConfig.name,
     description: siteConfig.description,
     inLanguage: "en-US",
     publisher: { "@id": `${siteConfig.schemaUrl}/#organization` },
     about: {
       "@type": "Place",
       name: siteConfig.locationLabel,
+      containedInPlace: getSouthCarolinaPlace(),
       address: {
         "@type": "PostalAddress",
         addressLocality: siteConfig.address.city,
@@ -221,8 +232,27 @@ export function getHomeFaqSchema(): SchemaObject {
   return buildFaqPageSchema(homeFaqPreview, "/");
 }
 
+export function getHomeWebPageSchema(): SchemaObject {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${siteConfig.schemaUrl}/#webpage`,
+    url: siteConfig.schemaUrl,
+    name: "Crawl Space Encapsulation in Greenville, SC",
+    description: HOME_PAGE_DESCRIPTION,
+    isPartOf: { "@id": `${siteConfig.schemaUrl}/#website` },
+    about: { "@id": `${siteConfig.schemaUrl}/#organization` },
+    spatialCoverage: {
+      "@type": "Place",
+      name: siteConfig.locationLabel,
+      containedInPlace: getSouthCarolinaPlace(),
+    },
+    inLanguage: "en-US",
+  };
+}
+
 export function getHomePageHeadSchemas(): SchemaObject[] {
-  return [getHomePageLocalBusinessSchema(), getHomeFaqSchema()];
+  return [getHomePageLocalBusinessSchema(), getHomeFaqSchema(), getHomeWebPageSchema()];
 }
 
 export function getFaqPageSchema(
@@ -275,7 +305,7 @@ export function getHowToSchema(): SchemaObject {
     "@id": `${siteConfig.schemaUrl}/#process`,
     name: "How the Crawl Space Encapsulation Process Works",
     description:
-      "The step-by-step crawl space encapsulation process used by licensed specialists serving Greenville and Upstate South Carolina.",
+      "The step-by-step crawl space encapsulation process used by licensed specialists serving Greenville, SC and Upstate South Carolina.",
     step: homeProcessSteps.map(({ step, title, description }) => ({
       "@type": "HowToStep",
       position: step,

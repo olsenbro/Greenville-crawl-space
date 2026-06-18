@@ -3,7 +3,7 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { PhoneLink } from "@/components/PhoneLink";
 import { SiteLogo } from "@/components/SiteLogo";
 import { getNeighborHref } from "@/lib/areas-served";
-import { serviceAreas, serviceLinks, siteConfig } from "@/lib/site-config";
+import { formatServiceAreaLabel, serviceAreas, serviceLinks, siteConfig } from "@/lib/site-config";
 
 export function Footer() {
   return (
@@ -13,7 +13,7 @@ export function Footer() {
           <Link
             href="/"
             className="inline-flex items-center gap-3 font-display text-xl font-semibold leading-tight text-neutral"
-            aria-label={`${siteConfig.name} home`}
+            aria-label={`${siteConfig.name} — ${siteConfig.locationLabel} home`}
           >
             <SiteLogo size={36} className="rounded-md" />
             <span>
@@ -90,10 +90,10 @@ export function Footer() {
                       href={href}
                       className="text-sm text-neutral/80 transition-colors hover:text-accent-light"
                     >
-                      {area}
+                      {formatServiceAreaLabel(area)}
                     </Link>
                   ) : (
-                    <span className="text-sm text-neutral/80">{area}</span>
+                    <span className="text-sm text-neutral/80">{formatServiceAreaLabel(area)}</span>
                   )}
                 </li>
               );

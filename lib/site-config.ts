@@ -33,11 +33,12 @@ const siteUrl = resolveSiteOrigin(process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SI
 
 export const siteConfig = {
   name: "Greenville Crawl Space Pros",
-  /** Explicit SC disambiguation — Greenville, NC is a separate market. */
+  /** Canonical location string for metadata, schema, and geo tags. */
   locationLabel: "Greenville, South Carolina",
+  stateName: "South Carolina",
   tagline: "Connect with Trusted Crawl Space Specialists in Greenville, SC",
   description:
-    "Connect with trusted local crawl space encapsulation, moisture control, and repair specialists serving Greenville and the Upstate South Carolina region. Free estimates and fast referrals.",
+    "Connect with trusted local crawl space encapsulation, moisture control, and repair specialists serving Greenville, SC and the Upstate South Carolina region. Free estimates and fast referrals.",
   url: siteUrl,
   schemaUrl: siteUrl,
   phone: "(864) 387-3270",
@@ -124,3 +125,8 @@ export const serviceAreas = [
   "Duncan",
   "Fountain Inn",
 ] as const;
+
+/** Consistent city + state label for NAP, footers, and service-area lists. */
+export function formatServiceAreaLabel(area: string): string {
+  return `${area}, SC`;
+}

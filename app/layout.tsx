@@ -44,6 +44,7 @@ export const metadata: Metadata = {
     "geo.placename": siteConfig.locationLabel,
     "geo.position": `${siteConfig.geo.latitude};${siteConfig.geo.longitude}`,
     ICBM: `${siteConfig.geo.latitude}, ${siteConfig.geo.longitude}`,
+    "DC.coverage": siteConfig.locationLabel,
   },
   icons: {
     icon: [
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.schemaUrl,
     siteName: siteConfig.name,
-    title: siteConfig.name,
+    title: `${siteConfig.name} | Greenville, SC`,
     description: siteConfig.description,
     images: [
       {

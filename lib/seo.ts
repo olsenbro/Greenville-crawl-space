@@ -7,6 +7,7 @@ const geoMetaTags = {
   "geo.placename": siteConfig.locationLabel,
   "geo.position": `${siteConfig.geo.latitude};${siteConfig.geo.longitude}`,
   ICBM: `${siteConfig.geo.latitude}, ${siteConfig.geo.longitude}`,
+  "DC.coverage": siteConfig.locationLabel,
 } as const;
 
 type GenerateMetadataOptions = {

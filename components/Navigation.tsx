@@ -52,7 +52,7 @@ export function Navigation() {
         <Link
           href="/"
           className="flex shrink-0 items-center gap-3 font-display text-lg font-semibold leading-tight text-primary sm:text-xl"
-          aria-label={`${siteConfig.name} home`}
+          aria-label={`${siteConfig.name} — ${siteConfig.locationLabel} home`}
           onClick={() => setMobileOpen(false)}
         >
           <SiteLogo size={36} priority className="rounded-md" />
