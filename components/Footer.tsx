@@ -33,7 +33,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="label-caps text-neutral/60">Contact</h3>
+          <h3 className="label-caps text-neutral/75">Contact</h3>
           <address className="mt-4 space-y-3 not-italic">
             <p className="text-sm font-semibold text-neutral">{siteConfig.name}</p>
             <p className="flex items-start gap-2 text-sm text-neutral/80">
@@ -63,7 +63,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="label-caps text-neutral/60">Services</h3>
+          <h3 className="label-caps text-neutral/75">Services</h3>
           <ul className="mt-4 space-y-2">
             {serviceLinks.map(({ href, label }) => (
               <li key={href}>
@@ -79,7 +79,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="label-caps text-neutral/60">Service Areas</h3>
+          <h3 className="label-caps text-neutral/75">Service Areas</h3>
           <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2">
             {serviceAreas.map((area) => {
               const href = getNeighborHref(area);
@@ -104,7 +104,7 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-narrow px-4 py-5 sm:px-6 lg:px-8">
-          <p className="mt-4 pt-4 text-xs leading-[1.7] text-white/45">
+          <p className="mt-4 pt-4 text-xs leading-[1.7] text-white/70">
             Greenville Crawl Space Pros is a local lead generation and referral service that connects
             homeowners with licensed crawl space contractors in the Greenville, SC area and throughout
             Upstate South Carolina. We do not directly perform crawl space encapsulation, repair, mold

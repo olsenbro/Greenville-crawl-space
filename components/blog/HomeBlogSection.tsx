@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { blogPosts, getBlogPostPath } from "@/lib/blog-posts";
 
 export function HomeBlogSection() {
@@ -34,13 +33,6 @@ export function HomeBlogSection() {
                 </Link>
               </h3>
               <p className="mt-3 flex-1 text-base leading-relaxed text-muted">{post.description}</p>
-              <Link
-                href={getBlogPostPath(post.slug)}
-                className="mt-5 inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-accent"
-              >
-                Read More
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
             </article>
           ))}
         </div>

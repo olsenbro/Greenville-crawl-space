@@ -83,7 +83,8 @@ export function Navigation() {
                 isServicesActive && navLinkActive,
               )}
               aria-expanded={servicesOpen}
-              aria-haspopup="true"
+              aria-haspopup="menu"
+              aria-controls="services-menu"
               onClick={() => setServicesOpen((open) => !open)}
             >
               Services
@@ -102,14 +103,13 @@ export function Navigation() {
               )}
             >
               <ul
+                id="services-menu"
                 className="overflow-hidden rounded-lg border border-primary/10 bg-white py-2 shadow-lg"
-                role="menu"
               >
                 {serviceLinks.map(({ href, label }) => (
-                  <li key={href} role="none">
+                  <li key={href}>
                     <Link
                       href={href}
-                      role="menuitem"
                       className={cn(
                         "block px-4 py-2.5 text-sm text-dark transition-colors hover:bg-neutral hover:text-primary",
                         pathname === href && "font-medium text-primary",
