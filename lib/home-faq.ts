@@ -5,6 +5,11 @@ export type HomeFaqItem = {
 
 export const homeFaqPreview: HomeFaqItem[] = [
   {
+    question: "What is crawl space encapsulation?",
+    answer:
+      "Crawl space encapsulation is the process of sealing your crawl space with a heavy-duty vapor barrier on the floor and walls, closing foundation vents, and installing a dehumidifier to control humidity. In Greenville, SC's humid climate, encapsulation prevents ground moisture and outdoor air from raising humidity under your home — protecting floor joists, reducing mold risk, and improving indoor air quality.",
+  },
+  {
     question: "How much does crawl space encapsulation cost in Greenville, SC?",
     answer:
       "Crawl space encapsulation in the Greenville area typically runs between $3,500 and $8,000 for a standard home, depending on square footage, condition, and whether mold remediation or structural repair is needed. Adding a dehumidifier typically adds $1,200–$2,000. Pricing varies by contractor and project scope — request a free estimate from a local specialist to get accurate numbers for your specific crawl space.",

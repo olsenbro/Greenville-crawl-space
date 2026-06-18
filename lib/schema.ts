@@ -106,6 +106,14 @@ export function getWebSiteSchema(): SchemaObject {
         longitude: siteConfig.geo.longitude,
       },
     },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${siteConfig.schemaUrl}/faq?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 }
 
@@ -209,6 +217,8 @@ function buildFaqPageSchema(
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": `${url}/#faq`,
+    url,
+    isPartOf: { "@id": `${siteConfig.schemaUrl}/#website` },
     mainEntity: items.map((item) => ({
       "@type": "Question",
       name: item.question,
@@ -242,6 +252,7 @@ export function getHomeWebPageSchema(): SchemaObject {
     description: HOME_PAGE_DESCRIPTION,
     isPartOf: { "@id": `${siteConfig.schemaUrl}/#website` },
     about: { "@id": `${siteConfig.schemaUrl}/#organization` },
+    mainEntity: { "@id": `${siteConfig.schemaUrl}/#faq` },
     spatialCoverage: {
       "@type": "Place",
       name: siteConfig.locationLabel,
@@ -252,7 +263,7 @@ export function getHomeWebPageSchema(): SchemaObject {
 }
 
 export function getHomePageHeadSchemas(): SchemaObject[] {
-  return [getHomePageLocalBusinessSchema(), getHomeFaqSchema(), getHomeWebPageSchema()];
+  return [getHomePageLocalBusinessSchema(), getHomeWebPageSchema()];
 }
 
 export function getFaqPageSchema(
