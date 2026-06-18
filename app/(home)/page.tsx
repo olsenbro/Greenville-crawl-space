@@ -17,11 +17,10 @@ import { ServiceAreaMap } from "@/components/ServiceAreaMap";
 import { PricingOutline, ServicesOutline } from "@/components/seo/PageOutlineSections";
 import { LocationLinksOutline } from "@/components/seo/InternalLinksSections";
 import { PageQuickAnswer } from "@/components/seo/PageQuickAnswer";
-import { SchemaScript } from "@/components/SchemaScript";
 import { homeFaqPreview } from "@/lib/home-faq";
 import { homeProcessSteps } from "@/lib/home-process-steps";
 import { getAuthoritiesForPath, authorities } from "@/lib/authorities";
-import { HOME_PAGE_DESCRIPTION, getHomePageSchemas } from "@/lib/schema";
+import { HOME_PAGE_DESCRIPTION } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -118,8 +117,6 @@ const trustBadges = [
 export default function Home() {
   return (
     <>
-      <SchemaScript schema={getHomePageSchemas()} />
-
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary text-white">
         <CrossHatchOverlay />
@@ -362,7 +359,11 @@ export default function Home() {
                 key={author}
                 className="rounded-2xl border border-primary/10 bg-white p-6 shadow-sm"
               >
-                <div className="flex gap-0.5 text-accent" aria-label="5 out of 5 stars">
+                <div
+                  className="flex gap-0.5 text-primary"
+                  role="img"
+                  aria-label="5 out of 5 stars"
+                >
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-current" aria-hidden="true" />
                   ))}

@@ -19,7 +19,7 @@ const config: Config = {
         },
         neutral: "#F8F6F2",
         dark: "#1C1C1C",
-        muted: "#6B7280",
+        muted: "#4B5563",
         danger: "#8B1A1A",
       },
       fontFamily: {
