@@ -28,6 +28,7 @@ const sourceSerif = Source_Serif_4({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
@@ -125,7 +126,9 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col">
         <PhoneClickTracker />
         <Navigation />
-        <main className="flex-1 pb-24 lg:pb-0">{children}</main>
+        <main className="flex-1 pb-[calc(3.5rem+env(safe-area-inset-bottom))] lg:pb-0">
+          {children}
+        </main>
         <Footer />
         <StickyCallButton />
       </body>

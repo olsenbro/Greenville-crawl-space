@@ -19,6 +19,11 @@
   h6 {
     @apply font-display font-semibold text-dark;
   }
+
+  /* Headings inherit light text inside explicitly white sections (e.g. green hero). */
+  .text-white :is(h1, h2, h3, h4, h5, h6) {
+    color: inherit;
+  }
 }
 
 @layer components {

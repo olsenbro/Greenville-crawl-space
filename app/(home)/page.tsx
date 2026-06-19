@@ -151,8 +151,8 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="mt-8 max-w-3xl rounded-lg border-2 border-accent/60 bg-accent/10 px-5 py-4">
-            <p className="flex gap-3 text-sm leading-relaxed text-white sm:text-base">
+          <div className="mt-8 max-w-3xl rounded-lg border-2 border-accent/60 bg-accent/10 px-5 py-4 text-white">
+            <p className="flex gap-3 text-sm leading-relaxed sm:text-base">
               <AlertTriangle
                 className="mt-0.5 h-5 w-5 shrink-0 text-accent-light"
                 aria-hidden="true"
