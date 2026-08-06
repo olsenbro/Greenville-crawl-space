@@ -117,6 +117,10 @@ export function Footer() {
           <div className="mt-4 flex flex-col items-center justify-between gap-3 text-center text-sm text-neutral/70 sm:flex-row">
             <p>&copy; 2026 Greenville Crawl Space Pros</p>
             <div className="flex items-center gap-4">
+              <Link href="/about" className="transition-colors hover:text-accent-light">
+                About
+              </Link>
+              <span aria-hidden="true">|</span>
               <Link href="/privacy-policy" className="transition-colors hover:text-accent-light">
                 Privacy Policy
               </Link>
