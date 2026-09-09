@@ -32,6 +32,33 @@ const nextConfig = {
         destination: "/services/floor-joist-repair",
         permanent: true,
       },
+      // Index paths that only have child routes
+      {
+        source: "/services",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/areas",
+        destination: "/areas-served",
+        permanent: true,
+      },
+      // Common guessed URLs for the lead form
+      {
+        source: "/estimate",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/free-estimate",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/privacy",
+        destination: "/privacy-policy",
+        permanent: true,
+      },
     ];
   },
 };

@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { PhoneLink } from "@/components/PhoneLink";
+import { trackFormSubmit } from "@/lib/analytics";
 import { submitLead } from "@/lib/leads";
 import { siteConfig } from "@/lib/site-config";
 
@@ -70,6 +71,7 @@ export function ContactForm() {
         source: "crawlspacegreenville.com",
         session_id: sessionId || undefined,
       });
+      trackFormSubmit({ formName: "contact_form" });
       form.reset();
       router.push("/thank-you");
     } catch {

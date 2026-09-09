@@ -28,3 +28,43 @@ export function trackPhoneClick({ source, href }: TrackPhoneClickOptions = {}): 
     console.log("Phone click tracked", payload);
   }
 }
+
+type TrackFormSubmitOptions = {
+  formName?: string;
+};
+
+/** Fire a GA4 `generate_lead` event after a successful lead form submission */
+export function trackFormSubmit({ formName }: TrackFormSubmitOptions = {}): void {
+  if (typeof window === "undefined") return;
+
+  const payload = {
+    form_name: formName ?? "contact_form",
+    page_path: window.location.pathname,
+  };
+
+  if (typeof window.gtag === "function") {
+    window.gtag("event", "generate_lead", payload);
+  }
+
+  if (process.env.NODE_ENV === "development") {
+    console.log("Form submit tracked", payload);
+  }
+}
+
+/** Fire a GA4 `page_not_found` event so 404 URLs are attributable in reports */
+export function trackNotFound(): void {
+  if (typeof window === "undefined") return;
+
+  const payload = {
+    missing_path: window.location.pathname + window.location.search,
+    referrer: document.referrer || "(none)",
+  };
+
+  if (typeof window.gtag === "function") {
+    window.gtag("event", "page_not_found", payload);
+  }
+
+  if (process.env.NODE_ENV === "development") {
+    console.log("404 tracked", payload);
+  }
+}

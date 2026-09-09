@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Home, Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PhoneLink } from "@/components/PhoneLink";
+import { NotFoundTracker } from "@/components/NotFoundTracker";
 import { AuthoritySection } from "@/components/AuthorityCitation";
 import { SERVICE_PAGES } from "@/components/service/ServiceInternalLinks";
 import {
@@ -29,6 +30,7 @@ export const metadata = buildPageMetadata({
 export default function NotFound() {
   return (
     <>
+      <NotFoundTracker />
       <Breadcrumbs items={[{ label: "Page Not Found" }]} path="/404" />
       <section className="section-padding bg-neutral">
         <div className="container-narrow mx-auto max-w-xl text-center">
