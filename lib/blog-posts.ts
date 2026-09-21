@@ -57,11 +57,12 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        title: "What a Fair Greenville Price Looks Like in 2026",
+        title: "Judging Whether a Quote Is Reasonable",
         paragraphs: [
-          "For context, full crawl space encapsulation on a standard Greenville-area home — 20-mil liner on floor and walls, sealed foundation vents, and a properly sized dehumidifier — generally falls between $3,500 and $8,000 in 2026, with most projects landing in the $5,000–$7,000 range for 1,000–1,500 square feet. Mold treatment adds roughly $500–$2,500 depending on severity. Structural repair and drainage are priced separately.",
-          "Those figures are a reference point, not a rule. A crawl space with 30 inches of clearance, extensive plumbing penetrations, and standing water is a genuinely harder job than a clean, tall, dry one, and it should cost more. The purpose of the range is to help you recognise when a quote sits far outside it and to ask why — in either direction. A quote well under $3,500 usually signals thin 6-mil plastic, floor-only coverage, or no dehumidifier, which tends to mean the moisture problem returns.",
-          "If one of your quotes sits well above this range, ask the estimator to walk you through what accounts for the difference. A well-run company can explain it specifically. If the answer is only about brand reputation or company size, you now know what you are paying for and can decide whether it is worth it to you.",
+          "Price alone will not tell you whether a quote is fair, because two quotes are rarely for the same work. A number that looks high may cover wall coverage, a properly sized dehumidifier and mold treatment, while a lower one covers the crawl space floor and nothing else. Until the scopes match, the numbers are not comparable.",
+          "The most useful question you can ask any estimator is simply to walk you through what accounts for their price. A well-run company can answer that specifically — this much liner, this dehumidifier, these hours, this prep work. If the explanation comes back only in terms of brand reputation, company size or how long they have been in business, that tells you what you would be paying for, and you can decide whether it is worth it to you.",
+          "Be equally careful at the low end. A quote that comes in far below the others usually signals thinner 6-mil plastic instead of reinforced liner, floor-only coverage, or no dehumidification — which in the Upstate climate generally means the moisture problem comes back within a few seasons. Cheap work that has to be redone is the most expensive option on the table.",
+          "Whatever the numbers look like, get the scope in writing before you compare them. A quote that specifies liner thickness, dehumidifier capacity, what is included and what is not, and how surprises will be priced is one you can actually evaluate. A single figure on a page is not.",
         ],
       },
     ],
