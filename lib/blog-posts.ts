@@ -18,6 +18,58 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "national-vs-local-crawl-space-contractor-greenville-sc",
+    title: "National vs. Local Crawl Space Contractors in Greenville, SC: How to Compare Quotes",
+    description:
+      "Got a quote from a national crawl space company and a local contractor in Greenville, SC? Here is what actually drives the price difference, and how to compare the two fairly.",
+    datePublished: "2026-09-21",
+    dateDisplay: "September 21, 2026",
+    quickAnswer:
+      "National crawl space companies and local Greenville contractors often quote the same job very differently. The gap usually comes from business structure — commissioned inspectors, regional call centers, and national marketing budgets — rather than from better materials or workmanship. Compare scope line by line before you compare price.",
+    intro:
+      "If you have had two companies look at your crawl space, you have probably noticed the quotes can differ by thousands of dollars for what sounds like the same work. That is confusing, and it makes it hard to tell whether the higher quote reflects better work or simply a bigger company. This guide explains how the two kinds of crawl space companies serving Greenville are structured, why their pricing tends to differ, and the specific questions that let you compare them fairly.",
+    sections: [
+      {
+        title: "The Two Kinds of Companies Serving Greenville",
+        paragraphs: [
+          "The Greenville and Upstate market is served by two very different types of crawl space company. The first is the national provider. These are large operations, often backed by private-equity investment, that have grown by acquiring established local companies and continuing to operate them under their original names. Mount Valley Foundation Services, for example, is a Groundworks company; the wider market also includes brands operating under Basement Systems, 58 Foundations, and franchise networks such as Crawlspace Medic.",
+          "The second type is the independent local contractor — a smaller, owner-operated business working in one metro area, usually with a handful of crews and the owner still on job sites. Greenville has several of these, and many have been working Upstate crawl spaces for decades.",
+          "One practical detail worth knowing: a company marketing itself in Greenville does not necessarily dispatch from Greenville. Several regional providers serving the Upstate run their branch operations out of Spartanburg or further afield, with local phone numbers routed to a shared call center. That is not dishonest, and it says nothing about quality — but if same-week scheduling or a quick warranty callback matters to you, it is worth asking where the crew actually drives from.",
+        ],
+      },
+      {
+        title: "Why the Prices Differ (It Is Usually Not the Materials)",
+        paragraphs: [
+          "Homeowners often assume a higher quote means better materials. In crawl space work that is rarely the explanation. A 20-mil reinforced vapor barrier, a crawl-space-rated dehumidifier, and properly sealed seams cost roughly the same whoever installs them — these are commodity products available to any licensed contractor.",
+          "The difference is overhead. A national provider carries costs a local contractor does not: regional and national advertising, a call center, layers of management, branch facilities, and inspectors who typically work on commission. Commission structures in particular tend to push quotes upward, because the person pricing your job is compensated on the value of what they sell. None of that is improper, but all of it is embedded in the number you are quoted.",
+          "Larger companies also tend to price in longer warranties and transferability, which have genuine value — particularly if you expect to sell the home. Whether that value matches the price difference depends on the size of the gap and how long you plan to stay.",
+          "What you should be sceptical of is a very large gap with no explanation. If two quotes differ substantially, the reason will nearly always be visible in the scope: liner thickness, whether foundation walls are covered or only the floor, whether a dehumidifier is included and how it is sized, and whether mold treatment or drainage work is bundled or excluded.",
+        ],
+      },
+      {
+        title: "How to Compare Two Quotes Fairly",
+        paragraphs: [
+          "Match scope before you match price. This is the single most useful thing you can do, and most homeowners skip it. Put both quotes side by side and confirm they describe the same project: square footage covered, liner thickness in mils, whether walls and piers are included or only the ground, dehumidifier make and capacity in pints per day, mold treatment, drainage, and any structural work.",
+          "Ask what happens if the crew finds something unexpected. Crawl spaces routinely hide rot, standing water, or failed insulation that nobody sees until the work starts. A good contractor will tell you plainly how change orders are handled and priced. A quote that cannot answer this is not a complete quote.",
+          "Ask who performs the work. Some companies subcontract. Others send their own crews. Neither is automatically better, but you are entitled to know, and it affects who you call if something needs correcting in two years.",
+          "Ask what the warranty actually covers and whether it transfers. A long warranty on the liner alone is very different from one covering the dehumidifier, the installation, and the humidity result. Get it in writing, and read what voids it.",
+          "Finally, be wary of pressure. A crawl space is not an emergency purchase in most cases. Any company that requires a decision during the inspection visit, or whose price expires at the end of the appointment, is using a sales tactic rather than giving you a fair assessment. Reputable contractors are comfortable letting you think about it.",
+        ],
+      },
+      {
+        title: "What a Fair Greenville Price Looks Like in 2026",
+        paragraphs: [
+          "For context, full crawl space encapsulation on a standard Greenville-area home — 20-mil liner on floor and walls, sealed foundation vents, and a properly sized dehumidifier — generally falls between $3,500 and $8,000 in 2026, with most projects landing in the $5,000–$7,000 range for 1,000–1,500 square feet. Mold treatment adds roughly $500–$2,500 depending on severity. Structural repair and drainage are priced separately.",
+          "Those figures are a reference point, not a rule. A crawl space with 30 inches of clearance, extensive plumbing penetrations, and standing water is a genuinely harder job than a clean, tall, dry one, and it should cost more. The purpose of the range is to help you recognise when a quote sits far outside it and to ask why — in either direction. A quote well under $3,500 usually signals thin 6-mil plastic, floor-only coverage, or no dehumidifier, which tends to mean the moisture problem returns.",
+          "If one of your quotes sits well above this range, ask the estimator to walk you through what accounts for the difference. A well-run company can explain it specifically. If the answer is only about brand reputation or company size, you now know what you are paying for and can decide whether it is worth it to you.",
+        ],
+      },
+    ],
+    ctaHeading: "Want a Second Opinion on Your Crawl Space Quote?",
+    ctaBody:
+      "Get a free assessment from a licensed local crawl space specialist in the Greenville area. A clear scope of work, honest pricing for your home, and no pressure to decide on the spot.",
+  },
+  {
     slug: "crawl-space-encapsulation-cost-greenville-sc",
     title: "Crawl Space Encapsulation Cost in Greenville, SC: What to Expect in 2026",
     description:

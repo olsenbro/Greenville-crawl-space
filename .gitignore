@@ -34,3 +34,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Internal ops docs (not part of the site — never deploy these)
+# NOTE: this repo is PUBLIC. Anything not listed here gets published by `git add -A`.
+# Partner names, phone numbers, pricing and strategy must never land in a commit.
+referral-log.md
+SEO-PLAYBOOK.md
+andrew-site-review-DRAFT.md
+greenville-backlink-strategy.md
+groundworks-competitive-analysis.md
