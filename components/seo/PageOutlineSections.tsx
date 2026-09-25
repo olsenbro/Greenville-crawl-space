@@ -91,7 +91,7 @@ export function PricingOutline({
               href="/crawl-space-encapsulation-cost"
               className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
             >
-              View the full 2025 cost guide
+              View the full 2026 cost guide
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </p>

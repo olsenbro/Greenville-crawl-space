@@ -262,7 +262,7 @@ export default function WhatIsEncapsulationPage() {
             href="/crawl-space-encapsulation-cost"
             className="font-semibold text-primary hover:underline"
           >
-            2025 cost guide →
+            2026 cost guide →
           </Link>
         </p>
       </ServiceSection>

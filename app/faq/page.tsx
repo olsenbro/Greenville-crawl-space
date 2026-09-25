@@ -70,7 +70,7 @@ export default function FaqPage() {
               href="/crawl-space-encapsulation-cost"
               className="font-semibold text-primary hover:underline"
             >
-              View 2025 cost guide →
+              View 2026 cost guide →
             </Link>
             {" · "}
             <Link href="/contact" className="font-semibold text-primary hover:underline">

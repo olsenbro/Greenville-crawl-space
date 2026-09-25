@@ -122,7 +122,7 @@ export function CityPageTemplate({ city }: CityPageTemplateProps) {
               href="/crawl-space-encapsulation-cost"
               className="font-semibold text-primary hover:underline"
             >
-              See our full 2025 Upstate SC price guide →
+              See our full 2026 Upstate SC price guide →
             </Link>
           </p>
         </div>

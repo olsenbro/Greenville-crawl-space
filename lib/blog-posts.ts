@@ -6,6 +6,8 @@ export type BlogPostSection = {
 export type BlogPost = {
   slug: string;
   title: string;
+  /** Shorter <title> for search results when the headline runs past ~60 characters */
+  seoTitle?: string;
   description: string;
   datePublished: string;
   dateDisplay: string;
@@ -14,9 +16,77 @@ export type BlogPost = {
   sections: BlogPostSection[];
   ctaHeading: string;
   ctaBody: string;
+  /** Internal links shown after the article body */
+  relatedLinks?: { href: string; label: string }[];
 };
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "crawl-space-mold-what-to-do-greenville-sc",
+    title: "Found Mold in Your Crawl Space? What It Means, When to DIY, and What Removal Costs in Greenville",
+    seoTitle: "Mold in Your Crawl Space? What to Do & Costs | Greenville SC",
+    description:
+      "White, black, or green growth in your Greenville crawl space? How to tell mold from harmless efflorescence, when you can clean it yourself, and what professional removal costs in Upstate SC.",
+    datePublished: "2026-09-25",
+    dateDisplay: "September 25, 2026",
+    quickAnswer:
+      "Mold of any color in a crawl space means the humidity is too high — the color does not tell you how dangerous it is. EPA guidance says patches under about 10 square feet can usually be cleaned by a homeowner; larger areas, or mold that keeps coming back, need professional treatment, which typically costs $500–$2,500 in Greenville, or $1,500–$4,000 with moisture control.",
+    intro:
+      "Most Greenville homeowners find crawl space mold the same way: an inspector, an HVAC tech, or a flashlight through the access door turns up white fuzz, black spots, or green staining on the floor joists. The next questions are always the same — is it actually mold, is it dangerous, can I just spray it, and what will this cost? Here are straight answers based on EPA and CDC guidance and what crawl space work runs in Upstate SC.",
+    sections: [
+      {
+        title: "Is It Mold or Efflorescence?",
+        paragraphs: [
+          "Not everything white in a crawl space is mold. A white, crusty, crystal-like deposit on concrete block or a brick foundation wall is usually efflorescence — mineral salts left behind as water moves through masonry and evaporates. It crumbles to powder when you rub it, dissolves in water, and is not a health concern on its own, though it does tell you water is moving through the wall.",
+          "Mold looks different. It is usually fuzzy, cottony, or spotted, it grows mostly on wood — joists, sill plates, and the underside of the subfloor — and it smears or stains instead of crumbling. White or gray fuzz on joists is one of the most common things found in Upstate crawl spaces, and it is mold, not efflorescence.",
+        ],
+      },
+      {
+        title: "Does the Color of Crawl Space Mold Matter?",
+        paragraphs: [
+          "Less than most people think. White, gray, green, and black mold all grow for the same reason: wood that stays damp in humid air. The CDC notes it is generally not necessary to identify the species of mold in a home and does not recommend routine mold testing — any mold growing indoors should be removed and the moisture problem fixed.",
+          "What matters more than color is how much there is, whether the wood underneath is still solid, and whether the moisture source has been dealt with. A few spots on one joist near a leaky pipe is a very different job from growth across the whole underside of the house.",
+        ],
+      },
+      {
+        title: "When Can You Clean Crawl Space Mold Yourself?",
+        paragraphs: [
+          "EPA guidance is that if the moldy area is less than about 10 square feet — roughly a 3-by-3-foot patch — most homeowners can handle it themselves. Scrub the surface with detergent and water, let it dry completely, and wear an N-95 respirator, gloves, and eye protection. A crawl space is a confined, dusty space, so take it slow and ventilate.",
+          "Call a professional when the growth covers more than about 10 square feet, when the wood is soft or crumbling when you press a screwdriver into it, when there is standing water, or when mold returns after you have cleaned it. Returning mold means the moisture source is still there, and no amount of scrubbing will keep up with it.",
+        ],
+      },
+      {
+        title: "Why Bleach and Fogging Alone Do Not Fix It",
+        paragraphs: [
+          "Spraying bleach from the access door is the most common DIY mistake. EPA guidance on mold remediation does not recommend biocides like chlorine bleach as a routine part of mold cleanup — the goal is to remove the mold and fix the moisture, and dead mold can still cause allergic reactions. Bleach also does little on porous wood, where growth extends below the surface.",
+          "Fogging a crawl space with an antimicrobial has the same limit. It can knock back surface growth, but if the crawl space still sits at 70–80% humidity every summer — normal for a vented crawl space in Upstate SC — the mold comes back. Treatment only lasts when the humidity problem is fixed at the same time.",
+        ],
+      },
+      {
+        title: "What Does Professional Crawl Space Mold Removal Cost in Greenville?",
+        paragraphs: [
+          "Mold treatment by itself typically runs $500–$2,500 in the Greenville area, depending on how much of the crawl space is affected and how easy it is to reach. Most homeowners end up budgeting $1,500–$4,000 because treatment is usually paired with moisture control — sealing vents, a proper vapor barrier, or a dehumidifier — so the mold does not return.",
+          "A good contractor will tell you what is causing the moisture, separate the price of mold treatment from any encapsulation work in the written quote, check joists for damage, and confirm the wood has dried before sealing anything. NC State Extension, for example, recommends waiting until framing reads 19% moisture or lower on a wood moisture meter before closing up a crawl space after water damage.",
+        ],
+      },
+      {
+        title: "How Do You Keep Crawl Space Mold From Coming Back?",
+        paragraphs: [
+          "Keep the humidity down. EPA guidance is to keep indoor relative humidity below 60%, ideally between 30% and 50%. In a Greenville crawl space that usually means closing off open foundation vents, covering the ground with a sealed vapor barrier, and running a crawl space dehumidifier through the humid months.",
+          "A cheap hygrometer left inside the access door is the easiest way to know whether your fix is working. If it reads above 60% in July, mold will eventually return no matter how well the last treatment was done.",
+        ],
+      },
+    ],
+    ctaHeading: "Want a Straight Answer on Your Crawl Space Mold?",
+    ctaBody:
+      "A free inspection from a licensed local specialist will tell you how much mold there is, whether the wood is sound, what is causing the moisture, and what it will cost to fix — in writing, with no obligation.",
+    relatedLinks: [
+      { href: "/services/mold-in-crawl-space", label: "Crawl space mold removal in Greenville, SC" },
+      { href: "/blog/crawl-space-mold-signs-greenville-sc", label: "5 signs your home has a crawl space mold problem" },
+      { href: "/services/dehumidifier-installation", label: "Crawl space dehumidifier installation" },
+      { href: "/crawl-space-encapsulation-cost", label: "2026 crawl space encapsulation cost guide" },
+    ],
+  },
   {
     slug: "national-vs-local-crawl-space-contractor-greenville-sc",
     title: "National vs. Local Crawl Space Contractors in Greenville, SC: How to Compare Quotes",

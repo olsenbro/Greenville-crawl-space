@@ -14,9 +14,9 @@ import { buildPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildPageMetadata({
-  title: "Crawl Space Encapsulation Cost Greenville SC | Guide",
+  title: "Crawl Space Encapsulation Cost Greenville SC (2026 Prices)",
   description:
-    "How much does crawl space encapsulation cost in Greenville, SC? See pricing for vapor barriers, dehumidifiers, mold treatment, and full systems. Free estimate.",
+    "2026 crawl space encapsulation prices in Greenville, SC — plus a quick checklist to see whether your home lands at the low or high end of the range before you get quotes.",
   canonical: "/crawl-space-encapsulation-cost",
 });
 
@@ -98,8 +98,8 @@ const costFaqs = [
 export default function CrawlSpaceEncapsulationCostPage() {
   return (
     <ServicePageTemplate
-      h1="Crawl Space Encapsulation Cost in Greenville, SC (2025 Guide)"
-      quickAnswer="Crawl space encapsulation in Greenville, SC costs $5,000–$9,000 for a full system with dehumidifier, or $1,500–$3,500 for vapor barrier only."
+      h1="Crawl Space Encapsulation Cost in Greenville, SC (2026 Guide)"
+      quickAnswer="Crawl space encapsulation in Greenville, SC costs $5,000–$9,000 for a full system with dehumidifier, or $1,500–$3,500 for vapor barrier only. Where your home lands in that range depends mostly on square footage, crawl space height, and whether there is standing water or mold — use the checklist below to estimate yours."
       breadcrumbPath="/crawl-space-encapsulation-cost"
       breadcrumbs={[{ label: "Cost Guide" }]}
       intro={[
@@ -116,7 +116,7 @@ export default function CrawlSpaceEncapsulationCostPage() {
         path: "/crawl-space-encapsulation-cost",
       })}
     >
-      <ServiceSection title="How Much Does Crawl Space Encapsulation Cost in Greenville, SC in 2025?">
+      <ServiceSection title="How Much Does Crawl Space Encapsulation Cost in Greenville, SC in 2026?">
         <div className="mb-6 rounded-lg border-l-4 border-accent bg-accent/10 p-4">
           <p className="font-semibold text-dark">About These Estimates</p>
           <p className="mt-2 text-sm leading-relaxed text-muted">
@@ -140,6 +140,34 @@ export default function CrawlSpaceEncapsulationCostPage() {
             ["Full project (encapsulation + mold + joist repair)", "$6,000–$15,000+"],
           ]}
         />
+
+        <h3 className="mt-10 font-display text-2xl font-semibold text-primary">
+          Will Your Home Be at the Low or High End of the Range?
+        </h3>
+        <p>
+          Two homes on the same street can get quotes thousands of dollars apart. Check which list
+          sounds more like your crawl space:
+        </p>
+        <ServiceComparisonTable
+          headers={["Likely lower end", "Likely higher end"]}
+          rows={[
+            ["Under about 1,500 sq ft", "Over 1,500 sq ft — extra liner rolls and a larger dehumidifier"],
+            ["Crawl space you can kneel or sit up in", "Under about 24 inches of clearance"],
+            ["Dry floor, no standing water after rain", "Standing water — drainage or a sump comes first"],
+            ["Little or no visible mold", "Mold on joists or subfloor that must be treated before sealing"],
+            ["Solid, dry floor joists", "Soft or damaged joists that need sistering"],
+            ["One clear, roomy access point", "A tight hatch or several separate crawl space sections"],
+          ]}
+        />
+        <p>
+          Mostly left column? Expect the lower half of the ranges below. Two or more items on the
+          right usually push a full system toward the top of the range or past it. The only way to
+          get your actual number is an in-person look —{" "}
+          <Link href="/contact" className="font-semibold text-primary hover:underline">
+            a free inspection gives you a written, itemized quote
+          </Link>
+          .
+        </p>
       </ServiceSection>
 
       <ServiceSection

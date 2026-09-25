@@ -269,7 +269,7 @@ export default function EncapsulationVsVaporBarrierPage() {
             href="/crawl-space-encapsulation-cost"
             className="font-semibold text-primary hover:underline"
           >
-            See our full 2025 cost breakdown →
+            See our full 2026 cost breakdown →
           </Link>
         </p>
       </ServiceSection>

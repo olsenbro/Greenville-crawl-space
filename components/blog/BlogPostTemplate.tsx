@@ -62,6 +62,27 @@ export function BlogPostTemplate({ post }: BlogPostTemplateProps) {
         </ServiceSection>
       ))}
 
+      {post.relatedLinks && post.relatedLinks.length > 0 ? (
+        <section className="border-t border-primary/10 bg-white section-padding">
+          <div className="container-narrow mx-auto max-w-3xl">
+            <h2 className="font-display text-2xl font-semibold text-primary">Related Pages</h2>
+            <ul className="mt-4 space-y-2">
+              {post.relatedLinks.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
+                  >
+                    {label}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
+
       <section className="border-t border-primary/10 bg-primary section-padding text-white">
         <div className="container-narrow mx-auto max-w-3xl text-center">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">{post.ctaHeading}</h2>

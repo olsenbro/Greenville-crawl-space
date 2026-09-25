@@ -20,7 +20,7 @@ export function generateMetadata({ params }: BlogPostPageProps): Metadata {
   }
 
   return buildPageMetadata({
-    title: post.title,
+    title: post.seoTitle ?? post.title,
     description: post.description,
     canonical: getBlogPostPath(post.slug),
   });
