@@ -28,6 +28,7 @@ export const siteRoutes: SiteRoute[] = [
     priority: 0.7,
   })),
   { path: "/areas-served", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/crawl-space-encapsulation-asheville-nc", changeFrequency: "monthly", priority: 0.8 },
   ...cityAreas.map((city) => ({
     path: `/areas-served/${city.slug}`,
     changeFrequency: "monthly" as const,

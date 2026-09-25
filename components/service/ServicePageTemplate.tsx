@@ -36,6 +36,8 @@ type ServicePageTemplateProps = {
   ctaHeading?: string;
   ctaBody?: string;
   authority?: AuthoritySource | AuthoritySource[];
+  /** Upstate SC service-area, city-link, and services outlines. Turn off for out-of-market pages. */
+  showUpstateSections?: boolean;
   children: React.ReactNode;
 };
 
@@ -52,6 +54,7 @@ export function ServicePageTemplate({
   ctaHeading = siteConfig.cta.defaultHeading,
   ctaBody = siteConfig.cta.defaultBody,
   authority,
+  showUpstateSections = true,
   children,
 }: ServicePageTemplateProps) {
   const pagePath =
@@ -107,18 +110,18 @@ export function ServicePageTemplate({
 
       {children}
 
-      <ServiceAreaOutline className="border-t border-primary/10 bg-neutral section-padding" />
+      {showUpstateSections ? (
+        <>
+          <ServiceAreaOutline className="border-t border-primary/10 bg-neutral section-padding" />
 
-      <LocationLinksOutline className="border-t border-primary/10 bg-white section-padding" />
+          <LocationLinksOutline className="border-t border-primary/10 bg-white section-padding" />
 
-      {serviceSlug ? (
-        <ServicesOutline
-          excludeSlug={serviceSlug}
-          className="border-t border-primary/10 bg-neutral section-padding"
-        />
-      ) : (
-        <ServicesOutline className="border-t border-primary/10 bg-neutral section-padding" />
-      )}
+          <ServicesOutline
+            excludeSlug={serviceSlug}
+            className="border-t border-primary/10 bg-neutral section-padding"
+          />
+        </>
+      ) : null}
 
       <RelatedGuidesLinks
         serviceSlug={serviceSlug}

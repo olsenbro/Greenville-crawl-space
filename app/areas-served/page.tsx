@@ -186,6 +186,16 @@ export default function AreasServedPage() {
             ))}
           </div>
           <p className="mt-8 text-lg text-muted">
+            Also serving western North Carolina:{" "}
+            <Link
+              href="/crawl-space-encapsulation-asheville-nc"
+              className="font-semibold text-primary hover:underline"
+            >
+              crawl space encapsulation and flood repair in Asheville, NC
+            </Link>
+            .
+          </p>
+          <p className="mt-8 text-lg text-muted">
             Not sure if we cover your area? Call{" "}
             <PhoneLink className="font-semibold text-primary hover:underline" /> — we&apos;ll confirm
             coverage and connect you with a specialist for a free estimate.
