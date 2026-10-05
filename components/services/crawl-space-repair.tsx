@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   BulletList,
   ProcessSteps,
@@ -171,7 +172,11 @@ export default function CrawlSpaceRepairPage() {
         <p>
           If you&apos;re selling, addressing crawl space issues before listing prevents last-minute price
           reductions and closing delays. If you&apos;re buying, a pre-purchase crawl space inspection protects
-          you from inheriting expensive hidden damage.
+          you from inheriting expensive hidden damage. See{" "}
+          <Link href="/crawl-space-home-sale-inspection" className="font-semibold text-primary hover:underline">
+            crawl space problems when selling or buying a home
+          </Link>{" "}
+          for what the CL-100 report checks and what SC sellers must disclose.
         </p>
       </ServiceSection>
     </ServicePageTemplate>

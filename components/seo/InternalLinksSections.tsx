@@ -8,6 +8,7 @@ export const GUIDE_PAGES = [
   { href: "/what-is-encapsulation", label: "What Is Crawl Space Encapsulation?" },
   { href: "/crawl-space-encapsulation-cost", label: "2026 Encapsulation Cost Guide" },
   { href: "/encapsulation-vs-vapor-barrier", label: "Encapsulation vs. Vapor Barrier" },
+  { href: "/crawl-space-home-sale-inspection", label: "Crawl Space Problems When Selling or Buying" },
   { href: "/faq", label: "Crawl Space FAQ" },
   { href: "/contact", label: "Request a Free Estimate" },
 ] as const;

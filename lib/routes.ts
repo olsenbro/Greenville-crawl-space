@@ -21,6 +21,7 @@ export const siteRoutes: SiteRoute[] = [
   { path: "/crawl-space-encapsulation-cost", changeFrequency: "monthly", priority: 0.9 },
   { path: "/encapsulation-vs-vapor-barrier", changeFrequency: "monthly", priority: 0.8 },
   { path: "/what-is-encapsulation", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/crawl-space-home-sale-inspection", changeFrequency: "monthly", priority: 0.8 },
   { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
   ...blogPosts.map((post) => ({
     path: getBlogPostPath(post.slug),
