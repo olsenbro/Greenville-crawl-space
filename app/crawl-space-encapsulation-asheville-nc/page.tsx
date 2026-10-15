@@ -261,7 +261,8 @@ function getAshevilleSchema(): SchemaObject {
         containedInPlace: northCarolina,
       },
       about: [
-        { "@type": "Event", name: "Hurricane Helene flooding in western North Carolina", startDate: "2024-09-26", endDate: "2024-09-27" },
+        // "Thing", not "Event": Google treats Event as an attendable event and flags a missing location.
+        { "@type": "Thing", name: "Hurricane Helene flooding in western North Carolina", sameAs: "https://en.wikipedia.org/wiki/Hurricane_Helene" },
       ],
       inLanguage: "en-US",
     },
