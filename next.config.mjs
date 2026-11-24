@@ -54,6 +54,12 @@ const nextConfig = {
         destination: "/contact",
         permanent: true,
       },
+      // Misspelled cost-page URL Google has seen (no hyphen in "crawl space")
+      {
+        source: "/crawlspace-encapsulation-cost",
+        destination: "/crawl-space-encapsulation-cost",
+        permanent: true,
+      },
       {
         source: "/privacy",
         destination: "/privacy-policy",
